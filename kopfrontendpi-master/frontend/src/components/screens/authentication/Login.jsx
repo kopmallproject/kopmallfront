@@ -7,6 +7,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import Loader from '../../Loader'
 import Message from '../../Message'
 import { login } from '../../../actions/userAction';
+import { baseUrl } from '../../baseUrl'
+import axios from 'axios'
 
 const Login = () => {
     const [email, setEmail] = useState("")
@@ -28,12 +30,43 @@ const Login = () => {
       }
     }, [userInfo, redirect])
   
-    const submitHandler = (e) => {
+    const  submitHandler = async (e) => {
       e.preventDefault()
       // console.log(fname, lname, email, password, confirmPassword)
   
-      dispatch(login(email, password ))
+        //   dispatch(login(email, password ))
+        const url = baseUrl + '/token/pair';
+        // fetch(url, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-type': 'application/json'
+        //     }
+        // })
+        // .then((response) => {
+        //     console.log("response", response)
+        //     return response.json();
+        // }).then((data) => {
+        //     console.log(data);
+        // })
 
+          const config={
+            headers: {
+                'Content-type': 'application/json'
+            }
+        }
+
+        const payload = {
+            email: email,
+            password: password
+        };
+
+
+
+        const {data} = await axios.post(`${baseUrl}/token/pair`, payload, config)
+        localStorage.setItem("accessToken", data.access);
+        localStorage.setItem("refreshToken", data.refresh);
+        console.log(data);
+        
     }
 
     const showPassword = () => {
@@ -103,4 +136,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;

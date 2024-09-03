@@ -1,6 +1,7 @@
 import axios from "axios";
 import { USER_LOGIN_REQUEST,  USER_LOGIN_SUCCESS, USER_LOGIN_FAIL,
-    USER_LOGOUT, USER_SIGNUP_REQUEST, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL, REFRESH_TOKEN
+    USER_LOGOUT, USER_SIGNUP_REQUEST, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL, REFRESH_TOKEN_SUCCESS, REFRESH_TOKEN_FAIL, REFRESH_TOKEN_REQUEST,
+    SET_AUTH_TOKENS, CLEAR_AUTH_TOKENS
 } from "../constants/UserConstants";
 import { baseUrl } from "../components/baseUrl";
 
@@ -8,6 +9,7 @@ import { baseUrl } from "../components/baseUrl";
 const saveTokens = (accessToken, refreshToken) => {
     localStorage.setItem("accessToken", accessToken);
     localStorage.setItem("refreshToken", refreshToken);
+    
   };
 
 export const isTokenExpired = (token) => {
@@ -90,7 +92,7 @@ export const login = (email, password) => async(dispatch) => {
 
         const {data} = await axios.post(`${baseUrl}/token/pair`, payload, config)
 
-        console.log('receiving data:', data);
+        console.log('receiving data:', data.access);
 
         saveTokens(data.access, data.refresh);
 
@@ -120,21 +122,32 @@ export const login = (email, password) => async(dispatch) => {
 
 
 export const refreshToken = () => async (dispatch) => {
+    dispatch({type: REFRESH_TOKEN_REQUEST})
     try {
       const refreshToken = localStorage.getItem("refreshToken");
   
-      const { data } = await axios.post("/api/auth/refresh", { refreshToken });
+      const { data } = await axios.post(`${baseUrl}/api/auth/refresh`, { refreshToken });
   
       saveTokens(data.access, data.refresh);
   
       dispatch({
-        type: REFRESH_TOKEN,
-        payload: data.access,
+        type: REFRESH_TOKEN_SUCCESS,
+        payload: data.access
       });
     } catch (error) {
-      dispatch(logout());
+        dispatch({type: REFRESH_TOKEN_FAIL, payload:error.message});
+        dispatch(logout());
     }
   };
+
+  export const setAuthTokens = (accessToken, refreshToken) => ({
+    type: SET_AUTH_TOKENS,
+    payload: { accessToken, refreshToken}
+  })
+
+  export const clearAuthTokens = () => ({
+    type: CLEAR_AUTH_TOKENS,
+  })
 
 export const logout=()=>(dispatch)=> {
     // localStorage.removeItem('userInfo')

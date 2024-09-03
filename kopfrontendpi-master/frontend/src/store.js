@@ -25,15 +25,20 @@ const cartItemsFromStorage = localStorage.getItem('cartItems') ? JSON.parse(loca
 
 const initialState = {
   cart: {cartItems: cartItemsFromStorage,
-    userLogin: {
-      loading: false,
-      isAuthenticated: false,
-      accessToken: localStorage.getItem("accessToken") || null,
-      error: null,
-    },
+    // userLogin: {
+    //   loading: false,
+    //   isAuthenticated: false,
+    //   accessToken: localStorage.getItem("accessToken") || null,
+    //   error: null,
+    // },
   },
+  isAuthenticated: !!localStorage.getItem("accessToken"),
+  accessToken: localStorage.getItem("accessToken") || null,
+  refreshToken: localStorage.getItem("accessToken") || null,
   
 };
+
+
 
 // const initialState = {
 //     ...existingInitialState,

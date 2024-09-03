@@ -1,5 +1,7 @@
+import { refreshToken } from "../actions/userAction";
 import { USER_LOGIN_REQUEST,  USER_LOGIN_SUCCESS, USER_LOGIN_FAIL,
-    USER_LOGOUT, USER_SIGNUP_REQUEST, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL, REFRESH_TOKEN
+    USER_LOGOUT, USER_SIGNUP_REQUEST, USER_SIGNUP_SUCCESS, USER_SIGNUP_FAIL, REFRESH_TOKEN_FAIL,
+    REFRESH_TOKEN_REQUEST, REFRESH_TOKEN_SUCCESS, SET_AUTH_TOKENS, CLEAR_AUTH_TOKENS
 } from "../constants/UserConstants";
 
 // const initialState = {
@@ -11,10 +13,9 @@ import { USER_LOGIN_REQUEST,  USER_LOGIN_SUCCESS, USER_LOGIN_FAIL,
 
 
 // const initialState = {
-//     loading: false,
-//     isAuthenticated: false,
+//     isAuthenticated: !!localStorage.getItem("accessToken"),
 //     accessToken: localStorage.getItem("accessToken") || null,
-//     error: null,
+//     refreshToken: localStorage.getItem("accessToken") || null,
 // };
 
 export const userSignupReducers = (state={}, action) => {
@@ -30,26 +31,38 @@ export const userSignupReducers = (state={}, action) => {
     }
 }
 
-export const userLoginReducers = (state={}, action) => {
+export const userLoginReducers = (state={userLogin:{}}, action) => {
     switch(action.type) {
-        case USER_LOGIN_REQUEST:
-            return {...state, userLogin: {loading: true, isAuthenticated: false, accessToken:action.payload, error:null}}
+        // case USER_LOGIN_REQUEST:
+        //     return {...state, isAuthenticated: true, accessToken:action.payload.access, refreshToken:action.payload.refresh}}
         case USER_LOGIN_SUCCESS:
-            return {...state, userLogin: {loading: false, isAuthenticated: true, accessToken:action.payload, error:null}}
-        case REFRESH_TOKEN:
+            return { userLogin: {isAuthenticated: true, accessToken:action.payload}}
+        case REFRESH_TOKEN_SUCCESS:
             return {
-                ...state,
-                // accessToken: action.payload,
+                userLogin: {isAuthenticated: true, accessToken:action.payload}
+                // ...state,
+                // accessToken: action.payload
                 // userInfo: action.payload
-                userLogin: {loading: false, isAuthenticated: true, accessToken:action.payload, error:null}
+                // userLogin: {loading: false, isAuthenticated: true, accessToken:action.payload, error:null}
             };
         case USER_LOGIN_FAIL:
-            return {...state, userLogin: {loading: false, isAuthenticated: false, accessToken:null, error:action.payload}}
-        case USER_LOGOUT:
             return {
-                ...state,
-                userLogin: {loading: false, isAuthenticated: false, accessToken:null, error:null}
+                // isAuthenticated: false, accessToken:null
+                userLogin: {isAuthenticated: false, accessToken:null}
+            }
+        case USER_LOGOUT:
+        case CLEAR_AUTH_TOKENS:
+            return {
+                userLogin: {isAuthenticated: false, accessToken:null}
+                // isAuthenticated: false, accessToken:null,
+                // userLogin: {loading: false, isAuthenticated: false, accessToken:null, error:null}
                 // userInfo: null
+            }
+        case SET_AUTH_TOKENS:
+            return {
+                // accessToken: action.payload,
+                // isAuthenticated:true
+                userLogin: {isAuthenticated: true, accessToken:action.payload}
             }
         default:
             return state

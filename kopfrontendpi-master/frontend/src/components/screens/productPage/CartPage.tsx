@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Header2 from '../../layouts/Header2';
 import Footer from '../../layouts/Footer';
 import { flash_sales } from '../../../data';
@@ -11,6 +11,7 @@ import Loader from '../../Loader';
 import Message from '../../Message';
 import { AppDispatch } from '../../../store';
 import {isTokenExpired, refreshToken} from '../../../actions/userAction';
+import { LoginContext } from '../../../App';
 
 interface CartItem {
   product: string;
@@ -49,6 +50,8 @@ const CartPage: React.FC<CartPageProps> = ({onClickBuy}) => {
   const [allnames, setAllnames] = useState<string>("");
   const [subTotal, setSubTotal] = useState<number>(0);
 
+  const [loggedIn, setLoggedIn] = useContext(LoginContext)
+
   const productId = id;
   const qty = location.search ? Number(location.search.split('=')[1]) : 1;
   console.log(productId, qty);
@@ -77,6 +80,10 @@ const CartPage: React.FC<CartPageProps> = ({onClickBuy}) => {
     // if (accessToken && isTokenExpired(accessToken)) {
     //   dispatch(refreshToken());
     // }
+    
+      if(loggedIn == false) {
+        navigate('/login')
+      }
 
     if (productId) {
       dispatch(addToCart(productId, qty));
@@ -84,7 +91,7 @@ const CartPage: React.FC<CartPageProps> = ({onClickBuy}) => {
 
     setParameters();
     
-  }, [ dispatch, productId, qty]);
+  }, [loggedIn, dispatch, productId, qty]);
 
   const removeFromCartHandler = (id: string) => {
     dispatch(removeFromCart(id));

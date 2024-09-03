@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect} from 'react'
 import { faCartShopping, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -10,6 +10,7 @@ import { Menu } from 'lucide-react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../actions/userAction'
 import { Link } from 'react-router-dom'
+import { LoginContext } from '../../App'
 
 
 
@@ -26,6 +27,11 @@ const Header2 = (props) => {
     const logoutHandler=()=>{
         dispatch(logout())
     }
+    const [loggedIn, setLoggedIn] = useContext(LoginContext)
+
+    useEffect(() => {
+        console.log("logged in", loggedIn)
+    })
   return (
     <>
         <header className='w-full lg:h-28 h-14 lg:border-b-[1px] border-b-gray relative'>
@@ -95,9 +101,9 @@ const Header2 = (props) => {
                                 <span className='hidden lg:inline-block'>account</span>
                                 <FontAwesomeIcon icon={faArrowDown}  className="hidden lg:inline-block"/>
                             </a>
-                            {userInfo ? (
+                            {loggedIn ? (
                                 <div className="sub_menu subMenu">
-                                    <span>Welcome {userInfo.name}</span>
+                                    <span>Welcome user</span>
                                     <div className="card">
                                         <a onClick={logoutHandler} className="">
                                             <span className='text-md text-[#FCB349]'>Logout</span>
