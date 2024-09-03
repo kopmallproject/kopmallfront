@@ -11,7 +11,7 @@ import Loader from '../../Loader';
 import Message from '../../Message';
 import { AppDispatch } from '../../../store';
 import {isTokenExpired, refreshToken} from '../../../actions/userAction';
-import { LoginContext } from '../../../App';
+import { LoginContext, LoginContextType } from '../../../App';
 
 interface CartItem {
   product: string;
@@ -50,7 +50,14 @@ const CartPage: React.FC<CartPageProps> = ({onClickBuy}) => {
   const [allnames, setAllnames] = useState<string>("");
   const [subTotal, setSubTotal] = useState<number>(0);
 
-  const [loggedIn, setLoggedIn] = useContext(LoginContext)
+  const context = useContext(LoginContext);
+
+  // Ensure context is not null before destructuring
+  if (!context) {
+    throw new Error("useContext must be used within a LoginContext.Provider");
+  }
+
+  const [loggedIn, setLoggedIn] = context as LoginContextType;
 
   const productId = id;
   const qty = location.search ? Number(location.search.split('=')[1]) : 1;

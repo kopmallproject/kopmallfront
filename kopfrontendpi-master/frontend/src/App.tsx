@@ -18,7 +18,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header2 from './components/layouts/Header2';
 import PrivateRoute from "./components/PrivateRoute";
 
-import { createContext } from 'react'
+import { createContext, Dispatch, SetStateAction } from 'react'
 
 type MyPaymentMetadata = {};
 
@@ -29,6 +29,15 @@ type AuthResult = {
     username: string
   }
 };
+
+type LoginStateType = boolean;
+type SetLoginStateType = Dispatch<SetStateAction<LoginStateType>>;
+
+// interface LoginContextType {
+//   value: [LoginStateType, SetLoginStateType];
+// }
+
+export type LoginContextType = [LoginStateType, SetLoginStateType];
 
 
 
@@ -64,13 +73,22 @@ interface WindowWithEnv extends Window {
   }
 }
 
+// interface LoginContextType {
+//   isLoggedIn: boolean;
+//   login: () => void;
+//   logout: () => void;
+// }
+
 const _window: WindowWithEnv = window;
 const backendURL = _window.__ENV && _window.__ENV.backendURL;
 
 const axiosClient = axios.create({ baseURL: `${backendURL}`, timeout: 20000, withCredentials: true});
 const config = {headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}};
 
-export const LoginContext = createContext();
+// export const LoginContext = createContext();
+// export const LoginContext = createContext<LoginContextType | null>(null);
+export const LoginContext = createContext<LoginContextType | null>(null);
+// export const LoginContext = createContext<LoginContextType>([false, () => {}])
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -144,10 +162,12 @@ const App: React.FC = () => {
     }
   }
 
-  const [loggedIn, setLoggedIn] = useState(true)
+  // const [loggedIn, setLoggedIn] = useState(true)
+  const [loggedIn, setLoggedIn] = useState<LoginStateType>(false);
   return (
     <>
     <LoginContext.Provider value={[loggedIn, setLoggedIn]}>
+    {/* <LoginContext.Provider value={{ value: [loggedIn, setLoggedIn] }}> */}
       <Router>
         {/* <Header2 user={user} onSignIn={signIn} onSignOut={signOut} /> */}
         {/* <Header2 /> */}
