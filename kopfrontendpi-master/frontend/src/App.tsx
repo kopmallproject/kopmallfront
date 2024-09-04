@@ -166,7 +166,9 @@ const App: React.FC = () => {
   useEffect(() => {
     
     const refreshFunction = async () => {
-      if (localStorage.refresh) {
+      
+      if (localStorage.refreshToken) {
+        console.log('refreshing')
         const url = baseUrl + '/token/refresh'
         
         const config={
@@ -189,17 +191,17 @@ const App: React.FC = () => {
       }
     }
 
-    const minutes = 1000 * 60
+    // const minutes = 1000 * 60
     refreshFunction()
 
-    setInterval(refreshFunction, minutes * 3)
+    setInterval(refreshFunction, 5000)
   })
 
   // const [loggedIn, setLoggedIn] = useState(true)
   const [loggedIn, setLoggedIn] = useState<LoginStateType>(
     localStorage.accessToken ? true : false);
 
-  function changeLoggedIn(value: boolean) {
+  function changeLoggedIn(value: any) {
     setLoggedIn(value);
     if (value === false) {
       localStorage.removeItem('accessToken')
@@ -208,7 +210,7 @@ const App: React.FC = () => {
   }
   return (
     <>
-    <LoginContext.Provider value={[loggedIn, changedLoggedIn]}>
+    <LoginContext.Provider value={[loggedIn, changeLoggedIn]}>
     {/* <LoginContext.Provider value={{ value: [loggedIn, setLoggedIn] }}> */}
       <Router>
         {/* <Header2 user={user} onSignIn={signIn} onSignOut={signOut} /> */}
