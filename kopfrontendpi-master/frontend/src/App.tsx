@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import SignUp from './components/screens/authentication/SignUp';
 import Login from './components/screens/authentication/Login';
@@ -19,6 +19,7 @@ import Header2 from './components/layouts/Header2';
 import PrivateRoute from "./components/PrivateRoute";
 
 import { createContext, Dispatch, SetStateAction } from 'react'
+import { baseUrl } from './components/baseUrl';
 
 type MyPaymentMetadata = {};
 
@@ -162,11 +163,52 @@ const App: React.FC = () => {
     }
   }
 
+  useEffect(() => {
+    
+    const refreshFunction = async () => {
+      if (localStorage.refresh) {
+        const url = baseUrl + '/token/refresh'
+        
+        const config={
+          headers: {
+              'Content-type': 'application/json'
+          }
+        }
+
+        const payload = {
+            refresh: localStorage.getItem('refreshToken')
+        };
+
+
+
+        const {data} = await axios.post(`${baseUrl}/token/refresh`, payload, config)
+        localStorage.setItem("accessToken", data.access);
+        localStorage.setItem("refreshToken", data.refresh);
+        setLoggedIn(true)
+        // console.log(data);
+      }
+    }
+
+    const minutes = 1000 * 60
+    refreshFunction()
+
+    setInterval(refreshFunction, minutes * 3)
+  })
+
   // const [loggedIn, setLoggedIn] = useState(true)
-  const [loggedIn, setLoggedIn] = useState<LoginStateType>(false);
+  const [loggedIn, setLoggedIn] = useState<LoginStateType>(
+    localStorage.accessToken ? true : false);
+
+  function changeLoggedIn(value: boolean) {
+    setLoggedIn(value);
+    if (value === false) {
+      localStorage.removeItem('accessToken')
+      localStorage.removeItem('refreshToken')
+    }
+  }
   return (
     <>
-    <LoginContext.Provider value={[loggedIn, setLoggedIn]}>
+    <LoginContext.Provider value={[loggedIn, changedLoggedIn]}>
     {/* <LoginContext.Provider value={{ value: [loggedIn, setLoggedIn] }}> */}
       <Router>
         {/* <Header2 user={user} onSignIn={signIn} onSignOut={signOut} /> */}

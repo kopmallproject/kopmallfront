@@ -9,8 +9,9 @@ import { faHamburger } from '@fortawesome/free-solid-svg-icons'
 import { Menu } from 'lucide-react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../actions/userAction'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { LoginContext } from '../../App'
+
 
 
 
@@ -18,6 +19,7 @@ const Header2 = (props) => {
     const userLogin = useSelector(state => state.userLogin)
     const {userInfo} = userLogin;
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const cart = useSelector(state => state.cart)
     const { cartItems } = cart
@@ -25,7 +27,11 @@ const Header2 = (props) => {
     console.log('user name', userInfo)
 
     const logoutHandler=()=>{
-        dispatch(logout())
+        setLoggedIn(false)
+        localStorage.removeItem("access")
+        localStorage.removeItem("refresh")
+        navigate("/login")
+        // dispatch(logout())
     }
     const [loggedIn, setLoggedIn] = useContext(LoginContext)
 
