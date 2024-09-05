@@ -5,7 +5,7 @@ import { categoryListReducers, productDetailsReducers, productsListReducers } fr
 import { userLoginReducers, userSignupReducers } from './reducers/userReducer'
 import { cartReducer } from './reducers/cartReducer'
 // import userReducer2 from './reducers/userReducer2'
-import { authMiddleware } from "./middleware/authMiddleware";
+// import { authMiddleware } from "./middleware/authMiddleware";
 
 
 const reducer = combineReducers({
@@ -44,7 +44,7 @@ const initialState = {
 //     ...existingInitialState,
 //     ...initialAuthState,
 //   };
-const middleware =[thunk, authMiddleware]
+const middleware =[thunk]
 // const store = createStore(reducer, initialState, composeWithDevTools(applyMiddleware(...middleware)))
 const store = createStore(reducer, initialState, applyMiddleware(...middleware))
 

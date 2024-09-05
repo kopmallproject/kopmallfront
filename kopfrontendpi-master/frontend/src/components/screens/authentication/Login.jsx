@@ -32,40 +32,48 @@ const Login = () => {
   
     const  submitHandler = async (e) => {
       e.preventDefault()
-      // console.log(fname, lname, email, password, confirmPassword)
-  
-        //   dispatch(login(email, password ))
-        const url = baseUrl + '/token/pair';
-        // fetch(url, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     }
-        // })
-        // .then((response) => {
-        //     console.log("response", response)
-        //     return response.json();
-        // }).then((data) => {
-        //     console.log(data);
-        // })
 
-          const config={
-            headers: {
-                'Content-type': 'application/json'
+        try {
+
+       
+            // console.log(fname, lname, email, password, confirmPassword)
+    
+            //   dispatch(login(email, password ))
+            const url = baseUrl + '/token/pair';
+            // fetch(url, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-type': 'application/json'
+            //     }
+            // })
+            // .then((response) => {
+            //     console.log("response", response)
+            //     return response.json();
+            // }).then((data) => {
+            //     console.log(data);
+            // })
+
+            const config={
+                headers: {
+                    'Content-type': 'application/json'
+                }
             }
+
+            const payload = {
+                email: email,
+                password: password
+            };
+
+
+
+            const {data} = await axios.post(`${baseUrl}/token/pair`, payload, config)
+            localStorage.setItem("accessToken", data.access);
+            localStorage.setItem("refreshToken", data.refresh);
+            console.log(data);
+            navigate("/")
+        } catch (error) {
+            console.log("login error", error)
         }
-
-        const payload = {
-            email: email,
-            password: password
-        };
-
-
-
-        const {data} = await axios.post(`${baseUrl}/token/pair`, payload, config)
-        localStorage.setItem("accessToken", data.access);
-        localStorage.setItem("refreshToken", data.refresh);
-        console.log(data);
         
     }
 

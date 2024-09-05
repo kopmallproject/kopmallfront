@@ -24,7 +24,7 @@ const Star = ({ filled }) => {
   }
 
 
-const ProductCardiii = ({data}) => {
+const ProductCardiii = ({data, addToCartHandler}) => {
   return (
     <>
         <div className="product_card min-w-[115px] lg:w-[220px]">
@@ -35,7 +35,7 @@ const ProductCardiii = ({data}) => {
                 <i className="p-[3px] bg-white rounded-full"><Heart className='w-[10px] h-[9px] lg:w-[20px] lg:h-[18px]' /></i>
                 </div>
                 <img className="w-[56px] h-[76px] lg:w-[142px] lg:h-[152px]" src={data.image} alt="" />
-                <button className="absolute -bottom-10  w-[100%] py-1 bg-[#FCB349] text-[#FFFFFF] text-[10px] lg:text-[20px]">Add To Cart</button>
+                <button className="absolute -bottom-10  w-[100%] py-1 bg-[#FCB349] text-[#FFFFFF] text-[10px] lg:text-[20px]" onClick={addToCartHandler}>Add To Cart</button>
             </div>
             <div className="mt-2 lg:mt-5">
                 <Link className='decoration-none' to={`/product/${data.id}`}>

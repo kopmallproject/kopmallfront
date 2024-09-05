@@ -14,7 +14,7 @@ import UserOrder from './components/screens/userPage/UserOrder';
 import UserOrderdetails from './components/screens/userPage/UserOrderdetails';
 import UserSavedItems from './components/screens/userPage/UserSavedItems';
 import UserAddressBook from './components/screens/userPage/UserAddressBook';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Header2 from './components/layouts/Header2';
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -92,6 +92,7 @@ export const LoginContext = createContext<LoginContextType | null>(null);
 // export const LoginContext = createContext<LoginContextType>([false, () => {}])
 
 const App: React.FC = () => {
+  const navigate = useNavigate()
   const [user, setUser] = useState<User | null>(null);
   const [showModal, setShowModal] = useState<boolean>(false);
 
@@ -168,33 +169,46 @@ const App: React.FC = () => {
     const refreshFunction = async () => {
       
       if (localStorage.refreshToken) {
-        console.log('refreshing')
-        const url = baseUrl + '/token/refresh'
+        try {
+
         
-        const config={
-          headers: {
-              'Content-type': 'application/json'
+          console.log('refreshing')
+          const url = baseUrl + '/token/refresh'
+          
+          const config={
+            headers: {
+                'Content-type': 'application/json'
+            }
           }
+
+          const payload = {
+              refresh: localStorage.getItem('refreshToken')
+          };
+
+          console.log('payload', payload)
+
+
+
+          const {data} = await axios.post(`${baseUrl}/token/refresh`, payload, config)
+          localStorage.setItem("accessToken", data.access);
+          localStorage.setItem("refreshToken", data.refresh);
+          setLoggedIn(true)
+          // console.log(data);
         }
-
-        const payload = {
-            refresh: localStorage.getItem('refreshToken')
-        };
-
-
-
-        const {data} = await axios.post(`${baseUrl}/token/refresh`, payload, config)
-        localStorage.setItem("accessToken", data.access);
-        localStorage.setItem("refreshToken", data.refresh);
-        setLoggedIn(true)
-        // console.log(data);
+        catch(error) {
+          console.log('refresh error', error)
+          localStorage.removeItem("accessToken");
+          localStorage.removeItem("refreshToken");
+          setLoggedIn(false)
+          navigate("/login")
+        }
       }
     }
 
-    // const minutes = 1000 * 60
+    const minutes = 1000 * 60
     refreshFunction()
 
-    setInterval(refreshFunction, 5000)
+    setInterval(refreshFunction, minutes * 3)
   })
 
   // const [loggedIn, setLoggedIn] = useState(true)
@@ -212,7 +226,7 @@ const App: React.FC = () => {
     <>
     <LoginContext.Provider value={[loggedIn, changeLoggedIn]}>
     {/* <LoginContext.Provider value={{ value: [loggedIn, setLoggedIn] }}> */}
-      <Router>
+      
         {/* <Header2 user={user} onSignIn={signIn} onSignOut={signOut} /> */}
         {/* <Header2 /> */}
         <Routes>
@@ -239,7 +253,7 @@ const App: React.FC = () => {
           <Route path="/user/saveditems" element={<UserSavedItems />} />
           <Route path="/user/addressbook" element={<UserAddressBook />} />
         </Routes>
-      </Router>
+      
       </LoginContext.Provider>
     </>
   );
