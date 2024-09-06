@@ -20,6 +20,7 @@ import PrivateRoute from "./components/PrivateRoute";
 
 import { createContext, Dispatch, SetStateAction } from 'react'
 import { baseUrl } from './components/baseUrl';
+import CheckOut from './components/screens/productPage/CheckOut';
 
 type MyPaymentMetadata = {};
 
@@ -166,54 +167,54 @@ const App: React.FC = () => {
 
   useEffect(() => {
     
-    const refreshFunction = async () => {
+    // const refreshFunction = async () => {
       
-      if (localStorage.refreshToken) {
-        try {
+    //   if (localStorage.refreshToken) {
+    //     try {
 
         
-          console.log('refreshing')
-          const url = baseUrl + '/token/refresh'
+    //       console.log('refreshing')
+    //       const url = baseUrl + '/token/refresh'
           
-          const config={
-            headers: {
-                'Content-type': 'application/json'
-            }
-          }
+    //       const config={
+    //         headers: {
+    //             'Content-type': 'application/json'
+    //         }
+    //       }
 
-          const payload = {
-              refresh: localStorage.getItem('refreshToken')
-          };
+    //       const payload = {
+    //           refresh: localStorage.getItem('refreshToken')
+    //       };
 
-          console.log('payload', payload)
+    //       console.log('payload', payload)
 
 
 
-          const {data} = await axios.post(`${baseUrl}/token/refresh`, payload, config)
-          localStorage.setItem("accessToken", data.access);
-          localStorage.setItem("refreshToken", data.refresh);
-          setLoggedIn(true)
-          // console.log(data);
-        }
-        catch(error) {
-          console.log('refresh error', error)
-          localStorage.removeItem("accessToken");
-          localStorage.removeItem("refreshToken");
-          setLoggedIn(false)
-          navigate("/login")
-        }
-      }
-    }
+    //       const {data} = await axios.post(`${baseUrl}/token/refresh`, payload, config)
+    //       localStorage.setItem("accessToken", data.access);
+    //       localStorage.setItem("refreshToken", data.refresh);
+    //       setLoggedIn(true)
+    //       console.log(data);
+    //     }
+    //     catch(error) {
+    //       console.log('refresh error', error)
+    //       localStorage.removeItem("accessToken");
+    //       localStorage.removeItem("refreshToken");
+    //       setLoggedIn(false)
+    //       navigate("/login")
+    //     }
+    //   }
+    // }
 
-    const minutes = 1000 * 60
-    refreshFunction()
+    // const minutes = 1000 * 60
+    // refreshFunction()
 
-    setInterval(refreshFunction, minutes * 3)
+    // setInterval(refreshFunction, minutes * 3)
   })
 
-  // const [loggedIn, setLoggedIn] = useState(true)
-  const [loggedIn, setLoggedIn] = useState<LoginStateType>(
-    localStorage.accessToken ? true : false);
+  const [loggedIn, setLoggedIn] = useState(true)
+  // const [loggedIn, setLoggedIn] = useState<LoginStateType>(
+  //   localStorage.accessToken ? true : false);
 
   function changeLoggedIn(value: any) {
     setLoggedIn(value);
@@ -245,6 +246,7 @@ const App: React.FC = () => {
         /> */}
           {/* <Route element={<PrivateRoute />}> */}
           <Route path="/cart/:id?" element={<CartPage onClickBuy={orderProduct} />} />
+          <Route path="/checkout" element={<CheckOut onClickBuy={orderProduct}/>} />
           {/* </Route> */}
           <Route path="/product/:id" element={<ProductPageOverview />} />
           <Route path="/user/account" element={<UserAccount />} />
