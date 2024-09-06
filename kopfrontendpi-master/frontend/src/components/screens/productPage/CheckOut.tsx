@@ -125,15 +125,15 @@ const CheckOut: React.FC<CheckOutPageProps> = ({onClickBuy}) => {
         <div className="flex flex-col gap-7 items-center lg:items-start lg:flex-row lg:px-28  mt-8">
               <div className="w-[100%] lg:w-[770px] border-x-[1px] border-solid border-[#0000004D]">
                 <h6 className="px-[4%] py-5 text-[24px] font-semibold border-y-[1px] border-solid border-[#0000004D]">
-                  Cart <span>({cartItems.length})</span>
+                  1. CHOOSE DELIVERY OPTION
                 </h6>
                 <div className="px-[4%] py-5 border-b-[1px] border-solid border-[#0000004D]">
-                  {cartItems.map((item) => (
+                  {/* {cartItems.map((item) => (
                     <CartCard
                       key={item.product}
                       data={item}
                     />
-                  ))}
+                  ))} */}
                 </div>
               </div>
 
