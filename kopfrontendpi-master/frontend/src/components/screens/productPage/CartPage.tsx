@@ -105,7 +105,8 @@ const CartPage: React.FC<CartPageProps> = ({onClickBuy}) => {
   };
 
   const checkoutHandler = () => {
-    navigate('/login?redirect=shipping');
+    // navigate('/login?redirect=shipping');
+    navigate('/checkout');
     // Call the function passed from the parent with the necessary arguments
     onClickBuy(allnames, subTotal, {productId: allid});
     // name, price, { productId: 'apple_pie_1' }

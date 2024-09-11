@@ -116,9 +116,9 @@ const CheckOut: React.FC<CheckOutPageProps> = ({onClickBuy}) => {
         
         </div>
 
-        <div className="flex flex-row justify-between items-center px-[4%] lg:px-28 py-4">
-          <img src="" alt="" />
-          <p className="">To complete your order delivery, you'll receive a One-Time Password (OTP) on your phone. Be ready to use it and receive your goodies! </p>
+        <div className="flex flex-row justify-between items-center px-[4%] lg:px-28 py-4 bg-[#FCB349]">
+          <img src="./assets/Megaphone.png" className='' alt="" />
+          <p className="w-[903px] text-center text-[20px]">To complete your order delivery, you'll receive a One-Time Password (OTP) on your phone. Be ready to use it and receive your goodies! </p>
           <div className=""></div>
         </div>
 
@@ -134,6 +134,25 @@ const CheckOut: React.FC<CheckOutPageProps> = ({onClickBuy}) => {
                       data={item}
                     />
                   ))} */}
+                  <form action="" className="">
+                    <div className="w-[474px] border-solid border-[1px] px-3 py-3">
+                      <div className="flex flex-row gap-2">
+                        <input type="radio" name="" id="" className='w-[30px] h-[30px] border-[#FCB349] border-[1px] border-solid bg-[#FCB349]'/>
+                        <span className="text-[20px] font-semibold ">Deliver to me</span>
+                      </div>
+                      <div className="flex flex-col mt-3">
+                        <span className="text-[16px] w-[428px]">Hi Wave, click on “Add Delivery Address” to specify an address</span>
+                        <button className='bg-[#FCB349] mt-3 py-4 px-1 w-[258px] text-[16px] text-[#25133A;]'>Add Delivery Address</button>
+                      </div>
+                    </div>
+
+                    <div className="mt-5">
+                      <div className="flex flex-row gap-2">
+                        <input type="radio" name="" id="" className='w-[30px] h-[30px] border-[#FCB349] border-[1px] border-solid bg-[#FCB349]'/>
+                        <span className="text-[20px] font-semibold">Pickup from store</span>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
 

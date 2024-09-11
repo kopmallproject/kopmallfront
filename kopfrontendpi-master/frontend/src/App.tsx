@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import SignIn from './components/screens/authentication/pi/SignIn';
 import SignUp from './components/screens/authentication/SignUp';
 import Login from './components/screens/authentication/Login';
 import ForgetPassword from './components/screens/authentication/ForgetPassword';
@@ -255,6 +256,7 @@ const App: React.FC = () => {
           <Route path="/user/saveditems" element={<UserSavedItems />} />
           <Route path="/user/addressbook" element={<UserAddressBook />} />
         </Routes>
+        { showModal && <SignIn onSignIn={signIn} onModalClose={onModalClose} /> }
       
       </LoginContext.Provider>
     </>

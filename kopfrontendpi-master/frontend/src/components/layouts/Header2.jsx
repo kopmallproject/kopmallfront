@@ -74,7 +74,7 @@ const Header2 = (props) => {
 
                             <div className="sub_menu subMenu">
                                 <div className="card ">
-                                    <a href="" className="">
+                                    <a href="" className="underline-none">
                                         <span className='text-md text-[#FCB349]'>Lorem</span>
                                     </a>
                                 </div>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import './authentication.css'
@@ -9,6 +9,7 @@ import Message from '../../Message'
 import { login } from '../../../actions/userAction';
 import { baseUrl } from '../../baseUrl'
 import axios from 'axios'
+import { LoginContext, LoginContextType } from '../../../App';
 
 const Login = () => {
     const [email, setEmail] = useState("")
@@ -16,6 +17,15 @@ const Login = () => {
     // const [message, setMessage] = useState("")
     const [show, changeShow] = useState("fa fa-eye-slash")
     const navigate = useNavigate()
+
+    const context = useContext(LoginContext);
+
+  // Ensure context is not null before destructuring
+  if (!context) {
+    throw new Error("useContext must be used within a LoginContext.Provider");
+  }
+
+  const [loggedIn, setLoggedIn] = context;
 
     const dispatch = useDispatch()
     const location = useLocation()
@@ -25,10 +35,13 @@ const Login = () => {
     const {error, loading, userInfo} = userLogin
   
     useEffect(() => {
-      if(userInfo) {
+    //   if(userInfo) {
+    //     navigate('/')
+    //   }
+    if(loggedIn == true) {
         navigate('/')
       }
-    }, [userInfo, redirect])
+    }, [loggedIn, userInfo, redirect])
   
     const  submitHandler = async (e) => {
       e.preventDefault()
