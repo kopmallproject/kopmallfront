@@ -13,9 +13,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import { LoginContext } from '../../App'
 
 
+interface Props {
+    onSignIn: () => void;
+    onSignOut: () => void;
+    user: User | null
+}
 
-
-const Header2 = (props) => {
+const Header2: React.FC<Props> = (props) => {
     const userLogin = useSelector(state => state.userLogin)
     const {userInfo} = userLogin;
     const dispatch = useDispatch()
@@ -130,6 +134,45 @@ const Header2 = (props) => {
                                             <span className='text-md text-[#FCB349]'>Signup</span>
                                         </Link>
                                     </div>
+                                    
+                                </div>
+                            )}
+
+                            {/* {props.user ? (
+                                <div className="sub_menu subMenu">
+                                    @{props.user.username} <button type="button" onClick={props.onSignOut}>Sign out</button>
+                                </div>
+                                
+                            ) : (
+                                <div className="sub_menu subMenu">
+                                    <button onClick={props.onSignIn}>Sign in</button>
+                                </div>
+                            )} */}
+                            
+                        </li>
+
+
+                        <li className='links relative'>
+                            <a href="#" className="flex gap-1 items-center text-[#000000]">
+                                <FontAwesomeIcon icon={faPerson} />
+                                <span className='hidden lg:inline-block'>Wallet</span>
+                                <FontAwesomeIcon icon={faArrowDown}  className="hidden lg:inline-block"/>
+                            </a>
+                            {props.user === null ? (
+                                <div className="sub_menu subMenu my-6 mr-2">
+                                    <span>PI</span>
+                                    <div className="card">
+                                        <button onClick={props.onSignIn}>Sign in</button>
+                                    </div>
+                                    
+                                </div>
+                            ) : (
+                                <div className="sub_menu subMenu">
+                                    
+                                    <div className='card'>
+                                        @{props.user.username} <button type="button" onClick={props.onSignOut}>Sign out</button>
+                                    </div>
+                                   
                                     
                                 </div>
                             )}

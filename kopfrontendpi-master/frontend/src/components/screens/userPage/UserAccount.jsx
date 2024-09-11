@@ -7,7 +7,7 @@ import Header2 from '../../layouts/Header2'
 const UserAccount = () => {
   return (
     <>
-        <Header2 />
+        {/* <Header2 /> */}
 
         <div className="py-20 lg:px-28 px-[5%]  bg-[#f9f9f9] flex flex-col lg:flex-row lg:justify-between">
             <div className="category_div rounded-lg drop-shadow-md    lg:flex flex-col gap-2 w-100% lg:w-[20%] lg:h-fit bg-[#fff]  text-[#000000]">

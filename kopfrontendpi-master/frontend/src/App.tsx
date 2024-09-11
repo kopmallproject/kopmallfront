@@ -229,7 +229,7 @@ const App: React.FC = () => {
     <LoginContext.Provider value={[loggedIn, changeLoggedIn]}>
     {/* <LoginContext.Provider value={{ value: [loggedIn, setLoggedIn] }}> */}
       
-        {/* <Header2 user={user} onSignIn={signIn} onSignOut={signOut} /> */}
+        <Header2 user={user} onSignIn={signIn} onSignOut={signOut} />
         {/* <Header2 /> */}
         <Routes>
           <Route path="/" element={<HomePage />} />

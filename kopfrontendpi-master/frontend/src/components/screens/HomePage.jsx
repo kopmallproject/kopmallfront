@@ -24,7 +24,7 @@ const IMAGES = [slideImg, slideImg, slideImg, slideImg, slideImg]
 const HomePage = () => {
   return (
     <>
-        <Header2 />
+        {/* <Header2 /> */}
         {/* <FontAwesomeIcon icon={faCoffee} /> */}
         
         <div className='mt-20 lg:px-28 px-[5%] h-[140px] lg:h-[345px] flex space-between'> 

@@ -114,7 +114,7 @@ const CartPage: React.FC<CartPageProps> = ({onClickBuy}) => {
 
   return (
     <>
-    <Header2 />
+    {/* <Header2 /> */}
 
       <div className="div">
         <h4 className="text-[14px] px-[4%] lg:px-28 mt-20">
