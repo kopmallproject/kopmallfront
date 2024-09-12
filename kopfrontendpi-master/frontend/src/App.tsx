@@ -100,6 +100,7 @@ const App: React.FC = () => {
 
   const signIn = async () => {
     const scopes = ['username', 'payments'];
+    console.log("window.Pi", window.Pi)
     const authResult: AuthResult = await window.Pi.authenticate(scopes, onIncompletePaymentFound);
     signInUser(authResult);
     setUser(authResult.user);

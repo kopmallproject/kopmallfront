@@ -13,11 +13,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import { LoginContext } from '../../App'
 
 
-interface Props {
-    onSignIn: () => void;
-    onSignOut: () => void;
-    user: User | null
-}
+// interface Props {
+//     onSignIn: () => void;
+//     onSignOut: () => void;
+//     user: User | null
+// }
 
 const Header2 = (props) => {
     const userLogin = useSelector(state => state.userLogin)
