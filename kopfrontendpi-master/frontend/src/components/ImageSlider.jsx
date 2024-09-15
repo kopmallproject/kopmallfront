@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ArrowBigLeft, ArrowBigRight, Circle, CircleDot } from "lucide-react"
 import "./image-slider.css"
 
 const ImageSlider = ({imageUrls}) => {
     const [imageIndex, SetImageIndex] = useState(0);
+    const delay = 2500;
     function showNextImage() {
         SetImageIndex(index => {
             if (index === imageUrls.length - 1) return 0
@@ -18,6 +19,15 @@ const ImageSlider = ({imageUrls}) => {
         })
         
     }
+
+    useEffect(() => {
+        setTimeout(
+            showNextImage,
+          delay
+        );
+    
+        return () => {};
+      }, [imageIndex]);
 
 
   return (

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faStar } from '@fortawesome/free-solid-svg-icons'
 import Header from '../layouts/Header'
@@ -13,15 +13,59 @@ import { flash_sales, logos, products } from '../../data'
 import Category from '../Category'
 
 const slideImg ="assets/Slider_1.png"
+const slideImg2 = "assets/bg-image-4_awzbqz.jpg"
+const slideImg3 = "assets/JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png"
 
 
-const IMAGES = [slideImg, slideImg, slideImg, slideImg, slideImg]
+
+const IMAGES = [slideImg, slideImg2, slideImg, slideImg3, slideImg]
 
 
+const getTimeLeft = (expiry) => {
+  let days = "0";
+  let hours = "0";
+  let minutes = "0";
+  let seconds = "0";
 
+  const difference = new Date(expiry).getTime() - new Date().getTime();
+
+  if (difference <= 0) {
+    return {
+      days,
+      hours,
+      minutes,
+      seconds,
+    }
+  }
+
+  const dys = Math.floor(difference / (1000 * 60 * 60 *24)).toString();
+  const hrs = Math.floor((difference / (1000 * 60 * 60)) % 24).toString();
+  const mnt = Math.floor((difference / (1000 * 60 )) % 60).toString();
+  const snd = Math.floor((difference / 1000)  % 60).toString();
+
+  days = dys < 10 ? `0${dys}` : dys.toString()
+  hours = hrs < 10 ? `0${hrs}` : hrs.toString()
+  minutes = mnt < 10 ? `0${mnt}` : mnt.toString()
+  seconds = snd < 10 ? `0${snd}` : snd.toString()
+
+  return {
+    days,
+    hours,
+    minutes,
+    seconds,
+  }
+}
 
 
 const HomePage = () => {
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft("2024-08-08T17:00:00"))
+  // const [timer, setTimer] = useState("00:00:00")
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeLeft(getTimeLeft("2024-09-15T17:00:00"))
+    }, 1000)
+  })
   return (
     <>
         {/* <Header2 /> */}
@@ -99,20 +143,20 @@ const HomePage = () => {
               <div className="time_wrapper flex items-center gap-4 mt-3 lg:mt-6
               ">
                 <div className="flex flex-col bg-white w-[27px] h-[27px] lg:w-[64px] lg:h-[64px] justify-center items-center rounded-full">
-                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">23</span>
+                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">{timeLeft.days}</span>
+                  <span className="text-[7px] lg:text-[11px] text-[#000000]">Days</span>
+                </div>
+                <div className="flex flex-col bg-white w-[27px] h-[27px] lg:w-[64px] lg:h-[64px] justify-center items-center rounded-full">
+                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">{timeLeft.hours}</span>
                   <span className="text-[7px] lg:text-[11px] text-[#000000]">Hours</span>
                 </div>
                 <div className="flex flex-col bg-white w-[27px] h-[27px] lg:w-[64px] lg:h-[64px] justify-center items-center rounded-full">
-                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">23</span>
-                  <span className="text-[7px] lg:text-[11px] text-[#000000]">Hours</span>
+                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">{timeLeft.minutes}</span>
+                  <span className="text-[7px] lg:text-[11px] text-[#000000]">Minutes</span>
                 </div>
                 <div className="flex flex-col bg-white w-[27px] h-[27px] lg:w-[64px] lg:h-[64px] justify-center items-center rounded-full">
-                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">23</span>
-                  <span className="text-[7px] lg:text-[11px] text-[#000000]">Hours</span>
-                </div>
-                <div className="flex flex-col bg-white w-[27px] h-[27px] lg:w-[64px] lg:h-[64px] justify-center items-center rounded-full">
-                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">23</span>
-                  <span className="text-[7px] lg:text-[11px] text-[#000000]">Hours</span>
+                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">{timeLeft.seconds}</span>
+                  <span className="text-[7px] lg:text-[11px] text-[#000000]">Seconds</span>
                 </div>
               </div>
               <button className='mt-4 lg:mt-8 bg-[#4B3D88] py-1 px-5 lg:py-4 lg:px-12 text-[5.76px] lg:text-[16px] text-[#FAFAFA] font-medium'>Buy Now!</button>
