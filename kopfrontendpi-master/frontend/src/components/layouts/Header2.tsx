@@ -10,17 +10,8 @@ import { Menu } from 'lucide-react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../actions/userAction'
 import { Link, useNavigate } from 'react-router-dom'
-import { LoginContext, LoginContextType, User } from '../../App'
-import { AppDispatch } from '../../store'
+import { LoginContext } from '../../App'
 
-interface CartItem {
-    product: string;
-    name: string;
-    image: string;
-    price: number;
-    countInStock: number;
-    qty: number;
-  }
 
 interface Props {
     onSignIn: () => void;
@@ -28,22 +19,16 @@ interface Props {
     user: User | null
 }
 
-interface CartState {
-    cart: {
-      cartItems: CartItem[];
-    };
-  }
-
 const Header2: React.FC<Props> = (props) => {
-    // const userLogin = useSelector(state => state.userLogin)
-    // const {userInfo} = userLogin;
-    const dispatch = useDispatch<AppDispatch>()
+    const userLogin = useSelector(state => state.userLogin)
+    const {userInfo} = userLogin;
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const cart = useSelector((state: CartState) => state.cart)
+    const cart = useSelector(state => state.cart)
     const { cartItems } = cart
 
-    // console.log('user name', userInfo)
+    console.log('user name', userInfo)
 
     const logoutHandler=()=>{
         setLoggedIn(false)
@@ -52,9 +37,7 @@ const Header2: React.FC<Props> = (props) => {
         navigate("/login")
         // dispatch(logout())
     }
-
-    const context = useContext(LoginContext);
-    const [loggedIn, setLoggedIn] = context as LoginContextType;
+    const [loggedIn, setLoggedIn] = useContext(LoginContext)
 
     useEffect(() => {
         console.log("logged in", loggedIn)
@@ -74,9 +57,9 @@ const Header2: React.FC<Props> = (props) => {
                             <FontAwesomeIcon icon={faSearch} className='pointer-events-none w-3 h-3 absolute ml-3' />
                             {/* ring-2 ring-gray-300 */}
                             <input className='lg:w-[360px] pr-3 pl-10 border-[1px] 
-                            border-solid border-[#00000080] py-2 font-semibold placeholder-gray-500 text-[12px] text-black rounded lg:rounded-xl  focus:ring-2 ' 
+                            border-solid\ border-[#00000080] py-2 font-semibold placeholder-gray-500 text-[12px] text-black rounded lg:rounded-xl  focus:ring-2 ' 
                                 type="text" 
-                                autoComplete="off"
+                                autocomplete="off"
                                 name="search" 
                                 placeholder='Search for products, brands and categories.' />
                                 
