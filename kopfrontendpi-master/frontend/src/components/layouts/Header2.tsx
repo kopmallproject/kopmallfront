@@ -10,7 +10,7 @@ import { Menu } from 'lucide-react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../actions/userAction'
 import { Link, useNavigate } from 'react-router-dom'
-import { LoginContext } from '../../App'
+import { LoginContext, User } from '../../App'
 
 
 interface Props {
@@ -19,16 +19,33 @@ interface Props {
     user: User | null
 }
 
+interface CartItem {
+    product: string;
+    name: string;
+    image: string;
+    price: number;
+    countInStock: number;
+    qty: number;
+  }
+
+
+interface CartState {
+    cart: {
+        cartItems: CartItem[];
+    };
+}
+
+
 const Header2: React.FC<Props> = (props) => {
-    const userLogin = useSelector(state => state.userLogin)
-    const {userInfo} = userLogin;
+    // const userLogin = useSelector(state => state.userLogin)
+    // const {userInfo} = userLogin;
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const cart = useSelector(state => state.cart)
+    const cart = useSelector((state:CartState) => state.cart)
     const { cartItems } = cart
 
-    console.log('user name', userInfo)
+    // console.log('user name', userInfo)
 
     const logoutHandler=()=>{
         setLoggedIn(false)
