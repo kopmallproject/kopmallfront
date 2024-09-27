@@ -1,4 +1,4 @@
-import React, { useContext, useEffect} from 'react'
+import React, { useContext, useEffect, useState} from 'react'
 import { faCartShopping, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -6,11 +6,15 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { faPerson } from '@fortawesome/free-solid-svg-icons'
 import { faHamburger } from '@fortawesome/free-solid-svg-icons'
-import { Menu } from 'lucide-react'
+import { Menu, Smartphone, X } from 'lucide-react'
 import { useDispatch, useSelector } from 'react-redux'
+import { listCategories } from '../../actions/productsActions'
 import { logout } from '../../actions/userAction'
 import { Link, useNavigate } from 'react-router-dom'
 import { LoginContext, User, LoginContextType} from '../../App'
+import HeaderCategory from '../HeaderCategory'
+
+
 
 
 interface Props {
@@ -39,6 +43,7 @@ const Header2: React.FC<Props> = (props) => {
     // const {userInfo} = userLogin;
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const [showMenuBar, setShowMenuBar] = useState(false)
 
     // const cart = useSelector(state => state.cart)
     const cart = useSelector((state: CartState) => state.cart);
@@ -64,7 +69,50 @@ const Header2: React.FC<Props> = (props) => {
         <header className='w-full lg:h-28 h-14 lg:border-b-[1px] border-b-gray relative'>
             <div className="max-w-screen-2xl h-full mx-auto lg:px-28 px-[5%] py-5 flex items-center justify-between">
                 <div className='flex items-center gap-6 '>
-                    <Menu className='lg:hidden'/>
+                    <Menu className={showMenuBar ? 'lg:hidden hidden': 'lg:hidden'} onClick={() => setShowMenuBar(true)}/>
+                    <X className={showMenuBar ?  'lg:hidden' : 'lg:hidden hidden'} onClick={() => setShowMenuBar(false)}/>
+                    <div className={showMenuBar ?  'mb-menu-bar lg:hidden w-[380px] h-[100%] bg-[#FAF7F7] absolute z-10 top-[68px] left-0 py-4' : 'hidden'} >
+                        <div className="bg-[#FAF7F7] pb-3">
+                            <h3 className="text-[20px] font-medium py-3 bg-[#D7D7D780] px-4">My Account</h3>
+                            <div className="px-4 flex flex-col gap-2">
+                                <Link className="flex flex-row gap-2 no-underline text-[#000000]" to={`/store/`}>
+                                    
+                                    <Smartphone />
+                                    <span>Orders</span>
+                                    
+                                </Link>
+
+                                <Link className="flex flex-row gap-2 no-underline text-[#000000]" to={`/store/`}>
+                                    
+                                    <Smartphone />
+                                    <span>Saved Items</span>
+                                    
+                                </Link>
+
+                                <Link className="flex flex-row gap-2 no-underline text-[#000000]" to={`/store/`}>
+                                    
+                                    <Smartphone />
+                                    <span>Address book</span>
+                                    
+                                </Link>
+
+                                <Link className="flex flex-row gap-2 no-underline text-[#000000]" to={`/store/`}>
+                                    
+                                    <Smartphone />
+                                    <span>Wallet</span>
+                                    
+                                </Link>
+                                
+
+                            </div>
+                            
+                        </div>
+                        <div className="bg-[#FAF7F7] pb-7">
+                            <h3 className="text-[20px] font-medium py-3  px-4">CATEGORIES</h3>
+                            <HeaderCategory />
+                        </div>
+
+                    </div>
                     <h1 className='text-[20x] lg:text-3xl uppercase font-bold'>
                         KOP MALL
                     </h1>
@@ -81,7 +129,7 @@ const Header2: React.FC<Props> = (props) => {
                                 placeholder='Search for products, brands and categories.' />
                                 
                         </div>
-                        <button className='hidden lg:block bg-[#FCB349] text-20px px-6 px-3 rounded font-weight-700 hover:text-[#FCB349] hover:bg-white hover:border-[1px] hover:border-[#FCB349]'>Search</button>
+                        <button className='hidden lg:block bg-[#FCB349] text-20px px-3 rounded font-weight-700 hover:text-[#FCB349] hover:bg-white hover:border-[1px] hover:border-[#FCB349]'>Search</button>
                     </form>
                 </div>
                 <div>
