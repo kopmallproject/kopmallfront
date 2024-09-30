@@ -27,7 +27,7 @@ code {
   }
 
   .category_div_card {
-    @apply flex flex-row items-center gap-2 text-[16px] text-white hover:tracking-wide hover:text-[#666];
+    @apply flex flex-row items-center gap-2 text-[16px] text-white hover:tracking-tight hover:text-[#666];
   }
 
 }

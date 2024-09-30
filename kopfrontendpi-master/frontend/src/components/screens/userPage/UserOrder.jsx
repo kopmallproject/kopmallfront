@@ -11,27 +11,27 @@ const UserOrder = () => {
 
         <div className="py-20 lg:px-28 px-[5%]  bg-[#f9f9f9] flex flex-col lg:flex-row lg:justify-between">
             <div className="category_div rounded-lg drop-shadow-md    lg:flex flex-col gap-2 w-100% lg:w-[20%] lg:h-[23%] bg-[#fff]  text-[#000000]">
-                <div className="category_div_card rounded-t-lg bg-[#D7D7D7] px-5 py-3">
+                <div className="category_div_card text-[#000000] rounded-t-lg bg-[#D7D7D7] px-5 py-3">
                     <UserRound />
                     <span>My Account</span>
                 </div>
-                <div className="category_div_card px-5 py-2">
+                <div className="category_div_card text-[#000000] px-5 py-2">
                     <i className="w-[24px] h-[24px]"><Gift /></i>
                     <span>Orders</span>
                 </div>
-                <div className="category_div_card px-5 py-2">
+                <div className="category_div_card text-[#000000] px-5 py-2">
                     <Heart />
                     <span>Saved items</span>
                 </div>
-                <div className="category_div_card px-5 py-2">
+                <div className="category_div_card text-[#000000] px-5 py-2">
                     <BookUser />
                     <span>Address book</span>
                 </div>
-                <div className="category_div_card px-5 py-2">
+                <div className="category_div_card text-[#000000] px-5 py-2">
                     <Apple />
                     <span>Supermarket</span>
                 </div>
-                <div className="category_div_card px-5 py-2">
+                <div className="category_div_card text-[#000000] px-5 py-2">
                     <Wallet />
                     <span>Wallet</span>
                 </div>

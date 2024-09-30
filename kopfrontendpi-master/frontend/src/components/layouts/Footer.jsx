@@ -43,21 +43,21 @@ const Footer = () => {
                 <div className="mt-6 lg:mt-0 lg:w-[175px]">
                     <h2 className='text-[20px] font-weight-500 capitalize'>Account</h2>
                     <div className="mt-6 flex flex-col gap-4 text-[16px] text-[#FAFAFA] font-weight-400">
-                        <span className=""><a href="" className="">My Account</a></span>
-                        <span className=""><a href="" className="">Login</a> / <a href="" className=''>Register</a></span>
-                        <span className=""><a href="" className="">Cart</a></span>
-                        <span className=""><a href="" className="">Wishlist</a></span>
-                        <span className=""><a href="" className="">Shop</a></span>
+                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">My Account</a></span>
+                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Login</a> / <a href="" className='no-underline text-[#FFFFFF]'>Register</a></span>
+                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Cart</a></span>
+                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Wishlist</a></span>
+                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Shop</a></span>
                         
                     </div>
                 </div>
                 <div className="mt-6 lg:mt-0 lg:w-[175px]">
                     <h2 className='text-[20px] font-weight-500 capitalize'>Quick Link</h2>
                     <div className="mt-6 flex flex-col gap-4 text-[16px] text-[#FAFAFA] font-weight-400">
-                        <span className=""><a href="" className="">Privacy Policy</a></span>
-                        <span className=""><a href="" className="">Terms Of Use</a></span>
-                        <span className=""><a href="" className="">FAQ</a></span>
-                        <span className=""><a href="" className="">Contact</a></span>
+                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Privacy Policy</a></span>
+                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Terms Of Use</a></span>
+                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">FAQ</a></span>
+                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Contact</a></span>
                         
                     </div>
                 </div>
