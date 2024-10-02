@@ -60,11 +60,18 @@ const getTimeLeft = (expiry) => {
 const HomePage = () => {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft("2024-08-08T17:00:00"))
   // const [timer, setTimer] = useState("00:00:00")
+  // const Ref = useRef()
+
+  // function getDeadTime() {
+  //   let deadline = new Date();
+  // }
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft(getTimeLeft("2024-09-15T17:00:00"))
     }, 1000)
+
+    // getDeadTime()
   })
   return (
     <>
