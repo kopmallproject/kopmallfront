@@ -11,6 +11,7 @@ import ProductCard from '../ProductCard'
 import ProductCardii from '../ProductCardii'
 import { flash_sales, logos, products } from '../../data'
 import Category from '../Category'
+import Timer from '../Timer'
 
 const slideImg ="assets/Slider_1.png"
 const slideImg2 = "assets/bg-image-4_awzbqz.jpg"
@@ -21,58 +22,75 @@ const slideImg3 = "assets/JBL_BOOMBOX_2_HERO_020_x1 (1) 1.png"
 const IMAGES = [slideImg, slideImg2, slideImg, slideImg3, slideImg]
 
 
-const getTimeLeft = (expiry) => {
-  let days = "0";
-  let hours = "0";
-  let minutes = "0";
-  let seconds = "0";
+// const getTimeLeft = (expiry) => {
+//   let days = "0";
+//   let hours = "0";
+//   let minutes = "0";
+//   let seconds = "0";
 
-  const difference = new Date(expiry).getTime() - new Date().getTime();
+//   const difference = new Date(expiry).getTime() - new Date().getTime();
 
-  if (difference <= 0) {
-    return {
-      days,
-      hours,
-      minutes,
-      seconds,
-    }
-  }
+//   if (difference <= 0) {
+//     return {
+//       days,
+//       hours,
+//       minutes,
+//       seconds,
+//     }
+//   }
 
-  const dys = Math.floor(difference / (1000 * 60 * 60 *24)).toString();
-  const hrs = Math.floor((difference / (1000 * 60 * 60)) % 24).toString();
-  const mnt = Math.floor((difference / (1000 * 60 )) % 60).toString();
-  const snd = Math.floor((difference / 1000)  % 60).toString();
+//   const dys = Math.floor(difference / (1000 * 60 * 60 *24)).toString();
+//   const hrs = Math.floor((difference / (1000 * 60 * 60)) % 24).toString();
+//   const mnt = Math.floor((difference / (1000 * 60 )) % 60).toString();
+//   const snd = Math.floor((difference / 1000)  % 60).toString();
 
-  days = dys < 10 ? `0${dys}` : dys.toString()
-  hours = hrs < 10 ? `0${hrs}` : hrs.toString()
-  minutes = mnt < 10 ? `0${mnt}` : mnt.toString()
-  seconds = snd < 10 ? `0${snd}` : snd.toString()
+//   days = dys < 10 ? `0${dys}` : dys.toString()
+//   hours = hrs < 10 ? `0${hrs}` : hrs.toString()
+//   minutes = mnt < 10 ? `0${mnt}` : mnt.toString()
+//   seconds = snd < 10 ? `0${snd}` : snd.toString()
 
-  return {
-    days,
-    hours,
-    minutes,
-    seconds,
-  }
-}
+//   return {
+//     days,
+//     hours,
+//     minutes,
+//     seconds,
+//   }
+// }
 
 
 const HomePage = () => {
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft("2024-08-08T17:00:00"))
-  // const [timer, setTimer] = useState("00:00:00")
-  // const Ref = useRef()
-
-  // function getDeadTime() {
-  //   let deadline = new Date();
-  // }
+  const duration = 2*24*60*60*1000;
+  const [time, setTime] = useState(duration);
+  const [sec, setSec] = useState(0)
+  const [min, setMin] = useState(0)
+  const [hr, setHr] = useState(0)
+  const [dy, setDy] = useState(0)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeLeft(getTimeLeft("2024-09-15T17:00:00"))
+    setTimeout(() => {
+            setTime(time - 1000);
+            getFormattedTime(time);
     }, 1000)
+  }, [time])
 
-    // getDeadTime()
-  })
+    const getFormattedTime = (milliseconds) => {
+        let total_seconds = parseInt(Math.floor(milliseconds / 1000))
+        let total_minutes = parseInt(Math.floor(total_seconds / 60))
+        let total_hours = parseInt(Math.floor(total_minutes / 60));
+        let days = parseInt(Math.floor(total_hours / 24))
+
+        let seconds = parseInt(total_seconds % 60);
+        let minutes = parseInt(total_minutes % 60);
+        let hours = parseInt(total_hours % 24);
+
+        setSec(seconds);
+        setMin(minutes);
+        setHr(hours);
+        setDy(days);
+
+        // return `${days}: ${hours}: ${minutes}: ${seconds}`;
+    }
+
   return (
     <>
         {/* <Header2 /> */}
@@ -127,6 +145,8 @@ const HomePage = () => {
           </div>
         </div>
 
+        {/* <Timer duration={2*24*60*60*1000}/> */}
+
         <div className="flash_sales_section lg:px-28 px-[5%] mt-20">
             <div className='flex gap-3 items-center '>
               <img className='w-14px h-27px lg:w-[20px] lg:h-[40px]' src="/assets/Rectangle.png" alt="" />
@@ -150,19 +170,19 @@ const HomePage = () => {
               <div className="time_wrapper flex items-center gap-4 mt-3 lg:mt-6
               ">
                 <div className="flex flex-col bg-white w-[27px] h-[27px] lg:w-[64px] lg:h-[64px] justify-center items-center rounded-full">
-                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">{timeLeft.days}</span>
+                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">{dy}</span>
                   <span className="text-[7px] lg:text-[11px] text-[#000000]">Days</span>
                 </div>
                 <div className="flex flex-col bg-white w-[27px] h-[27px] lg:w-[64px] lg:h-[64px] justify-center items-center rounded-full">
-                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">{timeLeft.hours}</span>
+                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">{hr}</span>
                   <span className="text-[7px] lg:text-[11px] text-[#000000]">Hours</span>
                 </div>
                 <div className="flex flex-col bg-white w-[27px] h-[27px] lg:w-[64px] lg:h-[64px] justify-center items-center rounded-full">
-                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">{timeLeft.minutes}</span>
+                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">{min}</span>
                   <span className="text-[7px] lg:text-[11px] text-[#000000]">Minutes</span>
                 </div>
                 <div className="flex flex-col bg-white w-[27px] h-[27px] lg:w-[64px] lg:h-[64px] justify-center items-center rounded-full">
-                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">{timeLeft.seconds}</span>
+                  <span className="text-[7.2px] lg:text-[16px] text-[#000000] font-semibold">{sec}</span>
                   <span className="text-[7px] lg:text-[11px] text-[#000000]">Seconds</span>
                 </div>
               </div>
