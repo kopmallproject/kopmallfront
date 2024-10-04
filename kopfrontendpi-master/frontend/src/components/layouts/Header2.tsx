@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState} from 'react'
-import { faCartShopping, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping, faSearch, faShop, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
@@ -113,12 +113,12 @@ const Header2: React.FC<Props> = (props) => {
                         </div>
 
                     </div>
-                    <h1 className='text-[20x] lg:text-3xl uppercase font-bold'>
+                    {/* <h1 className='text-[20x] lg:text-3xl uppercase font-bold'>
                         KOP MALL
-                    </h1>
-                    <div className="">
-                        <img class="" src="" />
-                    </div>
+                    </h1> */}
+                    <a href="/" className="">
+                        <img className="w-[40px] lg:w-[60px]" src="/assets/IMG_8629.JPG" />
+                    </a>
                     {/* w-full  */}
                     <form action="" className='gap-5 flex max-w-lg lg:max-w-md absolute lg:relative -bottom-12  lg:bottom-0'>
                         <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
@@ -163,12 +163,12 @@ const Header2: React.FC<Props> = (props) => {
                             </div>
                         </li>
                         <li className='relative'>
-                            <FontAwesomeIcon icon={faCartShopping} className='lg:hidden'/>
+                            <Link to="/store/2" className='text-[#000000]'><FontAwesomeIcon icon={faShop} className='lg:hidden'/></Link>
                             <Link to="/store/2" className='text-[#000000]'><span className='hidden lg:inline-block'>Shop</span></Link>
                             
                         </li>
                         <li className='relative'>
-                            <FontAwesomeIcon icon={faCartShopping} className='lg:hidden'/>
+                            <Link to="/cart" className='text-[#000000]'><FontAwesomeIcon icon={faCartShopping} className='lg:hidden'/></Link>
                             <Link to="/cart" className='text-[#000000]'><span className='hidden lg:inline-block'>Cart</span></Link>
                             <span className='w-4 h-4 bg-slate-400 text-white rounded-full 
                                 absolute left-0 -bottom-2 text-xs flex items-center justify-center'>{cartItems.length}</span>
@@ -181,8 +181,8 @@ const Header2: React.FC<Props> = (props) => {
                             </a>
                             {loggedIn ? (
                                 <div className="sub_menu subMenu">
-                                    <span>Welcome user</span>
-                                    <div className="card">
+                                    <span className='text-[10px] lg:text-[14px]'>Welcome user</span>
+                                    <div className="card mt-2 text-[8px] text-[12px]">
                                         <a onClick={logoutHandler} className="">
                                             <span className='text-md text-[#FCB349]'>Logout</span>
                                         </a>
@@ -191,13 +191,13 @@ const Header2: React.FC<Props> = (props) => {
                                 </div>
                             ) : (
                                 <div className="sub_menu subMenu">
-                                    <span>New User?</span>
-                                    <div className="card">
+                                    <span className='text-[8px] lg:text-[14px]'>New User?</span>
+                                    <div className="mt-[0.5px] lg:mt-2  mt-2 text-[8px] text-[12px]">
                                         <Link to="/login" className="">
                                             <span className='text-md text-[#FCB349]'>Login</span>
                                         </Link>
                                     </div>
-                                    <div className="card">
+                                    <div className=" mt-1 text-[8px] text-[12px]">
                                         <Link to="/signup" className="">
                                             <span className='text-md text-[#FCB349]'>Signup</span>
                                         </Link>
@@ -222,22 +222,21 @@ const Header2: React.FC<Props> = (props) => {
 
                         <li className='links relative'>
                             <a href="#" className="flex gap-1 items-center text-[#000000]">
-                                <FontAwesomeIcon icon={faPerson} />
+                                <FontAwesomeIcon icon={faWallet} />
                                 <span className='hidden lg:inline-block'>Wallet</span>
                                 <FontAwesomeIcon icon={faArrowDown}  className="hidden lg:inline-block"/>
                             </a>
                             {props.user === null ? (
                                 <div className="sub_menu subMenu my-6 mr-2">
-                                    <span>PI</span>
-                                    <div className="card">
+                                    <span className='text-[10px] lg:text-[14px]'>PI</span>
+                                    <div className="card mt-2 text-[8px] text-[12px]">
                                         <button onClick={props.onSignIn}>Sign in</button>
                                     </div>
-                                    
                                 </div>
                             ) : (
                                 <div className="sub_menu subMenu">
                                     
-                                    <div className='card'>
+                                    <div className='card text-[8px] text-[12px]'>
                                         @{props.user.username} <button type="button" onClick={props.onSignOut}>Sign out</button>
                                     </div>
                                    
