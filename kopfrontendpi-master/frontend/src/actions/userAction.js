@@ -56,7 +56,7 @@ export const signup = (fname, lname, email, phoneNumber, password) => async(disp
 
     catch(error) {
 
-        console.error('Signup error:', error.response.data);
+        console.error('Signup error:', error.response.data.detail[0].loc[1]);
         // console.error('Signup error:', error.response ? error.response.data : error.message);
 
         dispatch({
