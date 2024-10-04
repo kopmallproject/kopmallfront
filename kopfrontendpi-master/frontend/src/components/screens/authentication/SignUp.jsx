@@ -98,7 +98,7 @@ const SignUp = () => {
                         </button>
                     </div>
                     <div className="divider text-[14px] text-[#FFFFFF80] font-weight-400 my-10">OR</div>
-                    {error && <Message variant='danger'>{error.detail}</Message>}
+                    {error && <Message variant='danger'>{error}</Message>}
                     <form action="" onSubmit={submitHandler} className='flex flex-col gap-3'>
                         <input type="text" placeholder="First name" value={fname} onChange={(e) => setFname(e.target.value)} className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400" />
                         <input type="text" placeholder="Last name" value={lname} onChange={(e) => setLname(e.target.value)} className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400" />

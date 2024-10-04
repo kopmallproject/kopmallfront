@@ -9,8 +9,7 @@ import { baseUrl } from "../components/baseUrl";
 const saveTokens = (accessToken, refreshToken) => {
     localStorage.setItem("accessToken", accessToken);
     localStorage.setItem("refreshToken", refreshToken);
-    
-  };
+};
 
 export const isTokenExpired = (token) => {
     const decodedToken = JSON.parse(atob(token.split('.')[1]));
@@ -56,13 +55,13 @@ export const signup = (fname, lname, email, phoneNumber, password) => async(disp
 
     catch(error) {
 
-        console.error('Signup error:', error.response.data.detail[0].loc[1]);
+        console.error('Signup error:', error.response.data["detail"][0].msg);
         // console.error('Signup error:', error.response ? error.response.data : error.message);
 
         dispatch({
             type:USER_SIGNUP_FAIL,
-            payload: error.response && error.response.data.detail 
-            ? error.response.data.detail : error.message
+            payload: error.response.data["detail"][0].msg 
+            // ? error.response.data.detail : error.message
         })
     }
 
