@@ -75,33 +75,33 @@ const Header2: React.FC<Props> = (props) => {
                         <div className="bg-[#FAF7F7] pb-3">
                             <h3 className="text-[20px] font-medium py-3 bg-[#D7D7D780] px-4">My Account</h3>
                             <div className="px-4 flex flex-col gap-2">
-                                <Link className="flex flex-row gap-2 no-underline text-[#000000]" to={`/store/`}>
+                                <Link className="flex flex-row gap-2 no-underline text-[#000000]" to={`/user/order`}>
                                     
                                     <Smartphone />
                                     <span>Orders</span>
                                     
                                 </Link>
 
-                                <Link className="flex flex-row gap-2 no-underline text-[#000000]" to={`/store/`}>
+                                <Link className="flex flex-row gap-2 no-underline text-[#000000]" to={`/user/saveditems`}>
                                     
                                     <Smartphone />
                                     <span>Saved Items</span>
                                     
                                 </Link>
 
-                                <Link className="flex flex-row gap-2 no-underline text-[#000000]" to={`/store/`}>
+                                <Link className="flex flex-row gap-2 no-underline text-[#000000]" to={`/user/addressbook`}>
                                     
                                     <Smartphone />
                                     <span>Address book</span>
                                     
                                 </Link>
 
-                                <Link className="flex flex-row gap-2 no-underline text-[#000000]" to={`/store/`}>
+                                {/* <Link className="flex flex-row gap-2 no-underline text-[#000000]" to={`/store/`}>
                                     
                                     <Smartphone />
                                     <span>Wallet</span>
                                     
-                                </Link>
+                                </Link> */}
                                 
 
                             </div>
@@ -116,6 +116,9 @@ const Header2: React.FC<Props> = (props) => {
                     <h1 className='text-[20x] lg:text-3xl uppercase font-bold'>
                         KOP MALL
                     </h1>
+                    <div className="">
+                        <img class="" src="" />
+                    </div>
                     {/* w-full  */}
                     <form action="" className='gap-5 flex max-w-lg lg:max-w-md absolute lg:relative -bottom-12  lg:bottom-0'>
                         <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
