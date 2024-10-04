@@ -3,6 +3,7 @@ import Header from '../../layouts/Header'
 import Footer from '../../layouts/Footer'
 import { Apple, BookUser, Gift, Heart, LogOut, Pencil, Trash, UserRound, Wallet } from 'lucide-react'
 import Header2 from '../../layouts/Header2'
+import { Link } from 'react-router-dom'
 
 const UserSavedItems = () => {
   return (
@@ -10,33 +11,33 @@ const UserSavedItems = () => {
         {/* <Header2 /> */}
 
         <div className="py-20 lg:px-28 px-[5%]  bg-[#f9f9f9] flex flex-col lg:flex-row lg:justify-between">
-            <div className="category_div rounded-lg drop-shadow-md    lg:flex flex-col gap-2 w-100% lg:w-[20%] lg:h-fit bg-[#fff]  text-[#000000]">
-                <div className="category_div_card rounded-t-lg bg-[#D7D7D7] px-5 py-3">
+            <div className="category_div rounded-lg drop-shadow-md    lg:flex flex-col gap-2 w-100% lg:w-[20%] lg:h-[23%] bg-[#fff]  text-[#000000]">
+                <Link to="/user/account" className="no-underline category_div_card text-[#000000] rounded-t-lg bg-[#D7D7D7] px-5 py-3">
                     <UserRound />
                     <span>My Account</span>
-                </div>
-                <div className="category_div_card px-5 py-2">
+                </Link>
+                <Link to="/user/order" className=" no-underline flex flex-row items-center gap-2 text-[16px] text-[#000000] hover:tracking-tight hover:text-[#666]  px-5 py-3">
                     <i className="w-[24px] h-[24px]"><Gift /></i>
                     <span>Orders</span>
-                </div>
-                <div className="category_div_card px-5 py-2">
+                </Link>
+                <Link to="/user/saveditems" className=" no-underline flex flex-row items-center gap-2 text-[16px] text-[#000000] hover:tracking-tight hover:text-[#666]  px-5 py-3">
                     <Heart />
                     <span>Saved items</span>
-                </div>
-                <div className="category_div_card px-5 py-2">
+                </Link>
+                <Link to="/user/addressbook" className=" no-underline flex flex-row items-center gap-2 text-[16px] text-[#000000] hover:tracking-tight hover:text-[#666]  px-5 py-3">
                     <BookUser />
                     <span>Address book</span>
-                </div>
-                <div className="category_div_card px-5 py-2">
+                </Link>
+                <Link to="/store/2" className=" no-underline flex flex-row items-center gap-2 text-[16px] text-[#000000] hover:tracking-tight hover:text-[#666]  px-5 py-3">
                     <Apple />
                     <span>Supermarket</span>
-                </div>
-                <div className="category_div_card px-5 py-2">
+                </Link>
+                <Link to="#" className=" no-underline flex flex-row items-center gap-2 text-[16px] text-[#000000] hover:tracking-tight hover:text-[#666]  px-5 py-3">
                     <Wallet />
                     <span>Wallet</span>
-                </div>
+                </Link>
                 <div className="div border-t-[1px] border-[#0000001A] py-3 flex flex-col justify-center items-center">
-                    <a className='text-[#FCB349] flex flex-row items-center gap-2' href=""><LogOut />Logout</a>
+                        <a className='text-[#FCB349] flex flex-row items-center gap-2' href=""><LogOut />Logout</a>
                 </div>
             </div>
 

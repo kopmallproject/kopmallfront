@@ -182,6 +182,9 @@ const Header2: React.FC<Props> = (props) => {
                             {loggedIn ? (
                                 <div className="sub_menu subMenu">
                                     <span className='text-[10px] lg:text-[14px]'>Welcome user</span>
+                                    <Link to="/user/account" className="card mt-2 text-[8px] text-[12px]">
+                                        <span className='text-md text-[#FCB349]'>My Account</span>
+                                    </Link>
                                     <div className="card mt-2 text-[8px] text-[12px]">
                                         <a onClick={logoutHandler} className="">
                                             <span className='text-md text-[#FCB349]'>Logout</span>

@@ -26,6 +26,8 @@ const SignUp = () => {
 
     const userSignup = useSelector((state) => state.userSignup);
     const {error, loading, userInfo} = userSignup
+
+    const [takeError, SetTakeError] = useState('');
     
 
     useEffect(() => {

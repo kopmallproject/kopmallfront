@@ -32,7 +32,7 @@ const CartCard = ({data, removeFromCartHandler}) => {
             <div className="flex flex-col gap-3 lg:flex-row lg:gap-0 lg:justify-between">
                 <div className="flex flex-row items-start gap-2">
                     <div className="w-[85px] h-[69px] bg-[#F5F5F5] flex justify-center items-center">
-                        <img className='w-[61px] h-[53px]' src="/assets/havic-gamepad.png" alt="" />
+                        <img className='w-[61px] h-[53px]' src={data.image} alt="" />
                     </div>
                     <div className="flex flex-col gap-2 lg:gap-5">
                         <h3 className='text-[16px] lg:text-[24px] font-semibold'>{data.name}</h3>

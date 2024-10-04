@@ -18,15 +18,15 @@ const Category = () => {
 
   return (
     <>
-        <div className="category_div hidden max-h-[390px] lg:flex flex-col justify-between w-[20%] bg-[#25133A] p-5 text-[#FFFFFF]">
+        <div className="category_div hidden max-h-[390px] lg:flex flex-col justify-between w-[20%] bg-[#25133A] py-3 px-2 text-[#FFFFFF]">
             
             {
                 loading ? (<Loader />) : error ? (
                     <Message variant='danger'>{error}</Message>
                 ) : (
-                    <div className="card_wrapper w-[100%] lg:w-[80%] flex flex-row flex-wrap gap-3">
+                    <div className="card_wrapper w-[100%] lg:w-[100%] flex flex-col  overflow-y-scroll no-scrollbar gap-3">
                         {categories.map(cat => (
-                            <Link key={cat.id} className="category_div_card text-decoration-none" to={`/store/${cat.id}`}>
+                            <Link key={cat.id} className="category_div_card text-decoration-none " to={`/store/${cat.id}`}>
                                 
                                 <Smartphone />
                                 <span>{cat.name}</span>

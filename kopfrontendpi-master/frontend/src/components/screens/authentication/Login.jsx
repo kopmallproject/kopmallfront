@@ -33,6 +33,7 @@ const Login = () => {
   
     const userLogin = useSelector((state) => state.userLogin);
     const {error, loading, userInfo} = userLogin
+    const [takeError, SetTakeError] = useState('');
   
     useEffect(() => {
     //   if(userInfo) {
@@ -85,7 +86,8 @@ const Login = () => {
             console.log(data);
             navigate("/")
         } catch (error) {
-            console.log("login error", error)
+            // console.log("login error", error.response.data.detail)
+            SetTakeError(error.response.data.detail)
         }
         
     }
@@ -125,7 +127,7 @@ const Login = () => {
                         </button>
                     </div>
                     <div className="divider text-[14px] text-[#FFFFFF80] font-weight-400 my-10">OR</div>
-                    {error && <Message variant='danger'>{error}</Message>}
+                    {takeError && <Message variant='danger'>{takeError}</Message>}
                     <form action="" onSubmit={submitHandler} className='flex flex-col gap-3'>
                         <input type="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} className="input input-bordered border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400 " />
                         <label className="input input-bordered flex items-center gap-2 border-[1px] border-solid border-[#FFFFFF80] bg-transparent text-[#FFFFFF80] text-[16px] font-weight-400 ">

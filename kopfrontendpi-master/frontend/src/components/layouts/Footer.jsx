@@ -1,7 +1,8 @@
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons' 
+import { faFacebookF, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons' 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 const Footer = () => {
@@ -43,21 +44,21 @@ const Footer = () => {
                 <div className="mt-6 lg:mt-0 lg:w-[175px]">
                     <h2 className='text-[20px] font-weight-500 capitalize'>Account</h2>
                     <div className="mt-6 flex flex-col gap-4 text-[16px] text-[#FAFAFA] font-weight-400">
-                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">My Account</a></span>
-                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Login</a> / <a href="" className='no-underline text-[#FFFFFF]'>Register</a></span>
-                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Cart</a></span>
-                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Wishlist</a></span>
-                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Shop</a></span>
+                        <span className=""><Link to="/user/account" clLinkssName="no-underline text-[#FFFFFF]">My Account</Link></span>
+                        <span className=""><Link to="/login" className="no-underline text-[#FFFFFF]">Login</Link> / <Link to="" className='no-underline text-[#FFFFFF]'>Register</Link></span>
+                        <span className=""><Link to="/cart" className="no-underline text-[#FFFFFF]">Cart</Link></span>
+                        <span className=""><Link to="/user/saveditems" className="no-underline text-[#FFFFFF]">Wishlist</Link></span>
+                        <span className=""><Link to="/store/2" className="no-underline text-[#FFFFFF]">Shop</Link></span>
                         
                     </div>
                 </div>
                 <div className="mt-6 lg:mt-0 lg:w-[175px]">
                     <h2 className='text-[20px] font-weight-500 capitalize'>Quick Link</h2>
                     <div className="mt-6 flex flex-col gap-4 text-[16px] text-[#FAFAFA] font-weight-400">
-                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Privacy Policy</a></span>
-                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Terms Of Use</a></span>
-                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">FAQ</a></span>
-                        <span className=""><a href="" className="no-underline text-[#FFFFFF]">Contact</a></span>
+                        <span className=""><Link to="" className="no-underline text-[#FFFFFF]">Privacy Policy</Link></span>
+                        <span className=""><Link to="" className="no-underline text-[#FFFFFF]">Terms Of Use</Link></span>
+                        <span className=""><Link to="" className="no-underline text-[#FFFFFF]">FAQ</Link></span>
+                        <span className=""><Link to="" className="no-underline text-[#FFFFFF]">Contact</Link></span>
                         
                     </div>
                 </div>
@@ -68,9 +69,9 @@ const Footer = () => {
                         <span className="">Connect with us</span>
                         <div className="icons_social flex gap-7">
                             <FontAwesomeIcon className='w-7 h-7' icon={faFacebookF} />
-                            <FontAwesomeIcon className='w-7 h-7' icon={faArrowRight} />
-                            <FontAwesomeIcon className='w-7 h-7' icon={faArrowRight} />
-                            <FontAwesomeIcon className='w-7 h-7' icon={faArrowRight} />
+                            <FontAwesomeIcon className='w-7 h-7' icon={faInstagram} />
+                            <FontAwesomeIcon className='w-7 h-7' icon={faTwitter} />
+                            <FontAwesomeIcon className='w-7 h-7' icon={faLinkedin} />
                         
                         </div>
                         

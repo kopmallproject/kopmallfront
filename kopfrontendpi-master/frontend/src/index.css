@@ -54,3 +54,12 @@ li.links:hover .sub_menu {
   bottom: 3px;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom Scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+
