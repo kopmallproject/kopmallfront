@@ -1,1 +1,0 @@
-export const baseUrl = 'https://kopmall-nxwdv.ondigitalocean.app/api'
