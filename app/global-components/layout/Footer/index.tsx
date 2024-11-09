@@ -5,71 +5,98 @@ import {
   IoLogoLinkedin,
   IoLogoTwitter
 } from 'react-icons/io5';
+import Image from 'next/image';
+import Logo from '@/app/assets/images/logo.jpg';
+
 function Footer() {
   return (
-    <div className="bg-[#25133A] w-full px-3 md:px-[5%] py-10 text-white">
-      <div className="grid grid-cols-1 md:grid-cols-5 w-full gap-6 md:gap-8 lg:gap-20">
-        <div className="flex flex-col gap-3">
-          <h3 className="uppercase text-xl font-bold poppins">kop mall</h3>
-          <span className="block text-base">Subscribe</span>
-          <span>Get 10% off your first order</span>
-          <div className="search-icon mt-5 flex items-center w-3/4 sm:w-1/4 md:w-full border border-gray-300 rounded-md p-2 gap-4">
-            <input
-              type="text"
-              placeholder="Enter your email"
-              className="bg-transparent outline-none px-4 py-2 md:px-2 text-gray-300 text-xs"
-            />
-            {/* <HiOutlinePaperAirplane className="h-8 w-8 text-white" /> */}
-          </div>
+    <div className="bg-[#25133A] w-full px-3 md:px-[10%] xl:px-[12%] py-20 text-white">
+      <div className="w-full gap-6 md:gap-[80px]">
+        <div className="logo-wrapper flex flex-col gap-3">
+          <Image
+            src={Logo}
+            alt="user-icon"
+            className="bg-cover w-[60px] h-[60px] rounded-[7px]"
+          />{' '}
         </div>
-        <div className="flex flex-col gap-3">
-          <h3 className="poppins text-xl font-bold">Support</h3>
-          <span className="inline-block">
-            This is a placeholder for the office address
-          </span>
-          <span className="inline-block">kopmall@mail.com</span>
-          <span className="inline-block">+234 --------------</span>
-        </div>
-        <div className="flex flex-col gap-3">
-          <h3 className="poppins text-xl font-bold">Account</h3>
-          <span className="inline-block">My Account</span>
-          <span className="inline-block">Login / Register</span>
-          <span className="inline-block">Cart</span>
-          <span className="inline-block">Wishlist</span>
-          <span className="inline-block">Shop</span>
-        </div>
-        <div className="flex flex-col gap-3">
-          <h3 className="poppins text-xl font-bold">Quick Link</h3>
-          <span className="inline-block">Privacy Policy</span>
-          <span className="inline-block">Terms Of Use</span>
-          <span className="inline-block">FAQ</span>
-          <span className="inline-block">Contact</span>
-        </div>
-        <div className="flex flex-col gap-3">
-          <h3 className="poppins text-xl font-bold">Social media</h3>
-          <span className="inline-block">Connect with us</span>
-          <div className="flex items-center gap-3">
-            <div>
-              <a href="https://twitter.com">
-                <IoLogoTwitter className="text-[17px] translate-y-[1px]" />
-              </a>
-            </div>
-            <div>
-              <a href="https://www.linkedin.com">
-                <IoLogoLinkedin className="text-[16.5px] translate-y-[1px]" />
-              </a>
-            </div>
-            <div>
-              <a href="https://www.linkedin.com/company">
-                <IoLogoInstagram className="text-[16.5px] translate-y-[1px]" />
-              </a>
-            </div>
-            <div>
-              <a href="https://www.linkedin.com/company">
-                <IoLogoFacebook className="text-[16.5px] translate-y-[1px]" />
-              </a>
+        <div className="footer-content-wrapper mb-20 flex-col sm:grid md:grid-cols-2 lg:grid-cols-3 md:gap-y-[80px] mt-[50px] md:mt-[80px] flex gap-y-[45px]">
+          <div className="flex flex-col gap-3">
+            <h3 className="poppins text-[12px] text-gray-400 uppercase font-medium">
+              Support
+            </h3>
+            <div className="leading-[30px] text-[14px] font-thin">
+              Tech Solutions Inc. <br /> 1234 Innovation Drive, <br /> Suite 567
+              San Francisco, CA 94107 <br />
+              +415 555-0198 <br />
+              info@techsolutions.com
             </div>
           </div>
+          <div className="flex flex-col gap-3">
+            <h3 className="poppins text-[12px] text-gray-400 uppercase font-medium">
+              Account
+            </h3>
+            <div className="text-[14px] font-thin flex flex-col gap-4">
+              <span>My Account</span>
+              <span>Login / Register</span>
+              <span>Cart</span>
+              <span>Wishlist</span>
+              <span>Shop</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-3">
+            <h3 className="poppins text-[12px] text-gray-400 uppercase font-medium">
+              Quick Link
+            </h3>
+            <div className="text-[14px] font-thin flex flex-col gap-4">
+              <span>Privacy Policy</span>
+              <span>Terms Of Use</span>
+              <span>FAQ</span>
+              <span>Contact</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-3">
+            <h3 className="poppins text-[12px] text-gray-400 uppercase font-medium">
+              Social media
+            </h3>
+            <div className="flex items-center gap-5 mt-2">
+              <div>
+                <a href="https://twitter.com">
+                  <IoLogoTwitter className="text-[25px] translate-y-[1px]" />
+                </a>
+              </div>
+              <div>
+                <a href="https://www.linkedin.com">
+                  <IoLogoLinkedin className="text-[25px] translate-y-[1px]" />
+                </a>
+              </div>
+              <div>
+                <a href="https://www.linkedin.com/company">
+                  <IoLogoInstagram className="text-[25px] translate-y-[1px]" />
+                </a>
+              </div>
+              <div>
+                <a href="https://www.linkedin.com/company">
+                  <IoLogoFacebook className="text-[25px] translate-y-[1px]" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-3 mt-[30px] sm:mt-0">
+            <div className="poppins text-[12px] text-gray-400 uppercase font-medium">
+              Subscribe to our newsletter to get updates on our latest offers!
+            </div>
+            <div className="search-icon mt-2 flex items-center w-full xsm:w-[350px] border border-gray-300 rounded-[7px] p-2 gap-4">
+              <input
+                type="text"
+                placeholder="Enter your email"
+                className="bg-transparent outline-none px-4 py-2 md:px-2 text-gray-300 text-xs w-full"
+              />
+              <HiOutlinePaperAirplane className="h-8 w-8 text-white" />
+            </div>
+          </div>
+        </div>
+        <div className="text-[12px] mt-[20px] text-center w-full border-t-[1px] pt-[25px] text-gray-400">
+          Copyright KOP Mall 2024. All right reserved
         </div>
       </div>
     </div>
