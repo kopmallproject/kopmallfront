@@ -24,13 +24,15 @@ type NavLinksProps = {
 
 function NavLinks({ handleNavToggle }: NavLinksProps) {
   return (
-    <nav className="bg-glass_light lg:hidden fixed top-0 left-0 right-0 min-h-screen z-30 bg-white">
-      <div className="flex flex-col">
-        <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] mt-4 ml-3">
-          <HiOutlineXMark
-            onClick={handleNavToggle}
-            className="w-6 h-6 text-black"
-          />
+    <nav className="lg:hidden fixed top-0 left-0 right-0 min-h-screen z-30 bg-white">
+      <div className="flex flex-col min-h-screen relative h-[500px] overflow-y-auto pb-[100px]">
+        <div className="w-[40px] h-[40px] mt-4 ml-3 border rounded-full">
+          <div className="flex items-center justify-center w-[40px] h-[40px] translate-x-[-1px] translate-y-[-1px]">
+            <HiOutlineXMark
+              onClick={handleNavToggle}
+              className="w-6 h-6 text-black"
+            />
+          </div>
         </div>
         <div className="mt-8">
           <div className="px-3 flex justify-between gap-3 border-b pb-6">
@@ -53,35 +55,31 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
             </div> */}
             <div className="grid grid-cols-2">
               <Link className="border-r border-b" href="/">
-                <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780]">
+                <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineGift className="text-[20px]" />
-                  <span className="text-[14px] font-normal poppins">
-                    Orders
-                  </span>
+                  <span className="text-[14px] font-light poppins">Orders</span>
                 </div>
               </Link>
               <Link className="border-b" href="/">
-                <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780]">
+                <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineHeart className="text-[20px]" />
-                  <span className="text-[14px] font-normal poppins">
+                  <span className="text-[14px] font-light poppins">
                     Saved items
                   </span>
                 </div>
               </Link>
               <Link className="border-r" href="/">
-                <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780]">
+                <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineFolderOpen className="text-[20px]" />
-                  <span className="text-[14px] font-normal poppins">
+                  <span className="text-[14px] font-light poppins">
                     Address book
                   </span>
                 </div>
               </Link>
               <Link href="/">
-                <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780]">
+                <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineBanknotes className="text-[20px]" />
-                  <span className="text-[14px] font-normal poppins">
-                    Wallet
-                  </span>
+                  <span className="text-[14px] font-light poppins">Wallet</span>
                 </div>
               </Link>
             </div>
@@ -91,43 +89,43 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               categories
             </h3>
             <div className="flex flex-col mt-4">
-              <div className="flex items-center justify-between gap-3 border-b py-3 border-t font-normal text-[14px] px-3">
+              <div className="flex items-center justify-between gap-3 border-b py-3 border-t font-light text-[14px] px-3">
                 <li className="cursor-pointer poppins">Phones and tablets</li>
                 <HiChevronRight className="text-[20px]" />
               </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-normal text-[14px] px-3">
+              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
                 <li className="cursor-pointer poppins">Appliances</li>
                 <HiChevronRight className="text-[20px]" />
               </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-normal text-[14px] px-3">
+              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
                 <li className="cursor-pointer poppins">Computing</li>
                 <HiChevronRight className="text-[20px]" />
               </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-normal text-[14px] px-3">
+              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
                 <li className="cursor-pointer poppins">Wearable Tech</li>
                 <HiChevronRight className="text-[20px]" />
               </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-normal text-[14px] px-3">
+              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
                 <li className="cursor-pointer poppins">Supermarket</li>
                 <HiChevronRight className="text-[20px]" />
               </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-normal text-[14px] px-3">
+              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
                 <li className="cursor-pointer poppins">Cameras</li>
                 <HiChevronRight className="text-[20px]" />
               </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-normal text-[14px] px-3">
+              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
                 <li className="cursor-pointer poppins">Gaming</li>
                 <HiChevronRight className="text-[20px]" />
               </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-normal text-[14px] px-3">
+              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
                 <li className="cursor-pointer poppins">Land & Properties</li>
                 <HiChevronRight className="text-[20px]" />
               </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-normal text-[14px] px-3">
+              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
                 <li className="cursor-pointer poppins">Automobiles</li>
                 <HiChevronRight className="text-[20px]" />
               </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-normal text-[14px] px-3">
+              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
                 <li className="cursor-pointer poppins">Other Categories</li>
                 <HiChevronRight className="text-[20px]" />
               </div>

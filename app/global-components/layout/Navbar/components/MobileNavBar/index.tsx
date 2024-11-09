@@ -42,7 +42,7 @@ function MobileNavBar() {
           <input
             type="text"
             placeholder="Search for products, brands and categories."
-            className="poppins bg-transparent font-medium outline-none px-4 py-2 text-black w-full text-[12px]"
+            className="poppins bg-transparent font-light outline-none px-4 py-2 text-black w-full text-[12px]"
           />
         </div>
       </div>

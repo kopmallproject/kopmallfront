@@ -38,19 +38,19 @@ function ProductCard(product: ProductSpecs) {
           className="pt-[40px] bg-cover w-[100px] sm:w-[120px]"
         />
       </div>
-      <div className="product-name poppins uppercase font-semibold text-[14px] mt-3">
+      <div className="product-name poppins uppercase font-normal text-[12px] sm:text-[14px] mt-3">
         {product.productName}
       </div>
       <div className="price-and-discount mt-1 flex gap-4">
-        <span className="text-red-500 font-normal poppins">
+        <span className="text-red-500 font-normal poppins text-[12px] sm:text-[14px]">
           {product.discountedPrice}
         </span>
-        <span className="text-gray-500 font-normal poppins line-through">
+        <span className="text-gray-500 font-normal poppins line-through text-[12px] sm:text-[14px]">
           {product.originalPrice}
         </span>
       </div>
       <div className="rating">
-        <Rating size={20} initialValue={product.rating} />
+        <Rating size={15} initialValue={product.rating} />
       </div>
     </div>
   );

@@ -64,7 +64,7 @@ function Home() {
         </section>
         <section className="flash-sale-section mt-[50px]">
           <div className="main-header-wrapper flex flex-row justify-between items-center">
-            <h3 className="before:w-[10px] before:h-[50px] before:mr-[20px] before:secondary-background-color before:inline-block poppins font-semibold text-2xl sm:text-3xl secondary-text-color flex items-center">
+            <h3 className="before:w-[3px] before:h-[50px] before:mr-[15px] before:secondary-background-color before:inline-block poppins font-normal text-2xl sm:text-3xl secondary-text-color flex items-center">
               Latest
             </h3>
             <div className="page-navigators flex flex-row gap-6 items-center">
@@ -128,13 +128,13 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="flash-sales-products flex gap-x-5 mt-[50px] overflow-x-auto w-[100%]">
+          <div className="flash-sales-products flex gap-x-5 mt-[25px] overflow-x-auto w-[100%]">
             {products.map((product) => {
               return <ProductCard {...product} key={product.productName} />;
             })}
           </div>
           <div className="flex items-center justify-center mt-[40px] sm:mt-[50px]">
-            <button className="min-w-[200px] rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-semibold">
+            <button className="min-w-[200px] rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
               See All Products
             </button>
           </div>
@@ -148,10 +148,10 @@ function Home() {
         </section>
         <section className="new-arrivals-section mt-[50px] sm:mt-[100px]">
           <div className="main-header-wrapper flex flex-row justify-between items-center">
-            <h3 className="before:w-[10px] before:h-[50px] before:mr-[20px] before:secondary-background-color before:inline-block poppins font-semibold text-2xl md:text-3xl secondary-text-color flex items-center">
+            <h3 className="before:w-[3px] before:h-[50px] before:mr-[15px] before:secondary-background-color before:inline-block poppins font-normal text-2xl md:text-3xl secondary-text-color flex items-center">
               New arrivals
             </h3>
-            <div className="page-navigators flex flex-row gap-6 items-center">
+            {/* <div className="page-navigators flex flex-row gap-6 items-center">
               <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
                 <HiOutlineArrowLeft
                   // onClick={handleNavToggle}
@@ -164,7 +164,7 @@ function Home() {
                   className="w-5 h-5 text-white"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="mt-[20px] flex flex-col md:flex-row gap-x-6 gap-y-4">
             <div className="w-full md:w-1/2">
@@ -199,7 +199,7 @@ function Home() {
         </section>
         <section className="more-products-section mt-[50px]">
           <div className="main-header-wrapper flex flex-row justify-between items-center">
-            <h3 className="before:w-[10px] before:h-[50px] before:mr-[20px] before:secondary-background-color before:inline-block poppins font-semibold text-2xl sm:text-3xl secondary-text-color flex items-center">
+            <h3 className="before:w-[3px] before:h-[50px] before:mr-[15px] before:secondary-background-color before:inline-block poppins font-normal text-2xl sm:text-3xl secondary-text-color flex items-center">
               More Products
             </h3>
             <div className="page-navigators flex flex-row gap-6 items-center">
@@ -222,7 +222,7 @@ function Home() {
               Explore Endlessly
             </h3>
           </div>
-          <div className="flash-sales-products gap-x-5 gap-y-6 mt-[50px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 w-[100%]">
+          <div className="flash-sales-products gap-x-5 gap-y-6 mt-[25px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 w-[100%]">
             {products.map((product) => {
               return (
                 <FlexibleWidthProductCard
@@ -233,14 +233,14 @@ function Home() {
             })}
           </div>
           <div className="flex items-center justify-center mt-[40px] sm:mt-[50px]">
-            <button className="min-w-[200px] rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-semibold">
+            <button className="min-w-[200px] rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
               See All Products
             </button>
           </div>
         </section>
         <section className="browse-by-category-section mt-[50px]">
           <div className="main-header-wrapper flex flex-row justify-between items-center">
-            <h3 className="before:w-[10px] before:h-[50px] before:mr-[20px] before:secondary-background-color before:inline-block poppins font-semibold text-2xl sm:text-3xl secondary-text-color flex items-center">
+            <h3 className="before:w-[3px] before:h-[50px] before:mr-[15px] before:secondary-background-color before:inline-block poppins font-normal text-2xl sm:text-3xl secondary-text-color flex items-center">
               Categories
             </h3>
             {/* <div className="page-navigators flex flex-row gap-6 items-center">
@@ -274,7 +274,7 @@ function Home() {
                     <Image
                       src={category.categoryImage}
                       alt="user-icon"
-                      className="w-[50px] rounded-[7px] mt-2"
+                      className="w-[30px] md:w-[40px] rounded-[7px] mt-2"
                     />
                   </div>
                   <div className="category-name poppins font-normal text-[14px] mt-3 text-center">
