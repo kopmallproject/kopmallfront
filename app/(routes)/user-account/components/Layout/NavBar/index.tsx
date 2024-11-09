@@ -16,7 +16,7 @@ function NavBar() {
           <div className="text-[10px] flex items-center gap-2 px-4 py-2 hover:bg-[#D7D7D780]  cursor-pointer">
             <HiOutlineUser />
             <Link
-              href="/user-account/user-profile"
+              href="/user-account/user-account"
               className="capitalize poppins transition duration-200 ease-in-out transform hover:scale-105"
             >
               my account
