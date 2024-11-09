@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .nunito_sans {
+    font-family: var(--font-nunito_sans);
+  }
+
+  .poppins {
+    font-family: var(--font-poppins);
+  }
+
+  .primary-text-color {
+    color: #25133a;
+  }
+
+  .secondary-text-color {
+    color: #fcb349;
+  }
+
+  .primary-background-color {
+    background: #25133a;
+  }
+
+  .secondary-background-color {
+    background: #fcb349;
+  }
+}
+
+svg.star-svg {
+  display: inline;
+}
