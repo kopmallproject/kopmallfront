@@ -15,7 +15,7 @@ function MainAppLayout({ children }: ChildProp) {
       {/* Main content area */}
       <main className="main-app-layout">
         <NavBar />
-        <div className=" px-3 md:px-[5%] md:mx-auto min-h-screen">
+        <div className="min-h-screen px-3 sm:px-[20px] md:px-[5%] xl:px-[12%] md:mx-auto">
           {children}
         </div>
         <Footer />

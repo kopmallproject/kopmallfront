@@ -8,7 +8,7 @@ import goggleIcon from '../../../assets/images/img-5.png';
 import appleIcon from '../../../assets/images/img-6.png';
 import { HiMiniEyeSlash, HiMiniEye } from 'react-icons/hi2';
 
-const SignIn: React.FC = () => {
+const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -130,4 +130,4 @@ const SignIn: React.FC = () => {
   );
 };
 
-export default SignIn;
+export default Login;

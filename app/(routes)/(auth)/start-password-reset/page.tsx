@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import dummyAvatar from '../../../assets/images/img-3.png';
 
-const ForgetPassword: React.FC = () => {
+const StartPasswordReset: React.FC = () => {
   return (
     <>
       <section className="w-full py-[100px] lg:py-0 lg:w-1/2  flex flex-col justify-center">
@@ -46,4 +46,4 @@ const ForgetPassword: React.FC = () => {
   );
 };
 
-export default ForgetPassword;
+export default StartPasswordReset;
