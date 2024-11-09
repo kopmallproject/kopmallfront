@@ -28,12 +28,12 @@ function DesktopNavBar() {
               className="bg-transparent outline-none px-4 py-3 font-medium text-black font w-full text-[14px]"
             />
           </div>
-          <button className="group bg-[#FCB349] poppins text-black font-semibold text-[14px] rounded-md px-5 py-3 transition duration-200 ease-in-out transform hover:scale-105 hover:bg-[#FF9A29]">
+          <button className="group bg-[#FCB349] poppins text-black font-normal text-[14px] rounded-md px-5 py-3 transition duration-200 ease-in-out transform hover:scale-105 hover:bg-[#FF9A29]">
             Search
           </button>
         </div>
       </div>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-8">
         <div className="flex items-center gap-1">
           <HiOutlineQuestionMarkCircle className="h-6 w-6" />
           <span className="text-[14px]">Help</span>

@@ -90,43 +90,47 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
             </h3>
             <div className="flex flex-col mt-4">
               <div className="flex items-center justify-between gap-3 border-b py-3 border-t font-light text-[14px] px-3">
-                <li className="cursor-pointer poppins">Phones and tablets</li>
+                <span className="cursor-pointer poppins">
+                  Phones and tablets
+                </span>
                 <HiChevronRight className="text-[20px]" />
               </div>
               <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
-                <li className="cursor-pointer poppins">Appliances</li>
+                <span className="cursor-pointer poppins">Appliances</span>
                 <HiChevronRight className="text-[20px]" />
               </div>
               <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
-                <li className="cursor-pointer poppins">Computing</li>
+                <span className="cursor-pointer poppins">Computing</span>
                 <HiChevronRight className="text-[20px]" />
               </div>
               <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
-                <li className="cursor-pointer poppins">Wearable Tech</li>
+                <span className="cursor-pointer poppins">Wearable Tech</span>
                 <HiChevronRight className="text-[20px]" />
               </div>
               <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
-                <li className="cursor-pointer poppins">Supermarket</li>
+                <span className="cursor-pointer poppins">Supermarket</span>
                 <HiChevronRight className="text-[20px]" />
               </div>
               <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
-                <li className="cursor-pointer poppins">Cameras</li>
+                <span className="cursor-pointer poppins">Cameras</span>
                 <HiChevronRight className="text-[20px]" />
               </div>
               <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
-                <li className="cursor-pointer poppins">Gaming</li>
+                <span className="cursor-pointer poppins">Gaming</span>
                 <HiChevronRight className="text-[20px]" />
               </div>
               <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
-                <li className="cursor-pointer poppins">Land & Properties</li>
+                <span className="cursor-pointer poppins">
+                  Land & Properties
+                </span>
                 <HiChevronRight className="text-[20px]" />
               </div>
               <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
-                <li className="cursor-pointer poppins">Automobiles</li>
+                <span className="cursor-pointer poppins">Automobiles</span>
                 <HiChevronRight className="text-[20px]" />
               </div>
               <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
-                <li className="cursor-pointer poppins">Other Categories</li>
+                <span className="cursor-pointer poppins">Other Categories</span>
                 <HiChevronRight className="text-[20px]" />
               </div>
             </div>
