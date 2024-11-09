@@ -50,7 +50,7 @@ function OrderDetails() {
             </div>
           </div>
         </div>
-        <div className="section-three p-3 w-full flex flex-col xsm:flex-row xsm:justify-between gap-4 mt-3">
+        <div className="section-three lg:p-3 w-full flex flex-col xsm:flex-row xsm:justify-between gap-4 mt-3">
           <div className="w-full h-full">
             <div className="py-1 border h-[180px]">
               <h2 className="poppins font-bold text-xs px-2 py-1 border-b">

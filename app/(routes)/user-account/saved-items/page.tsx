@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import dummyAvatar from '../../../assets/images/img-8.jpg';
+import dummyAvatar from '../../../assets/images/img-47.jpg';
 import { HiTrash, HiOutlineArrowSmallLeft } from 'react-icons/hi2';
 
 function SavedItems() {
@@ -9,7 +9,7 @@ function SavedItems() {
       <main className="lg:border w-full flex flex-col lg:w-3/4 text-[14px] lg:shadow-sm lg:rounded-md">
         <div className="w-full flex items-center gap-2 lg:border-b text-sm lg:text-lg lg:p-3">
           <div className="w-full hidden lg:block">
-            <h2 className="poppins font-bold text-sm lg:text-lg lg:px-3">
+            <h2 className="poppins font-bold text-sm lg:text-lg">
               Saved Items
             </h2>
           </div>
