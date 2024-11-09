@@ -54,13 +54,16 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               <li className="capitalize poppins">my account</li>
             </div> */}
             <div className="grid grid-cols-2">
-              <Link className="border-r border-b" href="/">
+              <Link
+                className="border-r border-b"
+                href="/user-account/active-orders"
+              >
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineGift className="text-[20px]" />
                   <span className="text-[14px] font-light poppins">Orders</span>
                 </div>
               </Link>
-              <Link className="border-b" href="/">
+              <Link className="border-b" href="/user-account/saved-items">
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineHeart className="text-[20px]" />
                   <span className="text-[14px] font-light poppins">
@@ -68,7 +71,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                   </span>
                 </div>
               </Link>
-              <Link className="border-r" href="/">
+              <Link className="border-r" href="/user-account/address-book">
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineFolderOpen className="text-[20px]" />
                   <span className="text-[14px] font-light poppins">
@@ -76,7 +79,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                   </span>
                 </div>
               </Link>
-              <Link href="/">
+              <Link href="/user-account/my-account">
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineBanknotes className="text-[20px]" />
                   <span className="text-[14px] font-light poppins">Wallet</span>
@@ -89,50 +92,80 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               categories
             </h3>
             <div className="flex flex-col mt-4">
-              <div className="flex items-center justify-between gap-3 border-b py-3 border-t font-light text-[14px] px-3">
+              <Link
+                href="/categories/123"
+                className="flex items-center justify-between gap-3 border-b py-3 border-t font-light text-[14px] px-3"
+              >
                 <span className="cursor-pointer poppins">
                   Phones and tablets
                 </span>
                 <HiChevronRight className="text-[20px]" />
-              </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
+              </Link>
+              <Link
+                href="/categories/123"
+                className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3"
+              >
                 <span className="cursor-pointer poppins">Appliances</span>
                 <HiChevronRight className="text-[20px]" />
-              </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
+              </Link>
+              <Link
+                href="/categories/123"
+                className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3"
+              >
                 <span className="cursor-pointer poppins">Computing</span>
                 <HiChevronRight className="text-[20px]" />
-              </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
+              </Link>
+              <Link
+                href="/categories/123"
+                className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3"
+              >
                 <span className="cursor-pointer poppins">Wearable Tech</span>
                 <HiChevronRight className="text-[20px]" />
-              </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
+              </Link>
+              <Link
+                href="/categories/123"
+                className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3"
+              >
                 <span className="cursor-pointer poppins">Supermarket</span>
                 <HiChevronRight className="text-[20px]" />
-              </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
+              </Link>
+              <Link
+                href="/categories/123"
+                className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3"
+              >
                 <span className="cursor-pointer poppins">Cameras</span>
                 <HiChevronRight className="text-[20px]" />
-              </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
+              </Link>
+              <Link
+                href="/categories/123"
+                className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3"
+              >
                 <span className="cursor-pointer poppins">Gaming</span>
                 <HiChevronRight className="text-[20px]" />
-              </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
+              </Link>
+              <Link
+                href="/categories/123"
+                className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3"
+              >
                 <span className="cursor-pointer poppins">
                   Land & Properties
                 </span>
                 <HiChevronRight className="text-[20px]" />
-              </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
+              </Link>
+              <Link
+                href="/categories/123"
+                className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3"
+              >
                 <span className="cursor-pointer poppins">Automobiles</span>
                 <HiChevronRight className="text-[20px]" />
-              </div>
-              <div className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3">
+              </Link>
+              <Link
+                href="/categories/123"
+                className="flex items-center justify-between gap-3 border-b py-3 font-light text-[14px] px-3"
+              >
                 <span className="cursor-pointer poppins">Other Categories</span>
                 <HiChevronRight className="text-[20px]" />
-              </div>
+              </Link>
             </div>
           </ul>
         </div>

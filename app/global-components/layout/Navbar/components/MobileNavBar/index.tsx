@@ -9,6 +9,7 @@ import {
 import NavLinks from '../../../MobileNavLinks';
 import Image from 'next/image';
 import Logo from '../../../../../assets/images/logo.jpg';
+import Link from 'next/link';
 
 function MobileNavBar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -33,8 +34,12 @@ function MobileNavBar() {
             />{' '}
           </div>
           <div className="flex items-center gap-6">
-            <HiOutlineShoppingCart className="h-6 w-6" />
-            <HiOutlineUser className="h-6 w-6" />
+            <Link href="/cart/123">
+              <HiOutlineShoppingCart className="h-6 w-6" />
+            </Link>
+            <Link href="/user-account/my-account">
+              <HiOutlineUser className="h-6 w-6" />
+            </Link>
           </div>
         </div>
         <div className="search-icon mt-1 flex items-center bg-white border border-gray-300 rounded-md w-full p-2">
