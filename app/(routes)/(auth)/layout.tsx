@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import MainAuthSectionLayout from '../(auth)/components/layout/MainAuthSectionLayout';
 
 export const metadata: Metadata = {
-  title: 'Private Practice | Authentication section',
+  // title: 'Private Practice | Authentication section',
   description:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, vitae.'
   // icons: {

@@ -5,8 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import dummyAvatar from '../../../assets/images/img-2.png';
 import goggleIcon from '../../../assets/images/img-5.png';
-import appleIcon from '../../../assets/images/img-6.png';
+import piIcon from '../../../assets/images/img-51.png';
 import { HiMiniEyeSlash, HiMiniEye } from 'react-icons/hi2';
+import Logo from '@/app/assets/images/logo.jpg';
 
 const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,30 +15,36 @@ const Login: React.FC = () => {
   return (
     <>
       <section className="w-full py-[100px] lg:py-0 lg:w-1/2 flex flex-col justify-center">
-        <form className=" flex flex-col w-full px-3 sm:mx-auto sm:w-[70%] md:w-[60%] lg:w-[75%] text-white">
-          <div className="poppins flex flex-col gap-4">
-            <h2 className=" text-2xl uppercase">kop mall</h2>
+        <form className=" flex flex-col w-full px-3 sm:mx-auto sm:w-[70%] md:w-[500px] text-white">
+          <div className="poppins flex flex-col gap-4 text-center">
+            <div className="flex items-center justify-center poppins uppercase font-bold text-xl">
+              <Image
+                src={Logo}
+                alt="user-icon"
+                className="bg-cover w-[50px] h-[50px] rounded-[5px]"
+              />
+            </div>
             <h3 className="text-lg">Log in to your account</h3>
-            <span className="text-sm">
+            {/* <span className="text-sm">
               Welcome back! Select a method to log in
-            </span>
+            </span> */}
           </div>
           <div className="auth-section mt-6 flex flex-col gap-3 w-full lg:flex-row lg:items-center lg:justify-between xl:justify-center 2xl:gap-3 text-base">
-            <div className="flex items-center justify-center gap-4 border py-1 px-2 rounded-sm cursor-pointer">
+            <div className="flex items-center justify-center gap-4 border-[1px] py-2 px-3 rounded-[5px] cursor-pointer">
               <Image
                 src={goggleIcon}
                 alt="user-icon"
                 className="bg-cover w-5 h-5"
               />
-              <span>Log in with Goggle</span>
+              <span className="text-[12px] poppins">Log in with Goggle</span>
             </div>
-            <div className="flex items-center justify-center gap-4 border py-1 px-2 rounded-sm cursor-pointer">
+            <div className="flex items-center justify-center gap-4 border-[1px] py-2 px-3 rounded-[5px] cursor-pointer">
               <Image
-                src={appleIcon}
+                src={piIcon}
                 alt="user-icon"
                 className="bg-cover w-5 h-5"
               />
-              <span>Log in with Apple</span>
+              <span className="text-[12px] poppins">Authenticate with Pi</span>
             </div>
           </div>
           <div className="alternative-sign-up-introduction">
@@ -57,10 +64,10 @@ const Login: React.FC = () => {
                   type="email"
                   name="email"
                   placeholder="Enter email"
-                  className="flex-1 focus:outline-none  px-2 py-2 bg-[#25133A] border"
+                  className="flex-1 focus:outline-none px-3 py-3 bg-[#25133A] border-[1px] rounded-[5px]"
                 />
               </section>
-              <section className="flex items-center border bg-[#25133A] px-2 py-2 mb-3">
+              <section className="flex items-center border-[1px] rounded-[5px] bg-[#25133A] px-3 py-3 mb-3">
                 <input
                   className="flex-1 focus:outline-none bg-[#25133A]"
                   type={showPassword ? 'text' : 'password'}
@@ -78,36 +85,36 @@ const Login: React.FC = () => {
                   )}
                 </div>
               </section>
-              <section className="flex items-center justify-between mb-8">
-                <div className="input-group for-check-box flex items-center gap-2">
+              <section className="text-right mb-8">
+                {/* <div className="input-group for-check-box flex items-center gap-2">
                   <input
                     type="checkbox"
                     name="terms"
-                    className="cursor-pointer w-4 h-4 border-2 border-[#FCB349] rounded-sm checked:bg-[#0a66c3]checked:border-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-[#FCB349]"
+                    className="cursor-pointer w-4 h-4 border-[1px]-2 border-[1px]-[#FCB349] rounded-sm checked:bg-[#0a66c3]checked:border-[1px]-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-[#FCB349]"
                   />
                   <span className="capitalize">remember me</span>
-                </div>
+                </div> */}
                 <Link
-                  href="/forget-password"
-                  className="text-right text-[#FCB349]"
+                  href="/start-password-reset"
+                  className="text-right text-[#FCB349] poppins text-[12px]"
                 >
                   Forgot Password
                 </Link>
               </section>
-              <section className="submit-button-wrapper poppins mb-3 w-full hover:bg-[#FCB349] border-[#FCB349] border">
+              <section className="submit-button-wrapper poppins mb-3 w-full hover:bg-[#FCB349] border-[1px]-[#FCB349] border-[1px] rounded-[5px]">
                 <Link
                   href="/"
-                  className=" flex justify-center w-full px-4 submit py-3 font-bold rounded text-base text-[#FCB349] hover:text-white capitalize text-center"
+                  className="flex justify-center w-full px-4 submit py-3 font-normal text-base text-[#FCB349] hover:text-white capitalize text-center"
                 >
                   log in
                 </Link>
               </section>
-              <section className="hidden lg:block login-option-wrapper text-center">
-                <p className="opacity-100  text-slate-400 font-semibold">
+              <section className="block login-option-wrapper text-center poppins text-[12px]">
+                <p className="opacity-100 text-slate-400">
                   Don't have an account?{' '}
                   <Link
                     href="/sign-up"
-                    className="no-underline text-[#FCB349] font-bold"
+                    className="no-underline text-[#FCB349] font-normal"
                   >
                     Sign up
                   </Link>{' '}
@@ -119,8 +126,8 @@ const Login: React.FC = () => {
       </section>
       <section className="hidden lg:flex justify-center items-center bg-white w-full lg:w-1/2">
         <div className="flex flex-col items-center justify-center gap-7">
-          <Image src={dummyAvatar} alt="user-icon" className="w-2/4 h-2/4" />
-          <p className="font-semibold text-lg w-3/5 text-center">
+          <Image src={dummyAvatar} alt="user-icon" className="w-[400px]" />
+          <p className="text-[16px] w-3/5 text-center font-normal poppins">
             Explore a wide range of gadgets and find the perfect tech for your
             lifestyle.
           </p>

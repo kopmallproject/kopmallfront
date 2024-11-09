@@ -65,9 +65,9 @@ function Home() {
         <section className="flash-sale-section mt-[50px]">
           <div className="main-header-wrapper flex flex-row justify-between items-center">
             <h3 className="before:w-[3px] before:h-[50px] before:mr-[15px] before:secondary-background-color before:inline-block poppins font-normal text-2xl sm:text-3xl secondary-text-color flex items-center">
-              Latest
+              Flash Sales
             </h3>
-            <div className="page-navigators flex flex-row gap-6 items-center">
+            <div className="page-navigators flex flex-row gap-3 sm:gap-6 items-center">
               <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
                 <HiOutlineArrowLeft
                   // onClick={handleNavToggle}
@@ -83,7 +83,7 @@ function Home() {
             </div>
           </div>
           <div className="flash-sales-countdown-section-wrapper mt-6 flex flex-col xsm:flex-row gap-6">
-            <h3 className="poppins text-[20px] sm:text-2xl">Flash Sales</h3>
+            {/* <h3 className="poppins text-[20px] sm:text-2xl">Flash Sales</h3> */}
             <div className="flash-sales-countdown flex">
               <div className="flex flex-col gap-y-2 w-[40px] xsm:w-[50px]">
                 <span className="text-[12px] sm:text-[14px] poppins text-center">
@@ -151,7 +151,7 @@ function Home() {
             <h3 className="before:w-[3px] before:h-[50px] before:mr-[15px] before:secondary-background-color before:inline-block poppins font-normal text-2xl md:text-3xl secondary-text-color flex items-center">
               New arrivals
             </h3>
-            {/* <div className="page-navigators flex flex-row gap-6 items-center">
+            {/* <div className="page-navigators flex flex-row gap-3 sm:gap-6 items-center">
               <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
                 <HiOutlineArrowLeft
                   // onClick={handleNavToggle}
@@ -202,7 +202,7 @@ function Home() {
             <h3 className="before:w-[3px] before:h-[50px] before:mr-[15px] before:secondary-background-color before:inline-block poppins font-normal text-2xl sm:text-3xl secondary-text-color flex items-center">
               More Products
             </h3>
-            <div className="page-navigators flex flex-row gap-6 items-center">
+            <div className="page-navigators flex flex-row gap-3 sm:gap-6 items-center">
               <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
                 <HiOutlineArrowLeft
                   // onClick={handleNavToggle}
@@ -217,11 +217,11 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="flash-sales-countdown-section-wrapper mt-6 flex flex-col xsm:flex-row gap-6">
+          {/* <div className="flash-sales-countdown-section-wrapper mt-6 flex flex-col xsm:flex-row gap-6">
             <h3 className="poppins text-[20px] sm:text-2xl">
               Explore Endlessly
             </h3>
-          </div>
+          </div> */}
           <div className="flash-sales-products gap-x-5 gap-y-6 mt-[25px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 w-[100%]">
             {products.map((product) => {
               return (
@@ -243,7 +243,7 @@ function Home() {
             <h3 className="before:w-[3px] before:h-[50px] before:mr-[15px] before:secondary-background-color before:inline-block poppins font-normal text-2xl sm:text-3xl secondary-text-color flex items-center">
               Categories
             </h3>
-            {/* <div className="page-navigators flex flex-row gap-6 items-center">
+            {/* <div className="page-navigators flex flex-row gap-3 sm:gap-6 items-center">
               <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
                 <HiOutlineArrowLeft
                   // onClick={handleNavToggle}
