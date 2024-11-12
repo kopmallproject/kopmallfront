@@ -125,20 +125,31 @@ const ProductNavigationTabs = () => {
             {/* Individual Reviews */}
             <div className="mt-6 space-y-6">
               {Array.from({ length: 4 }).map((_, index) => (
-                <div key={index} className="border-b pb-4">
-                  <div className="flex items-center space-x-4">
+                <div
+                  key={index}
+                  className="border-b pb-4 flex items-center gap-4"
+                >
+                  <div className="flex flex-col justify-center gap-2">
                     <div className="bg-blue-600 text-white rounded-full h-10 w-10 flex items-center justify-center font-bold">
                       W
                     </div>
-                    <div>
+                    <div className="mb-3">
                       <p className="font-semibold">Wave</p>
                       <p className="text-xs text-gray-500">June 25, 2024</p>
                     </div>
                   </div>
-                  <Rating initialValue={3.5} readonly size={20} allowFraction />
-                  <p className="text-gray-600 mt-2">
-                    Exactly as advertised but not what I really needed. Not bad.
-                  </p>
+                  <div className="flex flex-col">
+                    <Rating
+                      initialValue={3.5}
+                      readonly
+                      size={20}
+                      allowFraction
+                    />
+                    <p className="text-gray-600 mt-2">
+                      Exactly as advertised but not what I really needed. Not
+                      bad.
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

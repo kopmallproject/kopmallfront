@@ -34,7 +34,7 @@ const QuantitySelector = () => {
           </button>
         </div>
       </div>
-      <button className="px-4 py-2 text-white bg-[#FCB349] rounded hover:bg-orange-400 focus:outline-none w-1/2">
+      <button className="px-4 py-2 text-white bg-[#FCB349] rounded hover:bg-orange-400 focus:outline-none lg:w-1/2">
         Buy Now!
       </button>
       <button className=" text-gray-700 p-2 border border-gray-300 rounded hover:bg-gray-100 focus:outline-none">

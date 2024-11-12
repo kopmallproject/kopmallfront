@@ -39,7 +39,7 @@ const WarrantyPage: React.FC = () => {
             <ReviewMobileTab />
             <ProductNavigationTabs />
           </div>
-          <div className="main-header-wrapper flex flex-col">
+          <div className="main-header-wrapper flex flex-col mt-4">
             <h3 className="before:w-[10px] before:h-[30px] before:mr-[20px] before:secondary-background-color before:inline-block poppins font-semibold text-lg sm:text-xl secondary-text-color flex items-center">
               Picks for you
             </h3>
