@@ -41,132 +41,254 @@ import { HiOutlineArrowRight } from 'react-icons/hi2';
 import { products } from '@/app/data/products-list';
 import { categories } from '@/app/data/category-list';
 import { officialStores } from '@/app/data/official-stores';
+import { HiChevronRight } from 'react-icons/hi2';
+import { HiMiniShoppingBag } from 'react-icons/hi2';
 
 function Home() {
   return (
     <MainAppLayout>
-      <main className="min-h-screen mt-4">
-        <section className="menu-with-voucher-section flex flex-col lg:flex-row gap-y-[20px] justify-between">
-          <div className="w-full lg:w-[70%]">
+      <main className="min-h-screen pt-6">
+        <section className="first-section flex flex-col xl:flex-row gap-y-[20px] justify-between">
+          <div className="w-full xl:w-[62%] xl:h-[400px]">
             <Image
               src={DummyBanner1}
               alt="user-icon"
-              className="w-full rounded-[7px]"
+              className="w-full rounded-[7px] xl:h-[400px]"
             />
           </div>
-          <div className="lg:w-[25.5%] top-category-menu text-white">
+          <div className="w-full xl:w-[35.5%] grid grid-cols-4 xl:grid-cols-2 gap-[20px] top-category-menu text-white xl:h-[400px]">
+            <div className="xl:h-[190px]">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full xl:h-[190px] rounded-[7px]"
+              />
+            </div>
+            <div className="xl:h-[190px]">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full xl:h-[190px] rounded-[7px]"
+              />
+            </div>
+            <div className="xl:h-[190px]">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full xl:h-[190px] rounded-[7px]"
+              />
+            </div>
+            <div className="xl:h-[190px]">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full xl:h-[190px] rounded-[7px]"
+              />
+            </div>
+          </div>
+        </section>
+        <section className="mt-[20px] p-3 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[20px] top-category-menu">
+          <div className="flex flex-col gap-3">
             <Image
               src={DummyBanner2}
               alt="user-icon"
               className="w-full rounded-[7px]"
             />
+            <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
+              Up to 20% Off
+            </span>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Image
+              src={DummyBanner2}
+              alt="user-icon"
+              className="w-full rounded-[7px]"
+            />
+            <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
+              TV & Audio deals
+            </span>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Image
+              src={DummyBanner2}
+              alt="user-icon"
+              className="w-full rounded-[7px]"
+            />
+            <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
+              Phone & tablet deals
+            </span>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Image
+              src={DummyBanner2}
+              alt="user-icon"
+              className="w-full rounded-[7px]"
+            />
+            <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
+              Appliance deals
+            </span>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Image
+              src={DummyBanner2}
+              alt="user-icon"
+              className="w-full rounded-[7px]"
+            />
+            <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
+              Amazing Discounts
+            </span>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Image
+              src={DummyBanner2}
+              alt="user-icon"
+              className="w-full rounded-[7px]"
+            />
+            <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
+              Clearance Sales
+            </span>
           </div>
         </section>
-        <section className="flash-sale-section mt-[50px]">
-          <div className="main-header-wrapper flex flex-row justify-between items-center">
-            <h3 className="before:w-[3px] before:h-[50px] before:mr-[15px] before:secondary-background-color before:inline-block poppins font-normal text-2xl sm:text-3xl secondary-text-color flex items-center">
-              Flash Sales
-            </h3>
-            <div className="page-navigators flex flex-row gap-3 sm:gap-6 items-center">
-              <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
-                <HiOutlineArrowLeft
-                  // onClick={handleNavToggle}
-                  className="w-5 h-5 text-white"
-                />
-              </div>
-              <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
-                <HiOutlineArrowRight
-                  // onClick={handleNavToggle}
-                  className="w-5 h-5 text-white"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="flash-sales-countdown-section-wrapper mt-6 flex flex-col xsm:flex-row gap-6">
-            {/* <h3 className="poppins text-[20px] sm:text-2xl">Flash Sales</h3> */}
-            <div className="flash-sales-countdown flex">
-              <div className="flex flex-col gap-y-2 w-[40px] xsm:w-[50px]">
-                <span className="text-[12px] sm:text-[14px] poppins text-center">
-                  Days
-                </span>
-                <div className="font-semibold text-xl xsm:text-2xl poppins text-center">
-                  03
-                </div>
-              </div>
-              <div className="flex items-center secondary-text-color text-[25px] font-semibold mx-[5px]">
-                :
-              </div>
-              <div className="flex flex-col gap-y-2 w-[50px]">
-                <span className="text-[12px] sm:text-[14px] poppins text-center">
-                  Hours
-                </span>
-                <div className="font-semibold text-xl xsm:text-2xl poppins text-center">
-                  23
-                </div>
-              </div>
-              <div className="flex items-center secondary-text-color text-[25px] font-semibold mx-[5px]">
-                :
-              </div>
-              <div className="flex flex-col gap-y-2">
-                <span className="text-[12px] sm:text-[14px] poppins">
-                  Minutes
-                </span>
-                <div className="font-semibold text-xl xsm:text-2xl poppins text-center">
-                  19
-                </div>
-              </div>
-              <div className="flex items-center secondary-text-color text-[25px] font-semibold mx-[5px]">
-                :
-              </div>
-              <div className="flex flex-col gap-y-2">
-                <span className="text-[12px] sm:text-[14px] poppins">
-                  Seconds
-                </span>
-                <div className="font-semibold text-xl xsm:text-2xl poppins text-center">
-                  56
+        <section className="flash-sale-section bg-white mt-[20px] rounded-[7px] pb-2">
+          <div className="main-header-wrapper bg-red-600 py-2 rounded-tl-[7px] rounded-tr-[7px] text-white px-3 border-b-[1px] flex flex-row justify-between items-center">
+            <div className="flex">
+              <div className="flex gap-2 items-center">
+                <HiMiniShoppingBag className="secondary-text-color text-[25px] xsm:text-[30px]" />
+                <div className="flex flex-col gap-1">
+                  <h3 className="poppins font-normal xsm:mt-0 text-[14px] flex items-center">
+                    {/* <h3 className="poppins font-light before:w-[3px] before:h-[54px] before:sm:h-[61px] before:rounded-tl-[7px] before:mr-[15px] before:secondary-background-color before:inline-block text-2xl sm:text-3xl flex items-center"> */}
+                    Flash Sales
+                  </h3>
+                  <h2 className="poppins font-light text-[12px] xsm:text-[14px] flex flex-col xsm:flex-row xsm:items-center gap-1 xsm:gap-2">
+                    <span>Time Left: </span>
+                    <span className="font-normal"> 00h : 18m : 49s</span>
+                  </h2>
                 </div>
               </div>
             </div>
+            <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
+              <div className="text-center">See all items</div>
+              <div>
+                <HiChevronRight className="text-[16px] font-bold" />
+              </div>
+            </div>
           </div>
-          <div className="flash-sales-products flex gap-x-5 mt-[25px] overflow-x-auto w-[100%]">
+          <div className="flash-sales-products p-3 flex gap-5 w-[100%] overflow-x-auto">
             {products.map((product) => {
               return <ProductCard {...product} key={product.productName} />;
             })}
           </div>
-          <div className="flex items-center justify-center mt-[40px] sm:mt-[50px]">
-            <button className="min-w-[200px] rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
-              See All Products
+          {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
+            <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
+              See All Items
             </button>
+          </div> */}
+        </section>
+        <section className="mt-[20px] p-3 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[20px] top-category-menu">
+          <div className="flex flex-col gap-3">
+            <Image
+              src={DummyBanner2}
+              alt="user-icon"
+              className="w-full rounded-[7px]"
+            />
+            <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
+              Up to 20% Off
+            </span>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Image
+              src={DummyBanner2}
+              alt="user-icon"
+              className="w-full rounded-[7px]"
+            />
+            <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
+              TV & Audio deals
+            </span>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Image
+              src={DummyBanner2}
+              alt="user-icon"
+              className="w-full rounded-[7px]"
+            />
+            <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
+              Phone & tablet deals
+            </span>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Image
+              src={DummyBanner2}
+              alt="user-icon"
+              className="w-full rounded-[7px]"
+            />
+            <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
+              Appliance deals
+            </span>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Image
+              src={DummyBanner2}
+              alt="user-icon"
+              className="w-full rounded-[7px]"
+            />
+            <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
+              Amazing Discounts
+            </span>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Image
+              src={DummyBanner2}
+              alt="user-icon"
+              className="w-full rounded-[7px]"
+            />
+            <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
+              Clearance Sales
+            </span>
           </div>
         </section>
-        <section className="best-selling w-full mt-[50px] sm:mt-[80px]">
+        <section className="sponsored-products-section bg-white mt-[20px] rounded-[7px] pb-2">
+          <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+            <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+              Sponsored Products
+            </h3>
+            <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
+              <div className="text-center">See all items</div>
+              <div>
+                <HiChevronRight className="text-[16px] font-bold" />
+              </div>
+            </div>
+          </div>
+          <div className="products p-3 flex gap-5 w-[100%] overflow-x-auto">
+            {products.map((product) => {
+              return <ProductCard {...product} key={product.productName} />;
+            })}
+          </div>
+          {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
+            <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
+              See All Items
+            </button>
+          </div> */}
+        </section>
+        <section className="best-selling w-full mt-[20px] sm:mt-20px]">
           <Image
             src={DummyBanner3}
             alt="user-icon"
             className="w-full rounded-[7px]"
           />
         </section>
-        <section className="new-arrivals-section mt-[50px] sm:mt-[100px]">
-          <div className="main-header-wrapper flex flex-row justify-between items-center">
-            <h3 className="before:w-[3px] before:h-[50px] before:mr-[15px] before:secondary-background-color before:inline-block poppins font-normal text-2xl md:text-3xl secondary-text-color flex items-center">
-              New arrivals
+        {/* <section className="new-arrivals-section mt-[20px] sm:mt-[20px]">
+          <div className="main-header-wrapper py-4 px-3 border-b-[1px] flex flex-row justify-between items-center">
+            <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+              New Arrivals
             </h3>
-            {/* <div className="page-navigators flex flex-row gap-3 sm:gap-6 items-center">
-              <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
-                <HiOutlineArrowLeft
-                  // onClick={handleNavToggle}
-                  className="w-5 h-5 text-white"
-                />
+            <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
+              <div className="text-center">See all items</div>
+              <div>
+                <HiChevronRight className="text-[16px] font-bold" />
               </div>
-              <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
-                <HiOutlineArrowRight
-                  // onClick={handleNavToggle}
-                  className="w-5 h-5 text-white"
-                />
-              </div>
-            </div> */}
+            </div>
           </div>
-          <div className="mt-[20px] flex flex-col md:flex-row gap-x-6 gap-y-4">
+          <div className="flex flex-col md:flex-row gap-x-6 gap-y-4">
             <div className="w-full md:w-1/2">
               <Image
                 src={DummyBanner2}
@@ -196,100 +318,151 @@ function Home() {
               </div>
             </div>
           </div>
-        </section>
-        <section className="more-products-section mt-[50px]">
-          <div className="main-header-wrapper flex flex-row justify-between items-center">
-            <h3 className="before:w-[3px] before:h-[50px] before:mr-[15px] before:secondary-background-color before:inline-block poppins font-normal text-2xl sm:text-3xl secondary-text-color flex items-center">
-              More Products
+        </section> */}
+        <section className="mt-[20px] bg-white rounded-[7px] w-full">
+          <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+            <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+              Phone deals
             </h3>
-            <div className="page-navigators flex flex-row gap-3 sm:gap-6 items-center">
-              <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
-                <HiOutlineArrowLeft
-                  // onClick={handleNavToggle}
-                  className="w-5 h-5 text-white"
-                />
-              </div>
-              <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
-                <HiOutlineArrowRight
-                  // onClick={handleNavToggle}
-                  className="w-5 h-5 text-white"
-                />
+            <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
+              <div className="text-center">See all items</div>
+              <div>
+                <HiChevronRight className="text-[16px] font-bold" />
               </div>
             </div>
           </div>
-          {/* <div className="flash-sales-countdown-section-wrapper mt-6 flex flex-col xsm:flex-row gap-6">
-            <h3 className="poppins text-[20px] sm:text-2xl">
-              Explore Endlessly
-            </h3>
-          </div> */}
-          <div className="flash-sales-products gap-x-5 gap-y-6 mt-[25px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 w-[100%]">
-            {products.map((product) => {
-              return (
-                <FlexibleWidthProductCard
-                  {...product}
-                  key={product.productName}
-                />
-              );
-            })}
-          </div>
-          <div className="flex items-center justify-center mt-[40px] sm:mt-[50px]">
-            <button className="min-w-[200px] rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
-              See All Products
-            </button>
+          <div className="w-full grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-[20px] p-3">
+            <div className="flex flex-col gap-3">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full rounded-[7px]"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full rounded-[7px]"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full rounded-[7px]"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full rounded-[7px]"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full rounded-[7px]"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full rounded-[7px]"
+              />
+            </div>
           </div>
         </section>
-        <section className="browse-by-category-section mt-[50px]">
-          <div className="main-header-wrapper flex flex-row justify-between items-center">
-            <h3 className="before:w-[3px] before:h-[50px] before:mr-[15px] before:secondary-background-color before:inline-block poppins font-normal text-2xl sm:text-3xl secondary-text-color flex items-center">
-              Categories
+        <section className="mt-[20px] bg-white rounded-[7px] w-full">
+          <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+            <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+              Accessories deals
             </h3>
-            {/* <div className="page-navigators flex flex-row gap-3 sm:gap-6 items-center">
-              <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
-                <HiOutlineArrowLeft
-                  // onClick={handleNavToggle}
-                  className="w-5 h-5 text-white"
-                />
+            <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
+              <div className="text-center">See all items</div>
+              <div>
+                <HiChevronRight className="text-[16px] font-bold" />
               </div>
-              <div className="flex items-center justify-center border rounded-full w-[40px] h-[40px] primary-background-color">
-                <HiOutlineArrowRight
-                  // onClick={handleNavToggle}
-                  className="w-5 h-5 text-white"
-                />
-              </div>
-            </div> */}
+            </div>
           </div>
-          <div className="flash-sales-countdown-section-wrapper mt-6 flex flex-col xsm:flex-row gap-6">
-            <h3 className="capitalize poppins text-[20px] sm:text-2xl">
-              Browse by category
+          <div className="w-full grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-[20px] p-3">
+            <div className="flex flex-col gap-3">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full rounded-[7px]"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full rounded-[7px]"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full rounded-[7px]"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full rounded-[7px]"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full rounded-[7px]"
+              />
+            </div>
+            <div className="flex flex-col gap-3">
+              <Image
+                src={DummyBanner2}
+                alt="user-icon"
+                className="w-full rounded-[7px]"
+              />
+            </div>
+          </div>
+        </section>
+        <section className="sponsored-products-section bg-white mt-[20px] rounded-[7px] pb-2">
+          <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+            <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+              Binatone Store
             </h3>
+            <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
+              <div className="text-center">See all items</div>
+              <div>
+                <HiChevronRight className="text-[16px] font-bold" />
+              </div>
+            </div>
           </div>
-          <div className="category-listings mt-6 sm:mt-10 mb-[50px] flex flex-row lg:justify-center w-full overflow-x-auto gap-4">
-            {categories.map((category) => {
-              return (
-                <div
-                  key={category.categoryName}
-                  className="w-[120px] h-[120px] p-4 sm:w-[150px] sm:h-[150px] border rounded-[5px] flex flex-col items-center justify-center"
-                >
-                  <div className="w-[120px] sm:w-[150px] flex justify-center">
-                    <Image
-                      src={category.categoryImage}
-                      alt="user-icon"
-                      className="w-[30px] md:w-[40px] rounded-[7px] mt-2"
-                    />
-                  </div>
-                  <div className="category-name poppins font-normal text-[14px] mt-3 text-center">
-                    {category.categoryName}
-                  </div>
-                </div>
-              );
+          <div className="products p-3 flex gap-5 w-[100%] overflow-x-auto">
+            {products.map((product) => {
+              return <ProductCard {...product} key={product.productName} />;
             })}
           </div>
-          <div className="flash-sales-countdown-section-wrapper mt-8 lg:mt-16 flex flex-col xsm:flex-row gap-6">
-            <h3 className="capitalize poppins text-[20px] sm:text-2xl sm:text-center w-full">
+          {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
+            <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
+              See All Items
+            </button>
+          </div> */}
+        </section>
+        <section className="official-stores-section mt-[20px] bg-white rounded-[7px]">
+          <div className="flash-sales-countdown-section-wrapper border-b px-3 py-2">
+            <h3 className="capitalize poppins text-[14px] xsm:text-[16px] sm:text-[20px] sm:text-center w-full">
               Official Stores
             </h3>
           </div>
-          <div className="official-store-listings mt-6 sm:mt-10 mb-[50px] gap-6 lg:gap-y-8 grid grid-cols-4 md:grid-cols-6">
+          <div className="official-store-listings gap-6 lg:gap-y-8 grid grid-cols-4 md:grid-cols-6 p-3">
             {officialStores.map((store, index) => {
               return (
                 <Image
@@ -302,8 +475,8 @@ function Home() {
             })}
           </div>
         </section>
-        <section className="platform-offerings-section mt-[100px] mb-[100px]">
-          <section className="flex flex-col gap-y-10 sm:gap-y-20 sm:flex-row flex-wrap">
+        <section className="platform-offerings-section mt-[20px] pb-[100px]">
+          <section className="flex flex-col gap-y-10 sm:gap-y-20 sm:flex-row flex-wrap bg-white px-4 py-8 rounded-[7px]">
             <div className="flex flex-col items-center justify-center w-[75%] sm:w-[48%] lg:w-[30%] mx-auto">
               <Image
                 src={OfferingsImage2}
@@ -344,7 +517,7 @@ function Home() {
               </div>
             </div>
           </section>
-          <section className="flex flex-col gap-y-6 sm:flex-row sm:justify-between mt-[50px] md:mt-[100px]">
+          <section className="flex flex-col gap-y-6 sm:flex-row sm:justify-between mt-[20px] bg-white p-3 rounded-[7px]">
             <Image
               src={BannerX}
               alt="user-icon"

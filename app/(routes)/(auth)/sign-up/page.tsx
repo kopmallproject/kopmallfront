@@ -7,7 +7,7 @@ import dummyAvatar from '../../../assets/images/img-1.png';
 import goggleIcon from '../../../assets/images/img-5.png';
 import appleIcon from '../../../assets/images/img-6.png';
 import { HiMiniEyeSlash, HiMiniEye } from 'react-icons/hi2';
-import Logo from '@/app/assets/images/logo.jpg';
+import Logo from '@/app/assets/images/logo.png';
 import piIcon from '../../../assets/images/img-51.png';
 
 const SignUp: React.FC = () => {

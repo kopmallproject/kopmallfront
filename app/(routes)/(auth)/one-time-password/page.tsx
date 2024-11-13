@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import dummyAvatar from '../../../assets/images/img-4.png';
-import Logo from '@/app/assets/images/logo.jpg';
+import Logo from '@/app/assets/images/logo.png';
 
 const OneTimePassword: React.FC = () => {
   return (

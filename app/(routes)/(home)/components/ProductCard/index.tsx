@@ -22,10 +22,10 @@ type ProductSpecs = {
 
 function ProductCard(product: ProductSpecs) {
   return (
-    <div className="product-card relative w-[175px] sm:w-[220px] flex flex-col">
-      <div className="product-image-wrapper bg-[#F5F5F5] p-3 w-[175px] sm:w-[220px] h-[190px] sm:h-[220px] flex justify-center items-center">
+    <div className="product-card relative w-[150px] sm:w-[175px] flex flex-col">
+      <div className="product-image-wrapper bg-[#F5F5F5] p-3 w-[150px] sm:w-[175px] h-[150px] sm:h-[190px] flex justify-center items-center">
         <div className="discounts-and-isLiked-wrapper absolute left-0 top-[10px] px-3 flex justify-between w-full items-center">
-          <div className="secondary-background-color mt-[5px] self-start rounded-[5px] px-2 py-1 min-w-[50px] text-[12px] text-center">
+          <div className="secondary-background-color mt-[5px] self-start rounded-[5px] px-2 py-1 min-w-[50px] text-[10px] font-normal text-center">
             -{product.discount}%
           </div>
           <div className="like-product-button flex items-center justify-center w-[35px] h-[35px] rounded-full bg-white">

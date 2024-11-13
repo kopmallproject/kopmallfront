@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import dummyAvatar from '../../../assets/images/img-7.png';
 import { HiMiniEyeSlash, HiMiniEye } from 'react-icons/hi2';
-import Logo from '@/app/assets/images/logo.jpg';
+import Logo from '@/app/assets/images/logo.png';
 
 const CreateNewPassword: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);

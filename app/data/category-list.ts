@@ -29,5 +29,17 @@ export const categories = [
   {
     categoryName: 'Gaming',
     categoryImage: Image6
+  },
+  {
+    categoryName: 'Home Appliances',
+    categoryImage: Image4
+  },
+  {
+    categoryName: 'Furniture',
+    categoryImage: Image5
+  },
+  {
+    categoryName: 'Clothes And Apparels',
+    categoryImage: Image6
   }
 ];
