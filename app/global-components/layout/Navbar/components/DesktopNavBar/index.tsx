@@ -14,6 +14,7 @@ import Image3 from '@/app/assets/images/img-43.png';
 import Image4 from '@/app/assets/images/img-44.png';
 import Image5 from '@/app/assets/images/img-45.png';
 import Image6 from '@/app/assets/images/img-46.png';
+import Link from 'next/link';
 // import { categories } from '@/app/data/category-list';
 
 const categories = [
@@ -60,13 +61,15 @@ function DesktopNavBar() {
     <nav className="w-full">
       <div className="desktop-nav-bar w-full hidden bg-gray-100 lg:flex items-center justify-between shadow-sm py-[6px] px-3 lg:px-[10%] xl:px-[12%] lg:mx-auto">
         <div className="flex items-center gap-6">
-          <div className="poppins uppercase font-bold text-xl">
-            <Image
-              src={Logo}
-              alt="user-icon"
-              className="bg-cover w-[60px] h-[60px]"
-            />
-          </div>
+          <Link href="/">
+            <div className="poppins uppercase font-bold text-xl">
+              <Image
+                src={Logo}
+                alt="user-icon"
+                className="bg-cover w-[60px] h-[60px]"
+              />
+            </div>
+          </Link>
           <div className="flex items-center justify-center gap-4 w-3/4">
             <div className="search-icon flex items-center bg-white border border-gray-300 rounded-md w-[450px] xl:w-[500px] 2xl:w-[600px]">
               <HiOutlineMagnifyingGlass className="ml-3 h-6 w-6 text-gray-300 cursor-pointer" />

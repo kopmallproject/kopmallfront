@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import dummyAvatar from '../../../assets/images/img-7.png';
+import dummyAvatar from '@/app/assets/images/img-7.png';
 import { HiArrowSmallLeft, HiPencil } from 'react-icons/hi2';
 
 function OrderDetails() {

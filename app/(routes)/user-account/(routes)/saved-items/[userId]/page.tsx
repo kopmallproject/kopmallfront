@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import dummyAvatar from '../../../assets/images/img-47.jpg';
+import dummyAvatar from '@/app/assets/images/img-47.jpg';
 import { HiTrash, HiOutlineArrowSmallLeft } from 'react-icons/hi2';
 
 function SavedItems() {

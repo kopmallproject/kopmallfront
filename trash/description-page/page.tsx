@@ -1,17 +1,17 @@
 'use client';
 import React from 'react';
 import dummyAvatar from '../../../assets/images/img-17.png';
-import RelatedProducts from '../components/RelatedProducts';
+import RelatedProducts from '../../app/(routes)/product-page/components/RelatedProducts';
 import { products } from '@/app/data/products-list';
-import ProductImageGallery from '../components/ProductImageGallery';
-import ProductDescription from '../components/ProductDescription';
-import OverviewMobileTab from '../components/OverviewMobileTab';
-import DescriptionMobileTab from '../components/DescriptionMobileTab';
-import WarrantyMobileTab from '../components/WarrantyMobileTab';
-import ReviewMobileTab from '../components/ReviewMobileTab';
-import ProductNavigationTabs from '../components/ProductNavigationTabs';
+import ProductImageGallery from '../../app/(routes)/product-page/components/ProductImageGallery';
+import ProductDescription from '../../app/(routes)/product-page/components/ProductDescription';
+import OverviewMobileTab from '../../app/(routes)/product-page/components/OverviewMobileTab';
+import DescriptionMobileTab from '../../app/(routes)/product-page/components/DescriptionMobileTab';
+import WarrantyMobileTab from '../../app/(routes)/product-page/components/WarrantyMobileTab';
+import ReviewMobileTab from '../../app/(routes)/product-page/components/ReviewMobileTab';
+import ProductNavigationTabs from '../../app/(routes)/product-page/components/ProductNavigationTabs';
 
-const ReviewPage: React.FC = () => {
+const DescriptionPage: React.FC = () => {
   const images = [
     { src: dummyAvatar, alt: 'user-icon-1' },
     { src: dummyAvatar, alt: 'user-icon-2' },
@@ -60,4 +60,4 @@ const ReviewPage: React.FC = () => {
   );
 };
 
-export default ReviewPage;
+export default DescriptionPage;

@@ -8,7 +8,8 @@ import {
 } from 'react-icons/hi2';
 import NavLinks from '../../../MobileNavLinks';
 import Image from 'next/image';
-import Logo from '../../../../../assets/images/logo.jpg';
+import Logo from '../../../../../assets/images/logo.png';
+import Link from 'next/link';
 
 function MobileNavBar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -26,11 +27,13 @@ function MobileNavBar() {
               onClick={handleNavToggle}
               className="h-8 w-8 cursor-pointer"
             />
-            <Image
-              src={Logo}
-              alt="user-icon"
-              className="bg-cover w-[50px] h-[50px]"
-            />{' '}
+            <Link href="/">
+              <Image
+                src={Logo}
+                alt="user-icon"
+                className="bg-cover w-[50px] h-[50px]"
+              />{' '}
+            </Link>
           </div>
           <div className="flex items-center gap-6">
             <HiOutlineShoppingCart className="h-6 w-6" />
