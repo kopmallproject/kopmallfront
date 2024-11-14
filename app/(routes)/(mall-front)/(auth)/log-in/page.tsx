@@ -3,9 +3,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import dummyAvatar from '../../../assets/images/img-2.png';
-import goggleIcon from '../../../assets/images/img-5.png';
-import piIcon from '../../../assets/images/img-51.png';
+import dummyAvatar from '@/app/assets/images/img-2.png';
+import goggleIcon from '@/app/assets/images/img-5.png';
+import piIcon from '@/app/assets/images/img-51.png';
 import { HiMiniEyeSlash, HiMiniEye } from 'react-icons/hi2';
 import Logo from '@/app/assets/images/logo.png';
 import SideSalesImage from '@/app/assets/images/img-9.png';
