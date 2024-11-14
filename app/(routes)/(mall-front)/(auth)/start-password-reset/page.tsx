@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import dummyAvatar from '@/app/assets/images/img-3.png';
-import Logo from '@/app/assets/images/logo.jpg';
+import Logo from '@/app/assets/images/logo.png';
 
 const StartPasswordReset: React.FC = () => {
   return (

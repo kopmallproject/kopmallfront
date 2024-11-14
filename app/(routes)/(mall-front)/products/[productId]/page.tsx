@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import dummyAvatar from '../../../assets/images/img-17.png';
+import dummyAvatar from '@/app/assets/images/img-17.png';
 import RelatedProducts from '../components/RelatedProducts';
 import { products } from '@/app/data/products-list';
 import ProductImageGallery from '../components/ProductImageGallery';
