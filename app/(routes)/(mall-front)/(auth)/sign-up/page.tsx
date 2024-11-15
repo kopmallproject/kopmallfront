@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import dummyAvatar from '@/app/assets/images/img-1.png';
 import goggleIcon from '@/app/assets/images/img-5.png';
 import appleIcon from '@/app/assets/images/img-6.png';
 import { HiMiniEyeSlash, HiMiniEye } from 'react-icons/hi2';
@@ -15,32 +14,47 @@ const SignUp: React.FC = () => {
 
   return (
     <>
-      <section className="w-full py-[50px] lg:w-1/2 flex flex-col justify-center">
-        <form className="flex flex-col px-3 w-full sm:mx-auto sm:w-[70%] md:w-[500px] text-white">
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center justify-center">
+      <section className="hidden lg:flex justify-center items-center bg-white w-full lg:w-4/12 2xl:w-3/12 h-screen">
+        <div
+          className="flex flex-col items-center justify-center gap-7 log-in-page-side-sales-image"
+          // style={{
+          //   backgroundImage: `url(${SideSalesImage})`,
+          //   backgroundSize: 'cover',
+          //   backgroundPosition: 'center',
+          //   backgroundRepeat: 'no-repeat',
+          //   width: '100%',
+          //   height: '100vh'
+          // }}
+        >
+          {/* <Image src={dummyAvatar} alt="user-icon" className="w-[400px]" /> */}
+          {/* <p className="text-[16px] w-3/5 text-center font-normal poppins">
+            Explore a wide range of gadgets and find the perfect tech for your
+            lifestyle.
+          </p> */}
+        </div>
+      </section>
+      <section className="w-full py-[100px] lg:py-0 flex flex-col justify-center lg:w-8/12 2xl:w-9/12">
+        <form className="flex flex-col w-full px-3 sm:mx-auto sm:w-[70%] md:w-[500px] text-slate-900">
+          <div className="poppins flex flex-col gap-4 text-center">
+            <div className="flex items-center justify-center poppins uppercase font-bold text-xl">
               <Image
                 src={Logo}
                 alt="user-icon"
                 className="bg-cover w-[50px] h-[50px] rounded-[5px]"
               />
             </div>
-            <div className="text-center">
-              <h3 className="text-lg font-normal poppins ">
-                Select a method to create your account
-              </h3>
-            </div>
+            <h3 className="text-lg">Select a method to create your account</h3>
           </div>
-          <div className="auth-section mt-6 flex flex-col gap-3 w-full lg:flex-row lg:items-center lg:justify-between xl:justify-center 2xl:gap-3 text-base">
-            <div className="flex items-center justify-center gap-4 border-[1px] py-2 px-3 rounded-[5px] cursor-pointer">
+          <div className="auth-section mt-6 flex flex-col w-full lg:flex-row lg:items-center justify-center gap-3 text-base">
+            <div className="flex items-center justify-center gap-4 border-[1px] border-gray-500 py-2 px-3 rounded-[5px] cursor-pointer">
               <Image
                 src={goggleIcon}
                 alt="user-icon"
                 className="bg-cover w-5 h-5"
               />
-              <span className="text-[12px] poppins">Log in with Goggle</span>
+              <span className="text-[12px] poppins">sign up with Goggle</span>
             </div>
-            <div className="flex items-center justify-center gap-4 border-[1px] py-2 px-3 rounded-[5px] cursor-pointer">
+            <div className="flex items-center justify-center gap-4 border-[1px] border-gray-500 py-2 px-3 rounded-[5px] cursor-pointer">
               <Image
                 src={piIcon}
                 alt="user-icon"
@@ -61,12 +75,12 @@ const SignUp: React.FC = () => {
           </div>
           <div className="w-full mt-4">
             <div className="input-section flex flex-col w-full">
-              <section className="flex items-center justify-center mb-8">
+              <section className="flex items-center mb-8">
                 <input
                   type="text"
                   name="firstName"
                   placeholder="First Name"
-                  className="flex-1 focus:outline-none px-3 py-3 bg-[#25133A] border-[1px] rounded-[5px]"
+                  className="flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
                 />
               </section>
               <section className="flex items-center mb-8">
@@ -74,7 +88,7 @@ const SignUp: React.FC = () => {
                   type="text"
                   name="lastName"
                   placeholder="Last Name"
-                  className="flex-1 focus:outline-none px-3 py-3 bg-[#25133A] border-[1px] rounded-[5px]"
+                  className="flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
                 />
               </section>
               <section className="flex items-center mb-8">
@@ -82,13 +96,13 @@ const SignUp: React.FC = () => {
                   type="email"
                   name="email"
                   placeholder="Enter email"
-                  className="flex-1 focus:outline-none px-3 py-3 bg-[#25133A] border-[1px] rounded-[5px]"
+                  className="flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
                 />
               </section>
-              <section className="flex items-center mb-8 border rounded-[5px]">
+              <section className="flex items-center gap-4 mb-8  rounded-[5px]">
                 <select
                   name="countryCode"
-                  className="px-2 py-1 focus:outline-none text-[12px] border-none bg-[#25133A] border-[1px] rounded-[5px]"
+                  className="flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
                 >
                   <option className="text-[12px]" value="+234">
                     NG +234
@@ -107,13 +121,13 @@ const SignUp: React.FC = () => {
                   type=""
                   name="phoneNumber"
                   placeholder="Enter your number"
-                  className="flex-1 focus:outline-none px-3 py-3 bg-[#25133A]"
+                  className="flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
                 />
               </section>
 
-              <section className="flex items-center mb-8  px-3 py-3 bg-[#25133A] border-[1px] rounded-[5px]">
+              <section className="flex items-center border-[1px] border-gray-500 rounded-[5px] bg-white px-3 py-3 mb-3">
                 <input
-                  className="flex-1 focus:outline-none bg-[#25133A]"
+                  className="flex-1 focus:outline-none bg-white"
                   type={showPassword ? 'text' : 'password'}
                   placeholder="Password"
                   id="password"
@@ -129,15 +143,15 @@ const SignUp: React.FC = () => {
                   )}
                 </div>
               </section>
-              <section className="submit-button-wrapper poppins mb-3 w-full border-[#FCB349] hover:bg-[#FCB349] border rounded-[5px]">
+              <section className="submit-button-wrapper poppins mb-3 w-full primary-background-color hover:bg-[#FCB349] border-[1px]-[#FCB349] border-[1px] rounded-[5px]">
                 <Link
                   href="/"
-                  className=" flex justify-center w-full px-4 submit py-3 font-normal rounded text-base text-[#FCB349] hover:text-white capitalize text-center"
+                  className="flex justify-center w-full px-4 submit py-3 font-normal text-base text-[#FCB349] hover:text-white capitalize text-center"
                 >
                   sign up
                 </Link>
               </section>
-              <section className="block login-option-wrapper text-center">
+              <section className="block login-option-wrapper text-center poppins text-[12px] mb-4">
                 <p className="opacity-100 text-slate-400 font-normal poppins text-[12px]">
                   Already have an account?{' '}
                   <Link
@@ -151,15 +165,6 @@ const SignUp: React.FC = () => {
             </div>
           </div>
         </form>
-      </section>
-      <section className="hidden lg:flex justify-center items-center bg-white w-full lg:w-1/2">
-        <div className="flex flex-col items-center justify-center gap-7">
-          <Image src={dummyAvatar} alt="user-icon" className="w-[400px]" />
-          <p className="text-[16px] w-3/5 text-center font-normal poppins">
-            Explore a wide range of gadgets and find the perfect tech for your
-            lifestyle.
-          </p>
-        </div>
       </section>
     </>
   );
