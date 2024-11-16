@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../../../../rtk-base/hooks';
-import { RootState } from '../../../../rtk-base/store';
-import { setActiveTab } from '../../../../rtk-base/slices/tab-slice';
+import { useAppDispatch, useAppSelector } from '@/app/rtk-base/hooks';
+import { RootState } from '@/app/rtk-base/store';
+import { setActiveTab } from '@/app/rtk-base/slices/tab-slice';
 import { Rating } from 'react-simple-star-rating';
 
 const ProductNavigationTabs = () => {
