@@ -26,8 +26,37 @@
   .secondary-background-color {
     background: #fcb349;
   }
+
+  .cart-page .overflow-x-auto,
+  .categories-page .overflow-x-auto,
+  .product-page .overflow-x-auto {
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .cart-page .overflow-x-auto::-webkit-scrollbar,
+  .categories-page .overflow-x-auto::-webkit-scrollbar,
+  .product-page .overflow-x-auto::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.newsletter-email-input::placeholder {
+  @apply text-gray-600;
 }
 
 svg.star-svg {
   display: inline;
+}
+
+.log-in-page-side-sales-image {
+  background-image: url('../assets/images/img-9.png');
+  background-size: cover; /* Adjusts image to cover the entire element */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
 }
