@@ -49,8 +49,9 @@ function ProductCard(product: ProductSpecs) {
           {product.originalPrice}
         </span>
       </div>
-      <div className="rating">
+      <div className="rating flex gap-1 items-center">
         <Rating size={15} initialValue={product.rating} />
+        <span className="text-[10px] mt-[4px]">(200)</span>
       </div>
     </div>
   );

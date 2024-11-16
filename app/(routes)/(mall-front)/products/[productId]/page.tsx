@@ -10,6 +10,15 @@ import DescriptionMobileTab from '../components/DescriptionMobileTab';
 import WarrantyMobileTab from '../components/WarrantyMobileTab';
 import ReviewMobileTab from '../components/ReviewMobileTab';
 import ProductNavigationTabs from '../components/ProductNavigationTabs';
+import DummyBanner1 from '@/app/assets/images/img-23.png';
+import DummyBanner2 from '@/app/assets/images/img-9.png';
+import DummyBanner3 from '@/app/assets/images/img-20.png';
+import DummyBanner4 from '@/app/assets/images/img-21.png';
+import DummyBanner5 from '@/app/assets/images/img-22.png';
+import DummyBanner6 from '@/app/assets/images/img-9.png';
+import Image from 'next/image';
+import ProductCard from '../../(home)/components/ProductCard';
+import { HiChevronRight } from 'react-icons/hi2';
 
 const OverviewPage: React.FC = () => {
   const images = [
@@ -21,7 +30,7 @@ const OverviewPage: React.FC = () => {
 
   return (
     <>
-      <main className="min-h-screen mt-4 text-[14px]">
+      <main className="product-page min-h-screen pt-4 pb-[100px] text-[14px]">
         <section className="single-product-section">
           <div className="flex gap-2 text-xs cursor-pointer">
             <span>Account / </span>
@@ -33,27 +42,165 @@ const OverviewPage: React.FC = () => {
             <ProductDescription />
           </div>
           <div className="w-full flex flex-col py-[20px]">
+            {/* for mobile screens */}
             <OverviewMobileTab />
             <DescriptionMobileTab />
             <WarrantyMobileTab />
             <ReviewMobileTab />
+
+            {/* for large screens */}
             <ProductNavigationTabs />
           </div>
-          <div className="main-header-wrapper flex flex-col mt-4">
-            <h3 className="before:w-[10px] before:h-[30px] before:mr-[20px] before:secondary-background-color before:inline-block poppins font-semibold text-lg sm:text-xl secondary-text-color flex items-center">
-              Picks for you
-            </h3>
-          </div>
-          <div className="mt-6 flex flex-col xsm:flex-row">
-            <h3 className="poppins text-[20px] sm:text-2xl">
-              Similar Items you might like
-            </h3>
-          </div>
-          <div className="related-products flex gap-x-5 mt-[20px] overflow-x-auto w-[100%]">
-            {products.map((product) => {
-              return <RelatedProducts {...product} key={product.productName} />;
-            })}
-          </div>
+
+          <section className="recently-viewed bg-white mt-[20px] rounded-[7px] pb-2">
+            <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+                Recently Viewed
+              </h3>
+              {/* <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
+              <div className="text-center">See all items</div>
+              <div>
+                <HiChevronRight className="text-[16px] font-bold" />
+              </div>
+            </div> */}
+            </div>
+            <div className="products p-3 flex gap-5 w-[100%] overflow-x-auto">
+              {products.map((product) => {
+                return <ProductCard {...product} key={product.productName} />;
+              })}
+            </div>
+            {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
+            <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
+              See All Items
+            </button>
+          </div> */}
+          </section>
+          <section className="mt-[20px] bg-white rounded-[7px] w-full">
+            <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+                Top Phone deals
+              </h3>
+              <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
+                <div className="text-center">See all items</div>
+                <div>
+                  <HiChevronRight className="text-[16px] font-bold" />
+                </div>
+              </div>
+            </div>
+            <div className="w-full grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-[20px] p-3">
+              <div className="flex flex-col gap-3">
+                <Image
+                  src={DummyBanner2}
+                  alt="user-icon"
+                  className="w-full rounded-[7px]"
+                />
+              </div>
+              <div className="flex flex-col gap-3">
+                <Image
+                  src={DummyBanner2}
+                  alt="user-icon"
+                  className="w-full rounded-[7px]"
+                />
+              </div>
+              <div className="flex flex-col gap-3">
+                <Image
+                  src={DummyBanner2}
+                  alt="user-icon"
+                  className="w-full rounded-[7px]"
+                />
+              </div>
+              <div className="flex flex-col gap-3">
+                <Image
+                  src={DummyBanner2}
+                  alt="user-icon"
+                  className="w-full rounded-[7px]"
+                />
+              </div>
+              <div className="flex flex-col gap-3">
+                <Image
+                  src={DummyBanner2}
+                  alt="user-icon"
+                  className="w-full rounded-[7px]"
+                />
+              </div>
+              <div className="flex flex-col gap-3">
+                <Image
+                  src={DummyBanner2}
+                  alt="user-icon"
+                  className="w-full rounded-[7px]"
+                />
+              </div>
+            </div>
+          </section>
+          <section className="sponsored-products-section bg-white mt-[20px] rounded-[7px] pb-2">
+            <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+                Recommended products
+              </h3>
+              <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
+                <div className="text-center">See all items</div>
+                <div>
+                  <HiChevronRight className="text-[16px] font-bold" />
+                </div>
+              </div>
+            </div>
+            <div className="products p-3 flex gap-5 w-[100%] overflow-x-auto">
+              {products.map((product) => {
+                return <ProductCard {...product} key={product.productName} />;
+              })}
+            </div>
+            {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
+            <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
+              See All Items
+            </button>
+          </div> */}
+          </section>
+          <section className="sponsored-products-section bg-white mt-[20px] rounded-[7px] pb-2">
+            <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+                Binatone Store
+              </h3>
+              <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
+                <div className="text-center">See all items</div>
+                <div>
+                  <HiChevronRight className="text-[16px] font-bold" />
+                </div>
+              </div>
+            </div>
+            <div className="products p-3 flex gap-5 w-[100%] overflow-x-auto">
+              {products.map((product) => {
+                return <ProductCard {...product} key={product.productName} />;
+              })}
+            </div>
+            {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
+            <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
+              See All Items
+            </button>
+          </div> */}
+          </section>
+          <section className="sponsored-products-section bg-white mt-[20px] rounded-[7px] pb-2">
+            <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+                Binatone Store
+              </h3>
+              <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
+                <div className="text-center">See all items</div>
+                <div>
+                  <HiChevronRight className="text-[16px] font-bold" />
+                </div>
+              </div>
+            </div>
+            <div className="products p-3 flex gap-5 w-[100%] overflow-x-auto">
+              {products.map((product) => {
+                return <ProductCard {...product} key={product.productName} />;
+              })}
+            </div>
+            {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
+            <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
+              See All Items
+            </button>
+          </div> */}
+          </section>
         </section>
       </main>
     </>

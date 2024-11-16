@@ -101,7 +101,7 @@ function DesktopNavBar() {
           </div>
         </div>
       </div>
-      <div className="px-3 lg:px-[10%] xl:px-[12%] lg:mx-auto hidden lg:flex">
+      <div className="px-3 lg:px-[10%] xl:px-[12%] lg:mx-auto hidden lg:flex border-b-[1px]">
         <div className="w-full poppins font-normal bg-white primary-text-color py-[7px] flex flex-row items-center">
           <div className="flex gap-3 items-center w-[150px]">
             <HiBars3BottomLeft
