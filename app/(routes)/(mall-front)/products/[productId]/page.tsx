@@ -1,15 +1,15 @@
 'use client';
 import React from 'react';
 import dummyAvatar from '@/app/assets/images/img-17.png';
-import RelatedProducts from '../components/RelatedProducts';
+import RelatedProducts from '@/app/(routes)/(mall-front)/products/components/RelatedProducts';
 import { products } from '@/app/data/products-list';
-import ProductImageGallery from '../components/ProductImageGallery';
-import ProductDescription from '../components/ProductDescription';
-import OverviewMobileTab from '../components/OverviewMobileTab';
-import DescriptionMobileTab from '../components/DescriptionMobileTab';
-import WarrantyMobileTab from '../components/WarrantyMobileTab';
-import ReviewMobileTab from '../components/ReviewMobileTab';
-import ProductNavigationTabs from '../components/ProductNavigationTabs';
+import ProductImageGallery from '@/app/(routes)/(mall-front)/products/components/ProductImageGallery';
+import ProductDescription from '@/app/(routes)/(mall-front)/products/components/ProductDescription';
+import OverviewMobileTab from '@/app/(routes)/(mall-front)/products/components/OverviewMobileTab';
+import DescriptionMobileTab from '@/app/(routes)/(mall-front)/products/components/DescriptionMobileTab';
+import WarrantyMobileTab from '@/app/(routes)/(mall-front)/products/components/WarrantyMobileTab';
+import ReviewMobileTab from '@/app/(routes)/(mall-front)/products/components/ReviewMobileTab';
+import ProductNavigationTabs from '@/app/(routes)/(mall-front)/products/components/ProductNavigationTabs';
 
 const OverviewPage: React.FC = () => {
   const images = [
