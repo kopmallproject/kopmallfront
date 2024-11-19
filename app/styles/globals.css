@@ -27,17 +27,21 @@
     background: #fcb349;
   }
 
-  /* .overflow-x-auto {
-    overflow: hidden;      
-    overflow-y: scroll;  
-    overflow-x: scroll;   
-    -ms-overflow-style: none; 
-    scrollbar-width: none;   
+  .cart-page .overflow-x-auto,
+  .categories-page .overflow-x-auto,
+  .product-page .overflow-x-auto {
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
-  .overflow-x-auto::-webkit-scrollbar {
+  .cart-page .overflow-x-auto::-webkit-scrollbar,
+  .categories-page .overflow-x-auto::-webkit-scrollbar,
+  .product-page .overflow-x-auto::-webkit-scrollbar {
     display: none;
-  } */
+  }
 }
 
 .newsletter-email-input::placeholder {

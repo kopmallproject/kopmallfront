@@ -72,7 +72,7 @@ function CartPage() {
     // <MainAppLayout>
     <>
       <TopNav />
-      <main className="pb-[200px] min-h-screen sm:px-[20px] md:px-[5%] xl:px-[12%] md:mx-auto">
+      <main className="pb-[200px] min-h-screen sm:px-[20px] md:px-[5%] xl:px-[12%] md:mx-auto bg-gray-100">
         <nav className="checkout-nav py-2 px-3 xsm:px-0">
           <div className="flex w-full items-center">
             <div className="mr-4">
@@ -99,7 +99,7 @@ function CartPage() {
             (OTP) on your phone. Be ready to use it and receive your purchases! 
           </div>
         </section>
-        <section className="px-3 navigation-indicator mt-[25px] mb-5 lg:mb-8 poppins font-normal flex gap-3 items-center text-gray-500 text-[12px]">
+        <section className="px-3 sm:px-0 navigation-indicator mt-[25px] mb-2 poppins font-normal flex gap-3 items-center text-gray-500 text-[12px]">
           <span className="capitalize">Home</span>
           <span>/</span>
           <span className="capitalize">Account</span>
@@ -111,7 +111,7 @@ function CartPage() {
 
         <section className="flex flex-col lg:flex-row lg:justify-between px-3 sm:px-0">
           <div className="w-full lg:w-[65%] mt-6">
-            <section className="delivery border-[1px] rounded-[5px] flex flex-col w-full">
+            <section className="delivery border-[1px] rounded-[5px] flex flex-col w-full bg-white">
               <div className="title poppins py-2 px-4 border-b-[1px] w-full">
                 Choose Delivery Option
               </div>
@@ -165,7 +165,7 @@ function CartPage() {
               </div>
             </section>
             <section className="hidden lg:flex cart-summary flex-col w-full">
-              <div className="mt-4 flex flex-col border-[1px] rounded-[5px]">
+              <div className="mt-4 flex flex-col border-[1px] rounded-[5px] bg-white">
                 <div className="title poppins py-2 px-4 border-b-[1px]">
                   Cart Summary
                 </div>
@@ -180,7 +180,7 @@ function CartPage() {
             </section>
           </div>
           <div className="flex flex-col lg:w-[30%] mt-6">
-            <section className="cart-core border-[1px] rounded-[5px] flex flex-col w-full">
+            <section className="cart-core border-[1px] rounded-[5px] flex flex-col w-full bg-white">
               <div className="title poppins py-2 px-4 border-b-[1px]">Cart</div>
               {cartProducts.map((each) => {
                 return (

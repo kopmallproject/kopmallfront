@@ -1,15 +1,15 @@
 // 'use client';
 // import React from 'react';
 // import dummyAvatar from '../../../assets/images/img-17.png';
-// import RelatedProducts from '@/app/(routes)/(mall-front)/products/components/RelatedProducts';
+// import RelatedProducts from '../../app/(routes)/product-page/components/RelatedProducts';
 // import { products } from '@/app/data/products-list';
-// import ProductImageGallery from '@/app/(routes)/(mall-front)/products/components/ProductImageGallery';
-// import ProductDescription from '@/app/(routes)/(mall-front)/products/components/ProductDescription';
-// import OverviewMobileTab from '@/app/(routes)/(mall-front)/products/components/OverviewMobileTab';
-// import DescriptionMobileTab from '@/app/(routes)/(mall-front)/products/components/DescriptionMobileTab';
-// import WarrantyMobileTab from '@/app/(routes)/(mall-front)/products/components/WarrantyMobileTab';
-// import ReviewMobileTab from '@/app/(routes)/(mall-front)/products/components/ReviewMobileTab';
-// import ProductNavigationTabs from '@/app/(routes)/(mall-front)/products/components/ProductNavigationTabs';
+// import ProductImageGallery from '../../app/(routes)/product-page/components/ProductImageGallery';
+// import ProductDescription from '../../app/(routes)/product-page/components/ProductDescription';
+// import OverviewMobileTab from '../../app/(routes)/product-page/components/OverviewMobileTab';
+// import DescriptionMobileTab from '../../app/(routes)/product-page/components/DescriptionMobileTab';
+// import WarrantyMobileTab from '../../app/(routes)/product-page/components/WarrantyMobileTab';
+// import ReviewMobileTab from '../../app/(routes)/product-page/components/ReviewMobileTab';
+// import ProductNavigationTabs from '../../app/(routes)/product-page/components/ProductNavigationTabs';
 
 // const ReviewPage: React.FC = () => {
 //   const images = [

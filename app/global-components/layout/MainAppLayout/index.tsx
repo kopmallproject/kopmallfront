@@ -10,17 +10,17 @@ type ChildProp = {
 
 function MainAppLayout({ children }: ChildProp) {
   return (
-    <>
+    <main className="relative z-20">
       <TopNav />
       {/* Main content area */}
-      <main className="main-app-layout">
+      <div className="main-app-layout">
         <NavBar />
-        <div className="min-h-screen px-3 sm:px-[20px] md:px-[5px] lg:px-[10%] xl:px-[12%] 2xl:px-[17%] md:mx-auto text-[14px]">
+        <div className="min-h-screen px-3 sm:px-[20px] md:px-[5%] lg:px-[10%] xl:px-[12%] 2xl:px-[17%] md:mx-auto text-[14px] bg-gray-100 relative">
           {children}
         </div>
         <Footer />
-      </main>
-    </>
+      </div>
+    </main>
   );
 }
 

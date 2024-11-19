@@ -53,7 +53,7 @@ function Home() {
       <TopNav />
       <main>
         <NavBar />
-        <div className="min-h-screen bg-black px-3 sm:px-[20px] md:px-[5px] lg:px-[10%] xl:px-[12%] 2xl:px-[17%] md:mx-auto text-[14px]">
+        <div className="min-h-screen bg-black px-3 sm:px-[20px] md:px-[5%] lg:px-[10%] xl:px-[12%] 2xl:px-[17%] md:mx-auto text-[14px]">
           <main className="min-h-screen pt-6 ">
             <section className="first-section flex flex-col xl:flex-row gap-y-[20px] justify-between">
               <div className="w-full xl:w-[62%] xl:h-[400px]">
@@ -329,7 +329,7 @@ function Home() {
             <section className="mt-[20px] bg-white rounded-[7px] w-full">
               <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
                 <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
-                  Phone deals
+                  Top Phone deals
                 </h3>
                 <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
                   <div className="text-center">See all items</div>
@@ -482,6 +482,34 @@ function Home() {
                 })}
               </div>
             </section>
+            <section className="best-discount-section bg-white mt-[20px] rounded-[7px] pb-2">
+              <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+                <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+                  Best Discounts(up to 60% off)
+                </h3>
+                <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
+                  <div className="text-center">See all items</div>
+                  <div>
+                    <HiChevronRight className="text-[16px] font-bold" />
+                  </div>
+                </div>
+              </div>
+              <div className="products p-3 gap-5 w-[100%] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+                {products.map((product) => {
+                  return (
+                    <FlexibleWidthProductCard
+                      {...product}
+                      key={product.productName}
+                    />
+                  );
+                })}
+              </div>
+              {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
+            <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
+              See All Items
+            </button>
+          </div> */}
+            </section>
             <section className="platform-offerings-section mt-[20px] pb-[100px]">
               <section className="flex flex-col gap-y-10 sm:gap-y-20 sm:flex-row flex-wrap bg-white px-4 py-8 rounded-[7px]">
                 <div className="flex flex-col items-center justify-center w-[75%] sm:w-[48%] lg:w-[30%] mx-auto">
@@ -490,7 +518,7 @@ function Home() {
                     alt="user-icon"
                     className="w-[50px] sm:w-[65px]"
                   />
-                  <div className="mt-3 poppins font-normal text-[12px] sm:text-[14px] uppercase">
+                  <div className="mt-3 poppins font-normal text-[12px] sm:text-[14px] uppercase text-center">
                     fast and affordable delivery
                   </div>
                   <div className="mt-1 text-[12px] sm:text-[14px] text-center">
@@ -503,7 +531,7 @@ function Home() {
                     alt="user-icon"
                     className="w-[50px] sm:w-[65px]"
                   />
-                  <div className="mt-3 poppins font-normal text-[12px] sm:text-[14px] uppercase">
+                  <div className="mt-3 poppins font-normal text-[12px] sm:text-[14px] uppercase text-center">
                     24/7 customer support
                   </div>
                   <div className="mt-1 text-[12px] sm:text-[14px] text-center">
@@ -516,7 +544,7 @@ function Home() {
                     alt="user-icon"
                     className="w-[50px] sm:w-[65px]"
                   />
-                  <div className="mt-3 poppins font-normal text-[12px] sm:text-[14px] uppercase">
+                  <div className="mt-3 poppins font-normal text-[12px] sm:text-[14px] uppercase text-center">
                     Money back guaranteed
                   </div>
                   <div className="mt-1 text-[12px] sm:text-[14px] text-center">

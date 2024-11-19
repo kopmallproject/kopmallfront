@@ -10,7 +10,7 @@ const ProductNavigationTabs = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="container hidden lg:block mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="container hidden lg:block mx-auto p-6 bg-white rounded-[7px] shadow-md min-h-[400px]">
       {/* Tabs */}
       <div className="flex border-b">
         {['Overview', 'Description', 'Warranty', 'Reviews'].map((tab) => (
@@ -32,7 +32,9 @@ const ProductNavigationTabs = () => {
       <div className="mt-4 text-sm text-gray-600">
         {activeTab === 'Overview' && (
           <div>
-            <h3 className="font-semibold text-gray-800">Product Overview</h3>
+            <h3 className="font-normal text-gray-800 poppins mb-2">
+              Product Overview
+            </h3>
             <p>
               This is a placeholder for an overview of the product features and
               highlights.
@@ -41,8 +43,8 @@ const ProductNavigationTabs = () => {
         )}
         {activeTab === 'Description' && (
           <div className="flex flex-col gap-6">
-            <table className="min-w-full text-left text-gray-500 border border-gray-300 rounded-md">
-              <tbody>
+            <table className="min-w-full text-left text-gray-500 border border-gray-300 rounded-[7px]">
+              <tbody className="rounded-[7px]">
                 <tr className="border-b">
                   <th className="px-4 py-2 font-medium text-gray-700">
                     Weight
