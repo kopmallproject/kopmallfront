@@ -10,7 +10,10 @@ import Logo from '@/app/assets/images/logo.png';
 
 function Footer() {
   return (
-    <div className="bg-gray-300 w-full px-3 md:px-[10%] xl:px-[12%] py-20 text-gray-600 poppins">
+    <div
+      id="footer"
+      className="bg-gray-300 w-full px-3 md:px-[10%] xl:px-[12%] py-20 text-gray-600 poppins"
+    >
       <div className="w-full gap-6 md:gap-[80px]">
         <div className="logo-wrapper flex flex-row items-center gap-1">
           <Image
