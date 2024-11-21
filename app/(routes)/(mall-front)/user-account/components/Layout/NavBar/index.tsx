@@ -25,7 +25,7 @@ function NavBar() {
           <div className="text-[10px] flex items-center gap-2 px-4 py-2 hover:bg-[#D7D7D780] cursor-pointer">
             <HiOutlineGift />
             <Link
-              href="/user-account/active-orders/123"
+              href="/user-account/active-order/123"
               className="capitalize poppins transition duration-200 ease-in-out transform hover:scale-105"
             >
               Orders

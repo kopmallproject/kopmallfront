@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer utilities {
+  html {
+    scroll-behavior: smooth;
+  }
   .nunito_sans {
     font-family: var(--font-nunito_sans);
   }
