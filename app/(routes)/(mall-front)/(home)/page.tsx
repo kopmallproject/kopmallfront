@@ -46,6 +46,7 @@ import { HiMiniShoppingBag } from 'react-icons/hi2';
 import Footer from '@/app/global-components/layout/Footer';
 import NavBar from '@/app/global-components/layout/Navbar';
 import TopNav from '@/app/global-components/layout/TopNav';
+import Link from 'next/link';
 
 function Home() {
   return (
@@ -473,7 +474,7 @@ function Home() {
                 {officialStores.map((store, index) => {
                   return (
                     <Image
-                      key={index} // Use the array index as the key
+                      key={index}
                       src={store.storeImage}
                       alt="user-icon"
                       className="w-[120px] sm:w-[150px] lg:w-[200px]"
@@ -495,14 +496,29 @@ function Home() {
                 </div>
               </div>
               <div className="products p-3 gap-5 w-[100%] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-                {products.map((product) => {
-                  return (
+                {products.map((product) => (
+                  <Link
+                    key={product.productId}
+                    href={{
+                      pathname: `/products/${product.productId}`, // Dynamic route using the product id
+                      query: {
+                        image: product.productImage.src,
+                        name: product.productName,
+                        price: product.discountedPrice,
+                        originalPrice: product.originalPrice,
+                        discount: product.discount,
+                        rating: product.rating,
+                        isLiked: product.isLiked
+                      }
+                    }}
+                    passHref
+                  >
                     <FlexibleWidthProductCard
                       {...product}
-                      key={product.productName}
+                      key={product.productId}
                     />
-                  );
-                })}
+                  </Link>
+                ))}
               </div>
               {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
             <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">

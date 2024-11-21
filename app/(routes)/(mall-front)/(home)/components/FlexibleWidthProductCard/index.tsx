@@ -11,13 +11,14 @@ import { Rating } from 'react-simple-star-rating';
 import { StaticImageData } from 'next/image';
 
 type ProductSpecs = {
+  productId: string;
   productName: string;
   originalPrice: number;
   discount: number;
   discountedPrice: number;
   rating: number;
   isLiked: boolean;
-  productImage: StaticImageData; // Assuming the path is of type string
+  productImage: StaticImageData;
 };
 
 function ProductCard(product: ProductSpecs) {

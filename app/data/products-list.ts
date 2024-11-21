@@ -11,6 +11,7 @@ import Product10 from '@/app/assets/images/img-19.png';
 
 export const products = [
   {
+    productId: 'p1',
     productName: 'Wireless Bluetooth Earbuds',
     originalPrice: 49.99,
     discount: 10,
@@ -20,6 +21,7 @@ export const products = [
     productImage: Product1
   },
   {
+    productId: 'p2',
     productName: 'Smart Fitness Watch',
     originalPrice: 99.99,
     discount: 15,
@@ -29,6 +31,7 @@ export const products = [
     productImage: Product2
   },
   {
+    productId: 'p3',
     productName: 'Laptop Stand Adjustable',
     originalPrice: 29.99,
     discount: 5,
@@ -38,6 +41,7 @@ export const products = [
     productImage: Product3
   },
   {
+    productId: 'p4',
     productName: 'Portable Charger 10000mAh',
     originalPrice: 24.99,
     discount: 20,
@@ -47,6 +51,7 @@ export const products = [
     productImage: Product4
   },
   {
+    productId: 'p5',
     productName: 'Wireless Mechanical Keyboard',
     originalPrice: 69.99,
     discount: 12,
@@ -56,6 +61,7 @@ export const products = [
     productImage: Product5
   },
   {
+    productId: 'p6',
     productName: 'Noise Cancelling Headphones',
     originalPrice: 129.99,
     discount: 18,
@@ -65,6 +71,7 @@ export const products = [
     productImage: Product6
   },
   {
+    productId: 'p7',
     productName: '4K Action Camera',
     originalPrice: 89.99,
     discount: 25,
@@ -74,6 +81,7 @@ export const products = [
     productImage: Product7
   },
   {
+    productId: 'p8',
     productName: 'Smartphone Tripod Stand',
     originalPrice: 19.99,
     discount: 10,
@@ -83,6 +91,7 @@ export const products = [
     productImage: Product8
   },
   {
+    productId: 'p9',
     productName: 'USB-C Hub Multiport Adapter',
     originalPrice: 34.99,
     discount: 15,
@@ -92,6 +101,7 @@ export const products = [
     productImage: Product9
   },
   {
+    productId: 'p10',
     productName: 'Gaming Mouse RGB',
     originalPrice: 39.99,
     discount: 20,
@@ -101,6 +111,7 @@ export const products = [
     productImage: Product10
   },
   {
+    productId: 'p11',
     productName: 'Portable LED Projector',
     originalPrice: 199.99,
     discount: 10,
@@ -110,6 +121,7 @@ export const products = [
     productImage: Product5
   },
   {
+    productId: 'p12',
     productName: 'Wireless Charging Pad',
     originalPrice: 15.99,
     discount: 5,

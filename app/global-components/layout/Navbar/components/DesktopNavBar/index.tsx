@@ -1,3 +1,4 @@
+'use client';
 import {
   HiOutlineChevronDown,
   HiOutlineMagnifyingGlass,
@@ -57,6 +58,13 @@ const categories = [
 ];
 
 function DesktopNavBar() {
+  const scrollToFooter = () => {
+    const footer = document.getElementById('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="w-full">
       <div className="desktop-nav-bar w-full hidden bg-gray-100 lg:flex items-center justify-between shadow-sm py-[6px] px-3 lg:px-[10%] xl:px-[12%] lg:mx-auto">
@@ -85,20 +93,29 @@ function DesktopNavBar() {
           </div>
         </div>
         <div className="flex items-center gap-8 2xl:gap-12">
-          <div className="flex items-center gap-1">
+          <div
+            onClick={scrollToFooter}
+            className="flex items-center gap-1 cursor-pointer"
+          >
             <HiOutlineQuestionMarkCircle className="h-6 w-6" />
             <span className="text-[14px]">Help</span>
             <HiOutlineChevronDown className="h-4 w-4" />
           </div>
-          <div className="flex items-center gap-1">
+          <Link
+            href="/cart/123"
+            className="flex items-center gap-1 cursor-pointer"
+          >
             <HiOutlineShoppingCart className="h-6 w-6" />
             <span className="text-[14px]">Cart</span>
-          </div>
-          <div className="flex items-center gap-1">
+          </Link>
+          <Link
+            href="/user-account/123"
+            className="flex items-center gap-1 cursor-pointer"
+          >
             <HiOutlineUser className="h-6 w-6" />
             <span className="text-[14px]">Account</span>
             <HiOutlineChevronDown className="h-4 w-4" />
-          </div>
+          </Link>
         </div>
       </div>
       <div className="px-3 lg:px-[10%] xl:px-[12%] lg:mx-auto hidden lg:flex border-b-[1px]">

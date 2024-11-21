@@ -9,7 +9,7 @@ type ImageData = {
 
 interface ProductImageGalleryProps {
   images: ImageData[];
-  mainImage: StaticImageData;
+  mainImage: string | StaticImageData;
 }
 
 const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
@@ -28,6 +28,8 @@ const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
               src={image.src}
               alt={image.alt}
               className="bg-cover w-[100px] sm:w-[120px]"
+              width={120}
+              height={120}
             />
           </div>
         ))}
@@ -37,6 +39,8 @@ const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
           src={mainImage}
           alt="main-product-image"
           className="bg-cover w-[80%] mx-auto"
+          width={400}
+          height={400}
         />
       </div>
     </div>
