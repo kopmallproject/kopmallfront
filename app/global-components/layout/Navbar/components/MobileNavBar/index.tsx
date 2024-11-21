@@ -20,7 +20,7 @@ function MobileNavBar() {
 
   return (
     <>
-      <div className="mobile-nav-bar lg:hidden flex flex-col mb-2 px-3 md:px-[5%] md:mx-auto">
+      <div className="mobile-nav-bar bg-gray-100 lg:hidden flex flex-col px-3 md:px-[5%] md:mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <HiBars3BottomLeft
