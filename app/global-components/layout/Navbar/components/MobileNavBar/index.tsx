@@ -20,12 +20,12 @@ function MobileNavBar() {
 
   return (
     <>
-      <div className="mobile-nav-bar lg:hidden flex flex-col mb-2 px-3 md:px-[5%] md:mx-auto">
+      <div className="mobile-nav-bar bg-gray-100 lg:hidden flex flex-col px-3 md:px-[5%] md:mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <HiBars3BottomLeft
               onClick={handleNavToggle}
-              className="h-8 w-8 cursor-pointer"
+              className="h-6 w-6 cursor-pointer"
             />
             <Link href="/">
               <Image
@@ -36,8 +36,12 @@ function MobileNavBar() {
             </Link>
           </div>
           <div className="flex items-center gap-6">
-            <HiOutlineShoppingCart className="h-6 w-6" />
-            <HiOutlineUser className="h-6 w-6" />
+            <Link href="/cart/123">
+              <HiOutlineShoppingCart className="h-6 w-6" />
+            </Link>
+            <Link href="/user-account/my-account">
+              <HiOutlineUser className="h-6 w-6" />
+            </Link>
           </div>
         </div>
         <div className="search-bar-wrapper flex items-center bg-white border border-gray-300 rounded-md w-full px-2 py-1">

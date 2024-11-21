@@ -54,7 +54,7 @@ function Home() {
       <TopNav />
       <main>
         <NavBar />
-        <div className="min-h-screen bg-black px-3 sm:px-[20px] md:px-[5%] lg:px-[10%] xl:px-[12%] 2xl:px-[17%] md:mx-auto text-[14px]">
+        <div className="min-h-screen bg-gray-100 lg:bg-black px-3 sm:px-[20px] md:px-[5%] lg:px-[10%] xl:px-[12%] 2xl:px-[17%] md:mx-auto text-[14px]">
           <main className="min-h-screen pt-6 ">
             <section className="first-section flex flex-col xl:flex-row gap-y-[20px] justify-between">
               <div className="w-full xl:w-[62%] xl:h-[400px]">

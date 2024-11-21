@@ -9,7 +9,7 @@ function SavedItems() {
       <main className="lg:border w-full flex flex-col lg:w-3/4 text-[14px] lg:shadow-sm lg:rounded-md">
         <div className="w-full flex items-center gap-2 lg:border-b text-sm lg:text-lg lg:p-3">
           <div className="w-full hidden lg:block">
-            <h2 className="poppins font-bold text-sm lg:text-lg">
+            <h2 className="poppins font-normal text-sm lg:text-lg">
               Saved Items
             </h2>
           </div>
@@ -39,7 +39,7 @@ function SavedItems() {
               here.
             </p>
             <div className="flex flex-col mb-6">
-              <button className="text-black font-bold bg-[#FCB349] hover:bg-[#FF9A29] px-4 py-1 text-xs rounded-sm">
+              <button className="text-black font-normal poppins bg-[#FCB349] hover:bg-[#FF9A29] px-4 py-3 text-[14px] rounded-[5px]">
                 Continue Shopping
               </button>
             </div>
