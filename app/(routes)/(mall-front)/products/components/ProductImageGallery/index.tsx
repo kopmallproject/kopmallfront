@@ -39,6 +39,7 @@ const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
           src={mainImage}
           alt="main-product-image"
           className="bg-cover w-[80%] mx-auto"
+          layout="intrinsic"
           width={400}
           height={400}
         />
