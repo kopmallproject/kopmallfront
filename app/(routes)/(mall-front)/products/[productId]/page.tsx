@@ -57,7 +57,7 @@ const OverviewPage: React.FC = () => {
               price={price as string}
               originalPrice={originalPrice as string}
               description="High quality vinyl controller skin for easy install & removal."
-              rating={Number(rating) || 4} // Ensure rating is a number
+              rating={Number(rating) || 4}
               stockStatus={''}
             />
           </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
 import CategoriesPageProductCard from '../../(home)/components/CategoriesPageProductCard';
 import ProductCard from '../../(home)/components/ProductCard';
+import SidebarFilter from '../SideBarFilter';
 import Image from 'next/image';
 import { products } from '@/app/data/products-list';
 import {
@@ -92,8 +93,8 @@ function CategoryPage() {
           </div> */}
           </section>
           <section className="flex lg:gap-4 lg:flex-row lg:justify-between">
-            <section className="categories-menu hidden rounded-[7px] lg:flex lg:w-[22%] 2xl:w-[250px] primary-background-color text-white self-start">
-              <div className="flex flex-col w-full">
+            <section className="categories-menu hidden rounded-[7px] lg:flex w-72 lg:w-[22%] 2xl:w-[250px] primary-background-color text-white self-start">
+              {/* <div className="flex flex-col w-full">
                 <div className="flex cursor-pointer items-center justify-between gap-3 border-b py-3 border-t font-light text-[14px] px-3">
                   <span className="poppins">Phones and tablets</span>
                   <HiChevronRight className="text-[20px]" />
@@ -134,7 +135,8 @@ function CategoryPage() {
                   <span className="poppins">Other Categories</span>
                   <HiChevronRight className="text-[20px]" />
                 </div>
-              </div>
+              </div> */}
+              <SidebarFilter />
             </section>
             <section className="category-products w-full lg:w-[73%] 2xl:w-[76%] bg-white rounded-[7px] pb-[20px]">
               <div className="p-3 main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
