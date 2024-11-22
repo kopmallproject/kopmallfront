@@ -9,7 +9,7 @@ function OverviewMobileTab() {
   return (
     <div
       key="overview-info"
-      className="lg:hidden border flex flex-col justify-center bg-white mb-2"
+      className="lg:hidden border flex flex-col justify-center bg-white mb-2 rounded-[7px] py-2"
     >
       <Disclosure>
         {({ open }: { open: boolean }) => (
@@ -17,7 +17,9 @@ function OverviewMobileTab() {
             {' '}
             <DisclosureButton className="flex w-full items-center justify-between">
               <div className="py-2  flex items-start px-2">
-                <h2 className="mr-2 uppercase text-sm font-bold">Overview</h2>
+                <h2 className="mr-2 uppercase text-[12px] font-medium">
+                  Overview
+                </h2>
               </div>
               <HiChevronUp
                 className={`${open ? 'rotate-180 transform' : 'border-b-0'} default--blue_text mr-2`}
