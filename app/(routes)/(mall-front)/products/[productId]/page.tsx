@@ -61,14 +61,14 @@ const OverviewPage: React.FC = () => {
               stockStatus={''}
             />
           </div>
-          <div className="w-full flex flex-col py-[20px]">
+          <div className="w-full flex flex-col">
             {/* for mobile screens */}
             <OverviewMobileTab />
             <DescriptionMobileTab />
             <WarrantyMobileTab />
             <ReviewMobileTab />
 
-            {/* for large screens */}
+            {/* for large screens - same as all the above 4 in 1 */}
             <ProductNavigationTabs />
           </div>
 

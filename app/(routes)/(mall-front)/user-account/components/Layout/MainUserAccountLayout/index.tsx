@@ -9,7 +9,7 @@ type ChildProp = {
 function MainUserAccountLayout({ children }: ChildProp) {
   return (
     <MainAppLayout>
-      <section className="w-full flex  gap-10 py-[30px] lg:py-[50px]">
+      <section className="w-full flex gap-10 py-4 sm:py-6 md:py-8">
         <NavBar />
         {children}
       </section>

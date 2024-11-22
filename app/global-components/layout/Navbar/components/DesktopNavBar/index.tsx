@@ -84,10 +84,10 @@ function DesktopNavBar() {
               <input
                 type="text"
                 placeholder="Search for products, brands and categories."
-                className="bg-transparent outline-none px-4 py-3 font-medium text-black font w-full text-[14px]"
+                className="bg-transparent outline-none px-4 py-[10px] font-medium text-black font w-full text-[14px]"
               />
             </div>
-            <button className="group bg-[#FCB349] poppins text-black font-normal text-[14px] rounded-md px-5 py-3 transition duration-200 ease-in-out transform hover:scale-105 hover:bg-[#FF9A29]">
+            <button className="group bg-[#FCB349] poppins text-black font-normal text-[14px] rounded-md px-5 py-[10px] transition duration-200 ease-in-out transform hover:scale-105 hover:bg-[#FF9A29]">
               Search
             </button>
           </div>

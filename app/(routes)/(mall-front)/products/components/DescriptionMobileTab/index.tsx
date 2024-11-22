@@ -9,7 +9,7 @@ function DescriptionMobileTab() {
   return (
     <div
       key="overview-info"
-      className="lg:hidden border flex flex-col justify-center bg-white mb-2"
+      className="lg:hidden border flex flex-col justify-center bg-white mb-2 rounded-[7px] py-2"
     >
       <Disclosure>
         {({ open }: { open: boolean }) => (
@@ -17,7 +17,7 @@ function DescriptionMobileTab() {
             {' '}
             <DisclosureButton className="flex w-full items-center justify-between">
               <div className="py-2  flex items-start px-2">
-                <h2 className="mr-2 uppercase text-sm font-bold">
+                <h2 className="mr-2 uppercase text-[12px] font-medium">
                   Description
                 </h2>
               </div>
@@ -28,28 +28,47 @@ function DescriptionMobileTab() {
             <DisclosurePanel className="text-gray-500 p-2">
               <div className="flex flex-col mt-4 gap-6">
                 {/* Specifications Table */}
-                <table className="min-w-full text-sm text-left text-gray-500 border border-gray-300 rounded-md">
-                  <tbody>
-                    <tr className="border-b">
-                      <th className="px-4 py-2 font-medium text-gray-700 whitespace-nowrap border-r">
-                        Weight
-                      </th>
-                      <td className="px-4 py-2">1.5kg</td>
-                    </tr>
-                    <tr className="border-b">
-                      <th className="px-4 py-2 font-medium text-gray-700 whitespace-nowrap border-r">
-                        Colour
-                      </th>
-                      <td className="px-4 py-2">Grey</td>
-                    </tr>
-                    <tr>
-                      <th className="px-4 py-2 font-medium text-gray-700 whitespace-nowrap border-r">
-                        Brand
-                      </th>
-                      <td className="px-4 py-2">Sony</td>
-                    </tr>
-                  </tbody>
-                </table>
+                {/* replaced table with flex-box */}
+                <div className="flex flex-col rounded-[7px] border">
+                  {/* Row 1 */}
+                  <div className="flex border-b">
+                    <div
+                      className="px-4 py-2 font-medium text-gray-700 border-r"
+                      style={{ flex: '0 0 30%' }}
+                    >
+                      Weight
+                    </div>
+                    <div className="px-4 py-2" style={{ flex: '0 0 80%' }}>
+                      1.5kg
+                    </div>
+                  </div>
+
+                  {/* Row 2 */}
+                  <div className="flex border-b">
+                    <div
+                      className="px-4 py-2 font-medium text-gray-700 border-r"
+                      style={{ flex: '0 0 30%' }}
+                    >
+                      Colour
+                    </div>
+                    <div className="px-4 py-2" style={{ flex: '0 0 80%' }}>
+                      Grey
+                    </div>
+                  </div>
+
+                  {/* Row 3 */}
+                  <div className="flex">
+                    <div
+                      className="px-4 py-2 font-medium text-gray-700 border-r"
+                      style={{ flex: '0 0 30%' }}
+                    >
+                      Brand
+                    </div>
+                    <div className="px-4 py-2" style={{ flex: '0 0 80%' }}>
+                      Sony
+                    </div>
+                  </div>
+                </div>
 
                 {/* Product Description Text */}
                 <div className="flex-1 text-sm text-gray-600">
