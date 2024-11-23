@@ -10,6 +10,7 @@ import NavLinks from '../../../MobileNavLinks';
 import Image from 'next/image';
 import Logo from '../../../../../assets/images/logo.png';
 import Link from 'next/link';
+import { categories } from '@/app/data/category-list';
 
 function MobileNavBar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -57,7 +58,7 @@ function MobileNavBar() {
       <div
         className={`${isNavOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-500 ease-in-out fixed top-0 left-0 w-10/12 sm:w-1/2 h-full z-30`}
       >
-        <NavLinks handleNavToggle={handleNavToggle} />
+        <NavLinks handleNavToggle={handleNavToggle} categories={categories} />
       </div>
     </>
   );
