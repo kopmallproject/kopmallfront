@@ -57,11 +57,13 @@ function Home() {
     dots: false,
     infinite: true,
     slidesToShow: 1,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     autoplay: true,
-    speed: 1500,
+    speed: 700,
     // autoplaySpeed: 500,
-    cssEase: 'linear',
+    // cssEase: 'linear',
+    waitForAnimate: false,
+    fade: true,
     arrows: false
   };
   return (
@@ -71,92 +73,60 @@ function Home() {
         <NavBar />
         <div className="min-h-screen bg-gray-100 lg:bg-black px-3 sm:px-[20px] md:px-[5%] lg:px-[10%] xl:px-[12%] 2xl:px-[17%] md:mx-auto text-[14px]">
           <main className="min-h-screen pt-6 ">
-            <Slider {...settings}>
-              <div>
-                {/* This wrapper makes the entire section a single slide */}
-                <section className="first-section overflow-hidden flex flex-col xl:flex-row gap-y-[20px] justify-between">
-                  <div className="w-full xl:w-[62%] xl:h-[400px]">
+            <div>
+              {/* This wrapper makes the entire section a single slide */}
+              <section className="first-section overflow-hidden flex flex-col xl:flex-row gap-y-[20px] justify-between">
+                <div className="w-full xl:w-[62%] xl:h-[400px]">
+                  <Slider {...settings}>
                     <Image
                       src={DummyBanner1}
                       alt="user-icon"
                       className="w-full rounded-[7px] xl:h-[400px]"
                     />
-                  </div>
-                  <div className="w-full xl:w-[35.5%] grid grid-cols-4 xl:grid-cols-2 gap-[20px] top-category-menu text-white xl:h-[400px]">
-                    <div className="xl:h-[190px]">
-                      <Image
-                        src={DummyBanner2}
-                        alt="user-icon"
-                        className="w-full xl:h-[190px] rounded-[7px]"
-                      />
-                    </div>
-                    <div className="xl:h-[190px]">
-                      <Image
-                        src={DummyBanner2}
-                        alt="user-icon"
-                        className="w-full xl:h-[190px] rounded-[7px]"
-                      />
-                    </div>
-                    <div className="xl:h-[190px]">
-                      <Image
-                        src={DummyBanner2}
-                        alt="user-icon"
-                        className="w-full xl:h-[190px] rounded-[7px]"
-                      />
-                    </div>
-                    <div className="xl:h-[190px]">
-                      <Image
-                        src={DummyBanner2}
-                        alt="user-icon"
-                        className="w-full xl:h-[190px] rounded-[7px]"
-                      />
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div>
-                {/* This wrapper makes the entire section a single slide */}
-                <section className="first-section overflow-hidden flex flex-col xl:flex-row gap-y-[20px] justify-between">
-                  <div className="w-full xl:w-[62%] xl:h-[400px]">
                     <Image
-                      src={DummyBanner1}
+                      src={DummyBanner3}
                       alt="user-icon"
                       className="w-full rounded-[7px] xl:h-[400px]"
                     />
+                    <Image
+                      src={DummyBanner4}
+                      alt="user-icon"
+                      className="w-full rounded-[7px] xl:h-[400px]"
+                    />
+                  </Slider>
+                </div>
+                <div className="w-full xl:w-[35.5%] grid grid-cols-4 xl:grid-cols-2 gap-[20px] top-category-menu text-white xl:h-[400px]">
+                  <div className="xl:h-[190px]">
+                    <Image
+                      src={DummyBanner2}
+                      alt="user-icon"
+                      className="w-full xl:h-[190px] rounded-[7px]"
+                    />
                   </div>
-                  <div className="w-full xl:w-[35.5%] grid grid-cols-4 xl:grid-cols-2 gap-[20px] top-category-menu text-white xl:h-[400px]">
-                    <div className="xl:h-[190px]">
-                      <Image
-                        src={DummyBanner2}
-                        alt="user-icon"
-                        className="w-full xl:h-[190px] rounded-[7px]"
-                      />
-                    </div>
-                    <div className="xl:h-[190px]">
-                      <Image
-                        src={DummyBanner2}
-                        alt="user-icon"
-                        className="w-full xl:h-[190px] rounded-[7px]"
-                      />
-                    </div>
-                    <div className="xl:h-[190px]">
-                      <Image
-                        src={DummyBanner2}
-                        alt="user-icon"
-                        className="w-full xl:h-[190px] rounded-[7px]"
-                      />
-                    </div>
-                    <div className="xl:h-[190px]">
-                      <Image
-                        src={DummyBanner2}
-                        alt="user-icon"
-                        className="w-full xl:h-[190px] rounded-[7px]"
-                      />
-                    </div>
+                  <div className="xl:h-[190px]">
+                    <Image
+                      src={DummyBanner2}
+                      alt="user-icon"
+                      className="w-full xl:h-[190px] rounded-[7px]"
+                    />
                   </div>
-                </section>
-              </div>
-            </Slider>
+                  <div className="xl:h-[190px]">
+                    <Image
+                      src={DummyBanner2}
+                      alt="user-icon"
+                      className="w-full xl:h-[190px] rounded-[7px]"
+                    />
+                  </div>
+                  <div className="xl:h-[190px]">
+                    <Image
+                      src={DummyBanner2}
+                      alt="user-icon"
+                      className="w-full xl:h-[190px] rounded-[7px]"
+                    />
+                  </div>
+                </div>
+              </section>
+            </div>
             <section className="mt-[20px] p-3 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[20px] top-category-menu">
               <div className="flex flex-col gap-3">
                 <Image
@@ -343,16 +313,23 @@ function Home() {
               <Slider {...settings}>
                 <div>
                   <Image
-                    src={DummyBanner3}
+                    src={DummyBanner1}
                     alt="user-icon"
-                    className="w-full rounded-[7px]"
+                    className="w-full h-[500px] rounded-[7px]"
                   />
                 </div>
                 <div>
                   <Image
                     src={DummyBanner3}
                     alt="user-icon"
-                    className="w-full rounded-[7px]"
+                    className="w-full h-[500px] rounded-[7px]"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={DummyBanner4}
+                    alt="user-icon"
+                    className="w-full h-[500px] rounded-[7px]"
                   />
                 </div>
               </Slider>
