@@ -61,7 +61,7 @@ function NavLinks({ handleNavToggle, categories }: NavLinksProps) {
               <Link
                 onClick={handleNavToggle}
                 className="border-r border-b"
-                href="/user-account/active-orders"
+                href="/user-account/orders/123"
               >
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineGift className="text-[20px]" />
@@ -73,7 +73,7 @@ function NavLinks({ handleNavToggle, categories }: NavLinksProps) {
               <Link
                 onClick={handleNavToggle}
                 className="border-b"
-                href="/user-account/saved-items"
+                href="/user-account/saved-items/123"
               >
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineHeart className="text-[20px]" />
@@ -85,7 +85,7 @@ function NavLinks({ handleNavToggle, categories }: NavLinksProps) {
               <Link
                 onClick={handleNavToggle}
                 className="border-r"
-                href="/user-account/address-book"
+                href="/user-account/address-book/123"
               >
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineFolderOpen className="text-[20px]" />
