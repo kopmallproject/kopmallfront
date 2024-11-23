@@ -15,14 +15,16 @@ import {
 import { IoWatchOutline } from 'react-icons/io5';
 import { CiApple } from 'react-icons/ci';
 import { GiGamepad } from 'react-icons/gi';
+import { categories } from '@/app/data/category-list';
 import Link from 'next/link';
 import { HiChevronRight } from 'react-icons/hi2';
 
 type NavLinksProps = {
   handleNavToggle: () => void;
+  categories: { id: string; categoryName: string }[];
 };
 
-function NavLinks({ handleNavToggle }: NavLinksProps) {
+function NavLinks({ handleNavToggle, categories }: NavLinksProps) {
   return (
     <nav className="lg:hidden fixed top-0 left-0 right-0 min-h-screen z-30 bg-white">
       <div className="flex flex-col min-h-screen relative h-[500px] overflow-y-auto pb-[100px]">
@@ -39,12 +41,14 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
             <Link
               className="w-1/2 font-normal border border-[#FCB349] rounded-[7px] px-3 py-3 text-[12px] poppins text-center"
               href="/log-in"
+              onClick={handleNavToggle}
             >
               Log in
             </Link>
             <Link
               className="w-1/2 font-normal border border-[#FCB349] rounded-[7px] px-3 py-3 text-[12px] poppins text-center"
               href="/sign-up"
+              onClick={handleNavToggle}
             >
               Sign up
             </Link>
@@ -55,8 +59,9 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
             </div> */}
             <div className="grid grid-cols-2">
               <Link
+                onClick={handleNavToggle}
                 className="border-r border-b"
-                href="/user-account/active-orders"
+                href="/user-account/orders/123"
               >
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineGift className="text-[20px]" />
@@ -65,7 +70,11 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                   </span>
                 </div>
               </Link>
-              <Link className="border-b" href="/user-account/saved-items">
+              <Link
+                onClick={handleNavToggle}
+                className="border-b"
+                href="/user-account/saved-items/123"
+              >
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineHeart className="text-[20px]" />
                   <span className="text-[12px] xsm:text-[14px] font-light poppins">
@@ -73,7 +82,11 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                   </span>
                 </div>
               </Link>
-              <Link className="border-r" href="/user-account/address-book">
+              <Link
+                onClick={handleNavToggle}
+                className="border-r"
+                href="/user-account/address-book/123"
+              >
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineFolderOpen className="text-[20px]" />
                   <span className="text-[12px] xsm:text-[14px] font-light poppins">
@@ -81,7 +94,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                   </span>
                 </div>
               </Link>
-              <Link href="/user-account/my-account">
+              <Link onClick={handleNavToggle} href="/user-account/my-account">
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineBanknotes className="text-[20px]" />
                   <span className="text-[12px] xsm:text-[14px] font-light poppins">
@@ -96,7 +109,28 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               categories
             </h3>
             <div className="flex flex-col mt-4">
+              {categories.map((category) => (
+                <Link
+                  key={category.id}
+                  onClick={handleNavToggle}
+                  href={`/categories/${category.categoryName}`}
+                  className="flex items-center justify-between gap-3 border-b py-3 font-light text-[12px] xsm:text-[14px] px-3"
+                >
+                  <span className="cursor-pointer poppins">
+                    {category.categoryName}
+                  </span>
+                  <HiChevronRight className="text-[20px]" />
+                </Link>
+              ))}
+            </div>
+          </ul>
+          {/* <ul className="flex flex-col border-t">
+            <h3 className="poppins text-lg font-semibold uppercase px-4 pt-4">
+              categories
+            </h3>
+            <div className="flex flex-col mt-4">
               <Link
+                onClick={handleNavToggle}
                 href="/categories/123"
                 className="flex items-center justify-between gap-3 border-b py-3 border-t font-light text-[12px] xsm:text-[14px] px-3"
               >
@@ -106,6 +140,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                 <HiChevronRight className="text-[20px]" />
               </Link>
               <Link
+                onClick={handleNavToggle}
                 href="/categories/123"
                 className="flex items-center justify-between gap-3 border-b py-3 font-light text-[12px] xsm:text-[14px] px-3"
               >
@@ -113,6 +148,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                 <HiChevronRight className="text-[20px]" />
               </Link>
               <Link
+                onClick={handleNavToggle}
                 href="/categories/123"
                 className="flex items-center justify-between gap-3 border-b py-3 font-light text-[12px] xsm:text-[14px] px-3"
               >
@@ -120,6 +156,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                 <HiChevronRight className="text-[20px]" />
               </Link>
               <Link
+                onClick={handleNavToggle}
                 href="/categories/123"
                 className="flex items-center justify-between gap-3 border-b py-3 font-light text-[12px] xsm:text-[14px] px-3"
               >
@@ -127,6 +164,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                 <HiChevronRight className="text-[20px]" />
               </Link>
               <Link
+                onClick={handleNavToggle}
                 href="/categories/123"
                 className="flex items-center justify-between gap-3 border-b py-3 font-light text-[12px] xsm:text-[14px] px-3"
               >
@@ -134,6 +172,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                 <HiChevronRight className="text-[20px]" />
               </Link>
               <Link
+                onClick={handleNavToggle}
                 href="/categories/123"
                 className="flex items-center justify-between gap-3 border-b py-3 font-light text-[12px] xsm:text-[14px] px-3"
               >
@@ -141,6 +180,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                 <HiChevronRight className="text-[20px]" />
               </Link>
               <Link
+                onClick={handleNavToggle}
                 href="/categories/123"
                 className="flex items-center justify-between gap-3 border-b py-3 font-light text-[12px] xsm:text-[14px] px-3"
               >
@@ -148,6 +188,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                 <HiChevronRight className="text-[20px]" />
               </Link>
               <Link
+                onClick={handleNavToggle}
                 href="/categories/123"
                 className="flex items-center justify-between gap-3 border-b py-3 font-light text-[12px] xsm:text-[14px] px-3"
               >
@@ -157,6 +198,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                 <HiChevronRight className="text-[20px]" />
               </Link>
               <Link
+                onClick={handleNavToggle}
                 href="/categories/123"
                 className="flex items-center justify-between gap-3 border-b py-3 font-light text-[12px] xsm:text-[14px] px-3"
               >
@@ -164,6 +206,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                 <HiChevronRight className="text-[20px]" />
               </Link>
               <Link
+                onClick={handleNavToggle}
                 href="/categories/123"
                 className="flex items-center justify-between gap-3 border-b py-3 font-light text-[12px] xsm:text-[14px] px-3"
               >
@@ -171,7 +214,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
                 <HiChevronRight className="text-[20px]" />
               </Link>
             </div>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </nav>
