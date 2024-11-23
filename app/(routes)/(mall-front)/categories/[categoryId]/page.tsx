@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
 import CategoriesPageProductCard from '../../(home)/components/CategoriesPageProductCard';
@@ -33,8 +34,13 @@ import DummyBanner3 from '@/app/assets/images/img-20.png';
 import DummyBanner4 from '@/app/assets/images/img-21.png';
 import DummyBanner5 from '@/app/assets/images/img-22.png';
 import DummyBanner6 from '@/app/assets/images/img-9.png';
+import { usePathname, useRouter } from 'next/navigation';
 
 function CategoryPage() {
+  const router = useRouter();
+  const pathname = usePathname(); // To get the current pathname
+  const categoryName = pathname?.split('/').pop(); // Extract the category name from the URL
+
   return (
     <>
       <div
@@ -67,7 +73,10 @@ function CategoryPage() {
             <span>/</span>
             <span className="capitalize">Categories</span>
             <span>/</span>
-            <span className="capitalize">Gaming</span>
+            {/* <span className="capitalize">Gaming</span> */}
+            <span className="capitalize">
+              {categoryName ? decodeURIComponent(categoryName) : 'Loading...'}
+            </span>
           </section>
           <section className="sponsored-products-section bg-white mt-[20px] mb-[20px] sm:mb-[40px] rounded-[7px] pb-2">
             <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
@@ -141,7 +150,10 @@ function CategoryPage() {
             <section className="category-products w-full lg:w-[73%] 2xl:w-[76%] bg-white rounded-[7px] pb-[20px]">
               <div className="p-3 main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
                 <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
-                  Category: Gaming
+                  Category:{' '}
+                  {categoryName
+                    ? decodeURIComponent(categoryName)
+                    : 'Loading...'}
                 </h3>
                 <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
                   <div className="text-center">Load more items</div>
