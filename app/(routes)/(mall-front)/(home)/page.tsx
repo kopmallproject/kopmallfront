@@ -104,7 +104,7 @@ function Home() {
                     />
                   </Slider>
                 </div>
-                <div className="w-full xl:w-[35.5%] grid grid-cols-4 xl:grid-cols-2 gap-[20px] top-category-menu text-white xl:h-[400px]">
+                <div className="w-full xl:w-[35.5%] grid grid-cols-4 xl:grid-cols-2 gap-[15px] top-category-menu text-white xl:h-[400px]">
                   <div className="xl:h-[190px]">
                     <Image
                       src={Dummygif7}
@@ -121,14 +121,14 @@ function Home() {
                   </div>
                   <div className="xl:h-[190px]">
                     <Image
-                      src={DummyBanner2}
+                      src={DummyBanner6}
                       alt="user-icon"
                       className="w-full xl:h-[190px] rounded-[7px]"
                     />
                   </div>
                   <div className="xl:h-[190px]">
                     <Image
-                      src={Dummygif8}
+                      src={DummyBanner5}
                       alt="user-icon"
                       className="w-full xl:h-[190px] rounded-[7px]"
                     />
@@ -136,10 +136,10 @@ function Home() {
                 </div>
               </section>
             </div>
-            <section className="mt-[20px] p-3 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[20px] top-category-menu">
+            <section className="mt-[20px] p-3 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[7px] top-category-menu">
               <div className="flex flex-col gap-3">
                 <Image
-                  src={Dummygif9}
+                  src={DummyBanner2}
                   alt="user-icon"
                   className="w-full h-full rounded-[7px]"
                 />
@@ -159,7 +159,7 @@ function Home() {
               </div>
               <div className="flex flex-col h-full gap-3">
                 <Image
-                  src={Dummygif10}
+                  src={DummyBanner5}
                   alt="user-icon"
                   className="w-full h-full rounded-[7px]"
                 />
@@ -169,7 +169,7 @@ function Home() {
               </div>
               <div className="flex flex-col gap-3">
                 <Image
-                  src={DummyBanner2}
+                  src={DummyBanner6}
                   alt="user-icon"
                   className="w-full rounded-[7px]"
                 />
