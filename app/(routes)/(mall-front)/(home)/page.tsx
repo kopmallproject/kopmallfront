@@ -4,6 +4,15 @@ import React from 'react';
 import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
 import Image from 'next/image';
 import DummyBanner1 from '@/app/assets/images/img-8.png';
+import DummyBanner52 from '@/app/assets/images/52.png';
+import Dummygif9 from '@/app/assets/images/9.gif';
+import Dummygif10 from '@/app/assets/images/10.gif';
+import Dummygif7 from '@/app/assets/images/7.gif';
+import Dummygif8 from '@/app/assets/images/8.gif';
+import DummyBanner53 from '@/app/assets/images/53.png';
+import DummyGif1 from '@/app/assets/images/3rd.gif';
+import DummyGif2 from '@/app/assets/images/4th.gif';
+import DummyGif3 from '@/app/assets/images/5th.gif';
 import DummyBanner2 from '@/app/assets/images/img-9.png';
 import DummyBanner3 from '@/app/assets/images/img-20.png';
 import DummyBanner4 from '@/app/assets/images/img-21.png';
@@ -79,17 +88,17 @@ function Home() {
                 <div className="w-full xl:w-[62%] xl:h-[400px]">
                   <Slider {...settings}>
                     <Image
-                      src={DummyBanner1}
+                      src={DummyGif1}
                       alt="user-icon"
                       className="w-full rounded-[7px] xl:h-[400px]"
                     />
                     <Image
-                      src={DummyBanner3}
+                      src={DummyGif2}
                       alt="user-icon"
                       className="w-full rounded-[7px] xl:h-[400px]"
                     />
                     <Image
-                      src={DummyBanner4}
+                      src={DummyGif3}
                       alt="user-icon"
                       className="w-full rounded-[7px] xl:h-[400px]"
                     />
@@ -98,7 +107,7 @@ function Home() {
                 <div className="w-full xl:w-[35.5%] grid grid-cols-4 xl:grid-cols-2 gap-[20px] top-category-menu text-white xl:h-[400px]">
                   <div className="xl:h-[190px]">
                     <Image
-                      src={DummyBanner2}
+                      src={Dummygif7}
                       alt="user-icon"
                       className="w-full xl:h-[190px] rounded-[7px]"
                     />
@@ -119,7 +128,7 @@ function Home() {
                   </div>
                   <div className="xl:h-[190px]">
                     <Image
-                      src={DummyBanner2}
+                      src={Dummygif8}
                       alt="user-icon"
                       className="w-full xl:h-[190px] rounded-[7px]"
                     />
@@ -130,9 +139,9 @@ function Home() {
             <section className="mt-[20px] p-3 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[20px] top-category-menu">
               <div className="flex flex-col gap-3">
                 <Image
-                  src={DummyBanner2}
+                  src={Dummygif9}
                   alt="user-icon"
-                  className="w-full rounded-[7px]"
+                  className="w-full h-full rounded-[7px]"
                 />
                 <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
                   Up to 20% Off
@@ -148,14 +157,14 @@ function Home() {
                   TV & Audio deals
                 </span>
               </div>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col h-full gap-3">
                 <Image
-                  src={DummyBanner2}
+                  src={Dummygif10}
                   alt="user-icon"
-                  className="w-full rounded-[7px]"
+                  className="w-full h-full rounded-[7px]"
                 />
                 <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
-                  Phone & tablet deals
+                  Phone
                 </span>
               </div>
               <div className="flex flex-col gap-3">
@@ -227,9 +236,9 @@ function Home() {
             <section className="mt-[20px] p-3 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[20px] top-category-menu">
               <div className="flex flex-col gap-3">
                 <Image
-                  src={DummyBanner2}
+                  src={Dummygif9}
                   alt="user-icon"
-                  className="w-full rounded-[7px]"
+                  className="w-full h-full rounded-[7px]"
                 />
                 <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
                   Up to 20% Off
@@ -245,14 +254,14 @@ function Home() {
                   TV & Audio deals
                 </span>
               </div>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col h-full gap-3">
                 <Image
-                  src={DummyBanner2}
+                  src={Dummygif10}
                   alt="user-icon"
-                  className="w-full rounded-[7px]"
+                  className="w-full h-full rounded-[7px]"
                 />
                 <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
-                  Phone & tablet deals
+                  Phone
                 </span>
               </div>
               <div className="flex flex-col gap-3">
@@ -313,14 +322,14 @@ function Home() {
               <Slider {...settings}>
                 <div>
                   <Image
-                    src={DummyBanner1}
+                    src={DummyBanner52}
                     alt="user-icon"
                     className="w-full h-[500px] rounded-[7px]"
                   />
                 </div>
                 <div>
                   <Image
-                    src={DummyBanner3}
+                    src={DummyBanner53}
                     alt="user-icon"
                     className="w-full h-[500px] rounded-[7px]"
                   />

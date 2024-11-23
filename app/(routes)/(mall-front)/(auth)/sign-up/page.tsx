@@ -16,7 +16,7 @@ const SignUp: React.FC = () => {
     <>
       <section className="hidden lg:flex justify-center items-center bg-white w-full lg:w-4/12 2xl:w-3/12 h-screen">
         <div
-          className="flex flex-col items-center justify-center gap-7 log-in-page-side-sales-image"
+          className="flex flex-col items-center justify-center gap-7 sign-up-page-side-sales-image"
           // style={{
           //   backgroundImage: `url(${SideSalesImage})`,
           //   backgroundSize: 'cover',
