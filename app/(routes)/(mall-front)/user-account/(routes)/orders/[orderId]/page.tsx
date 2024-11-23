@@ -7,16 +7,17 @@ import { RootState } from '@/app/rtk-base/store';
 import { setActiveTab } from '@/app/rtk-base/slices/tab-slice';
 import ActiveOrdersComponent from '../components/ActiveOrders';
 import ClosedOrders from '../components/ClosedOrders';
+import CompletedOrders from '../components/CompletedOrders';
 function ActiveOrders() {
   const activeTab = useAppSelector((state: RootState) => state.tab.activeTab);
   const dispatch = useAppDispatch();
   return (
     <>
       <main className="bg-white pb-[100px] p-3 md:p-4 lg:pb-[100px] w-full flex flex-col lg:w-3/4 min-h-[150px] text-[14px] rounded-[7px]">
-        <div className="w-full lg:border-b">
+        <div className="w-full">
           <h2 className="poppins font-medium text-[16px] lg:pb-3">Orders</h2>
         </div>
-        <div className="text-xs mt-3 lg:mt-0 lg:pt-3 pb-3 flex gap-8 text-slate-400">
+        <div className="text-xs mt-3 lg:mt-0 lg:pt-3 pb-3 flex justify-between lg:gap-8 lg:justify-start  text-slate-400">
           {/* <Link
             href="/user-account/active-order"
             className="poppins hover:text-[#FCB349] text-xs hover:border-b-2 hover:border-[#FCB349] h-[20px]"
@@ -31,31 +32,42 @@ function ActiveOrders() {
           </Link> */}
           <button
             onClick={() => dispatch(setActiveTab('Overview'))}
-            className={`text-center px-4 py-1 font-semibold ${
+            className={`w-1/3 text-center pr-4 py-1 font-semibold ${
               activeTab === 'Overview'
                 ? 'text-[#FDAF3E]'
                 : 'text-gray-700 border-transparent'
             } border-b-2 hover:border-[#FDAF3E] focus:outline-none`}
           >
-            Active
+            Active Orders (2)
           </button>
           <button
             onClick={() => dispatch(setActiveTab('Closed'))}
-            className={`text-center px-4 py-1 font-semibold ${
+            className={`w-1/3 text-center px-4 py-1 font-semibold ${
               activeTab === 'Closed'
                 ? 'text-[#FDAF3E]'
                 : 'text-gray-700 border-transparent'
             } border-b-2 hover:border-[#FDAF3E] focus:outline-none`}
           >
-            Closed
+            Closed Orders(7)
+          </button>
+          <button
+            onClick={() => dispatch(setActiveTab('Successful'))}
+            className={`w-1/3 text-center px-4 py-1 font-semibold ${
+              activeTab === 'Successful'
+                ? 'text-[#FDAF3E]'
+                : 'text-gray-700 border-transparent'
+            } border-b-2 hover:border-[#FDAF3E] focus:outline-none`}
+          >
+            Successful Orders(17)
           </button>
           <button className="hover:text-[#FCB349] hover:border-b-2 hover:border-[#FCB349]"></button>
         </div>
         <div className="flex flex-col gap-3 lg:gap-4 w-full">
           {/* Tab Content */}
-          <div className="w-full">
+          <div className="w-full pt-3">
             {activeTab === 'Overview' && <ActiveOrdersComponent />}
             {activeTab === 'Closed' && <ClosedOrders />}
+            {activeTab === 'Successful' && <CompletedOrders />}
           </div>
           {/* <div className="lg:mt-0 w-full flex flex-col gap-4 text-[14px]">
             <div className="w-full border-[1px] rounded-[7px] gap-3 flex flex-col sm:flex-row sm:justify-between sm:items-start p-2 xm:px-4">

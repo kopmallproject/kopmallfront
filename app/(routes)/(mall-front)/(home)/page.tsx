@@ -313,23 +313,9 @@ function Home() {
               <Slider {...settings}>
                 <div>
                   <Image
-                    src={DummyBanner1}
-                    alt="user-icon"
-                    className="w-full h-[500px] rounded-[7px]"
-                  />
-                </div>
-                <div>
-                  <Image
                     src={DummyBanner3}
                     alt="user-icon"
-                    className="w-full h-[500px] rounded-[7px]"
-                  />
-                </div>
-                <div>
-                  <Image
-                    src={DummyBanner4}
-                    alt="user-icon"
-                    className="w-full h-[500px] rounded-[7px]"
+                    className="w-full rounded-[7px]"
                   />
                 </div>
               </Slider>
