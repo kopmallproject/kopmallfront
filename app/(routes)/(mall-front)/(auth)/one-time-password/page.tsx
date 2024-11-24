@@ -45,32 +45,32 @@ const OneTimePassword: React.FC = () => {
           </div>
           <div className="w-full mt-4">
             <div className="input-section flex flex-col w-full">
-              <section className="w-full flex items-center justify-center pt-[30px] pb-[50px] gap-10">
+              <section className="w-full flex items-center justify-center pt-[20px] pb-[35px] gap-10">
                 <input
                   type=""
                   maxLength={1}
-                  className="w-10 h-10  text-center text-black border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-10 h-10  text-center text-black border-[1px] border-gray-300 rounded-md focus:border-blue-500 focus:outline-none text-lg"
                 />
                 <input
                   type=""
                   maxLength={1}
-                  className="w-10 h-10 text-center text-black border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-10 h-10 text-center text-black border-[1px] border-gray-300 rounded-md focus:border-blue-500 focus:outline-none text-lg"
                 />
                 <input
                   type=""
                   maxLength={1}
-                  className="w-10 h-10 text-center text-black border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-10 h-10 text-center text-black border-[1px] border-gray-300 rounded-md focus:border-blue-500 focus:outline-none text-lg"
                 />
                 <input
                   type=""
                   maxLength={1}
-                  className="w-10 h-10 text-center text-black border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-10 h-10 text-center text-black border-[1px] border-gray-300 rounded-md focus:border-blue-500 focus:outline-none text-lg"
                 />
               </section>
               <section className="submit-button-wrapper poppins mb-3 w-full primary-background-color hover:bg-[#FCB349] border-[1px]-[#FCB349] border-[1px] rounded-[5px]">
                 <Link
                   href="/create-new-password"
-                  className="flex justify-center w-full px-4 submit py-3 font-normal text-base text-[#FCB349] hover:text-white capitalize text-center"
+                  className="flex justify-center w-full px-4 submit py-3 font-normal text-[14px] text-[#FCB349] hover:text-white capitalize text-center"
                 >
                   reset password
                 </Link>

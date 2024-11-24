@@ -33,7 +33,7 @@ const SignUp: React.FC = () => {
           </p> */}
         </div>
       </section>
-      <section className="w-full py-[100px] lg:py-0 flex flex-col justify-center lg:w-8/12 2xl:w-9/12">
+      <section className="w-full py-[75px] lg:py-0 flex flex-col justify-center lg:w-8/12 2xl:w-9/12">
         <form className="flex flex-col w-full px-3 sm:mx-auto sm:w-[70%] md:w-[500px] text-slate-900">
           <div className="poppins flex flex-col gap-4 text-center">
             <div className="flex items-center justify-center poppins uppercase font-bold text-xl">
@@ -75,45 +75,45 @@ const SignUp: React.FC = () => {
           </div>
           <div className="w-full mt-4">
             <div className="input-section flex flex-col w-full">
-              <section className="flex items-center mb-8">
+              <section className="flex items-center mb-5">
                 <input
                   type="text"
                   name="firstName"
                   placeholder="First Name"
-                  className="flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
+                  className="text-[14px] flex-1 focus:outline-none px-3 py-[10px] bg-white border-gray-500 border-[1px] rounded-[5px]"
                 />
               </section>
-              <section className="flex items-center mb-8">
+              <section className="flex items-center mb-5">
                 <input
                   type="text"
                   name="lastName"
                   placeholder="Last Name"
-                  className="flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
+                  className="text-[14px] flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
                 />
               </section>
-              <section className="flex items-center mb-8">
+              <section className="flex items-center mb-5">
                 <input
                   type="email"
                   name="email"
                   placeholder="Enter email"
-                  className="flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
+                  className="text-[14px] flex-1 focus:outline-none px-3 py-[10px] bg-white border-gray-500 border-[1px] rounded-[5px]"
                 />
               </section>
-              <section className="flex items-center gap-4 mb-8  rounded-[5px]">
+              <section className="flex items-center gap-4 mb-5 rounded-[5px]">
                 <select
                   name="countryCode"
-                  className="flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
+                  className="text-[14px] flex-1 focus:outline-none px-3 py-[10px] bg-white border-gray-500 border-[1px] rounded-[5px]"
                 >
-                  <option className="text-[12px]" value="+234">
+                  <option className="text-[14px]" value="+234">
                     NG +234
                   </option>
-                  <option className="text-[12px]" value="+1">
+                  <option className="text-[14px]" value="+1">
                     US +1
                   </option>
-                  <option className="text-[12px]" value="+44">
+                  <option className="text-[14px]" value="+44">
                     CH +44
                   </option>
-                  <option className="text-[12px]" value="+91">
+                  <option className="text-[14px]" value="+91">
                     KOR +91
                   </option>
                 </select>
@@ -121,13 +121,13 @@ const SignUp: React.FC = () => {
                   type=""
                   name="phoneNumber"
                   placeholder="Enter your number"
-                  className="flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
+                  className="text-[14px] flex-1 focus:outline-none px-3 py-[10px] bg-white border-gray-500 border-[1px] rounded-[5px]"
                 />
               </section>
 
-              <section className="flex items-center border-[1px] border-gray-500 rounded-[5px] bg-white px-3 py-3 mb-3">
+              <section className="flex items-center border-[1px] border-gray-500 rounded-[5px] bg-white px-3 py-[10px] mb-3">
                 <input
-                  className="flex-1 focus:outline-none bg-white"
+                  className="text-[14px] flex-1 focus:outline-none bg-white"
                   type={showPassword ? 'text' : 'password'}
                   placeholder="Password"
                   id="password"
@@ -143,10 +143,10 @@ const SignUp: React.FC = () => {
                   )}
                 </div>
               </section>
-              <section className="submit-button-wrapper poppins mb-3 w-full primary-background-color hover:bg-[#FCB349] border-[1px]-[#FCB349] border-[1px] rounded-[5px]">
+              <section className="submit-button-wrapper poppins mb-3 mt-3 w-full primary-background-color hover:bg-[#FCB349] border-[1px]-[#FCB349] border-[1px] rounded-[5px]">
                 <Link
                   href="/"
-                  className="flex justify-center w-full px-4 submit py-3 font-normal text-base text-[#FCB349] hover:text-white capitalize text-center"
+                  className="flex justify-center w-full px-4 submit py-3 font-normal text-[14px] text-[#FCB349] hover:text-white capitalize text-center"
                 >
                   sign up
                 </Link>

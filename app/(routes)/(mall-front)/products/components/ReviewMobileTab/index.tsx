@@ -10,22 +10,24 @@ function ReviewMobileTab() {
   return (
     <div
       key="overview-info"
-      className="lg:hidden border flex flex-col justify-center bg-white mb-2"
+      className="lg:hidden border flex flex-col justify-center bg-white py-2 rounded-[7px]"
     >
       <Disclosure>
         {({ open }: { open: boolean }) => (
           <div>
             {' '}
             <DisclosureButton className="flex w-full items-center justify-between">
-              <div className="py-2  flex items-start px-2">
-                <h2 className="mr-2 uppercase text-sm font-bold">Review</h2>
+              <div className="py-2 flex items-start px-2">
+                <h2 className="mr-2 uppercase text-[12px] font-medium">
+                  Review
+                </h2>
               </div>
               <HiChevronUp
                 className={`${open ? 'rotate-180 transform' : 'border-b-0'} default--blue_text mr-2`}
               />
             </DisclosureButton>
             <DisclosurePanel className="text-gray-500 p-2">
-              <div className="container mx-auto p-4 md:p-6 bg-white rounded-lg shadow-md w-full">
+              <div className="container mx-auto p-4 bg-white w-full">
                 {/* Overall Rating */}
                 <div className="flex flex-col sm:flex-row items-center sm:space-x-4 text-center sm:text-left">
                   <div className="flex items-center space-x-2 sm:space-x-4">
@@ -39,7 +41,7 @@ function ReviewMobileTab() {
                 </div>
 
                 {/* Rating Distribution */}
-                <div className="mt-4 space-y-2">
+                <div className="mt-4 space-y-2 border-b pb-5">
                   {[5, 4, 3, 2, 1].map((star) => (
                     <div key={star} className="flex items-center text-sm">
                       <p className="text-gray-500 w-10 sm:w-12 text-center sm:text-left">
@@ -67,7 +69,9 @@ function ReviewMobileTab() {
                           W
                         </div>
                         <div>
-                          <p className="font-semibold">Wave</p>
+                          <p className="font-medium poppins text-[12px]">
+                            Wave
+                          </p>
                           <p className="text-xs text-gray-500">June 25, 2024</p>
                         </div>
                       </div>

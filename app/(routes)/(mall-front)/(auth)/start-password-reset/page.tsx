@@ -45,18 +45,18 @@ const StartPasswordReset: React.FC = () => {
           </div>
           <div className="w-full mt-4">
             <div className="input-section flex flex-col w-full">
-              <section className="flex items-center mb-8">
+              <section className="flex items-center mb-5">
                 <input
                   type="email"
                   name="email"
                   placeholder="Enter email"
-                  className="flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
+                  className="text-[14px] flex-1 focus:outline-none px-3 py-3 bg-white border-gray-500 border-[1px] rounded-[5px]"
                 />
               </section>
               <section className="submit-button-wrapper poppins mb-3 w-full primary-background-color hover:bg-[#FCB349] border-[1px]-[#FCB349] border-[1px] rounded-[5px]">
                 <Link
                   href="/one-time-password"
-                  className="flex justify-center w-full px-4 submit py-3 font-normal text-base text-[#FCB349] hover:text-white capitalize text-center"
+                  className="text-[14px] flex justify-center w-full px-4 submit py-3 font-normal text-[#FCB349] hover:text-white capitalize text-center"
                 >
                   reset password
                 </Link>

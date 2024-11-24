@@ -4,27 +4,41 @@ import { RiArrowGoBackLine, RiTruckLine } from 'react-icons/ri';
 import { Rating } from 'react-simple-star-rating';
 import QuantitySelector from '../QuantitySelector';
 
-const ProductDescription: React.FC = () => {
+interface ProductDescriptionProps {
+  name: string;
+  price: string;
+  originalPrice: string;
+  description: string;
+  rating: number;
+  stockStatus: string;
+}
+
+const ProductDescription: React.FC<ProductDescriptionProps> = ({
+  name,
+  price,
+  originalPrice,
+  description,
+  rating,
+  stockStatus
+}) => {
   return (
     <div className="product-description w-full lg:w-3/5 bg-white p-3 rounded-[7px]">
-      <h1 className="poppins text-2xl font-normal mb-2">
-        Havic HV G-92 Gamepad
-      </h1>
+      <h1 className="poppins text-2xl font-normal mb-2">{name}</h1>
       <div className="flex items-center gap-4">
         <div className="rating">
-          <Rating size={20} initialValue={4} />
+          <Rating size={20} initialValue={rating} />
         </div>
         <span className="text-gray-500">(150 Reviews)</span>
-        <span className="text-green-600 font-semibold">In Stock</span>
+        <span
+          className={`font-semibold ${stockStatus === 'In Stock' ? 'text-green-600' : 'text-red-600'}`}
+        >
+          {stockStatus}
+        </span>
       </div>
       <p className="text-[16px] sm:text-2xl font-bold text-gray-800 mt-4">
-        $192.00
+        {price}
       </p>
-      <p className="text-gray-600 mt-4 text-[14px]">
-        PlayStation 5 Controller Skin High quality vinyl with air channel
-        adhesive for easy bubble-free install & mess-free removal. Pressure
-        sensitive.
-      </p>
+      <p className="text-gray-600 mt-4 text-[14px]">{description}</p>
       <QuantitySelector />
       <div className="mt-6 flex flex-col gap-4 md:flex-row lg:flex-col">
         <div className="flex items-center border border-gray-300 px-4 py-3 rounded-[5px]">

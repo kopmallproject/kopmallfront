@@ -14,6 +14,10 @@ import OfferingsImage2 from '@/app/assets/images/img-37.png';
 import OfferingsImage3 from '@/app/assets/images/img-38.png';
 import BannerX from '@/app/assets/images/img-39.png';
 import BannerY from '@/app/assets/images/img-40.png';
+// @ts-ignore
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 import {
   HiOutlineXMark,
@@ -46,8 +50,22 @@ import { HiMiniShoppingBag } from 'react-icons/hi2';
 import Footer from '@/app/global-components/layout/Footer';
 import NavBar from '@/app/global-components/layout/Navbar';
 import TopNav from '@/app/global-components/layout/TopNav';
+import Link from 'next/link';
 
 function Home() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 700,
+    // autoplaySpeed: 500,
+    // cssEase: 'linear',
+    waitForAnimate: false,
+    fade: true,
+    arrows: false
+  };
   return (
     <>
       <TopNav />
@@ -55,45 +73,60 @@ function Home() {
         <NavBar />
         <div className="min-h-screen bg-gray-100 lg:bg-black px-3 sm:px-[20px] md:px-[5%] lg:px-[10%] xl:px-[12%] 2xl:px-[17%] md:mx-auto text-[14px]">
           <main className="min-h-screen pt-6 ">
-            <section className="first-section flex flex-col xl:flex-row gap-y-[20px] justify-between">
-              <div className="w-full xl:w-[62%] xl:h-[400px]">
-                <Image
-                  src={DummyBanner1}
-                  alt="user-icon"
-                  className="w-full rounded-[7px] xl:h-[400px]"
-                />
-              </div>
-              <div className="w-full xl:w-[35.5%] grid grid-cols-4 xl:grid-cols-2 gap-[20px] top-category-menu text-white xl:h-[400px]">
-                <div className="xl:h-[190px]">
-                  <Image
-                    src={DummyBanner2}
-                    alt="user-icon"
-                    className="w-full xl:h-[190px] rounded-[7px]"
-                  />
+            <div>
+              {/* This wrapper makes the entire section a single slide */}
+              <section className="first-section overflow-hidden flex flex-col xl:flex-row gap-y-[20px] justify-between">
+                <div className="w-full xl:w-[62%] xl:h-[400px]">
+                  <Slider {...settings}>
+                    <Image
+                      src={DummyBanner1}
+                      alt="user-icon"
+                      className="w-full rounded-[7px] xl:h-[400px]"
+                    />
+                    <Image
+                      src={DummyBanner3}
+                      alt="user-icon"
+                      className="w-full rounded-[7px] xl:h-[400px]"
+                    />
+                    <Image
+                      src={DummyBanner4}
+                      alt="user-icon"
+                      className="w-full rounded-[7px] xl:h-[400px]"
+                    />
+                  </Slider>
                 </div>
-                <div className="xl:h-[190px]">
-                  <Image
-                    src={DummyBanner2}
-                    alt="user-icon"
-                    className="w-full xl:h-[190px] rounded-[7px]"
-                  />
+                <div className="w-full xl:w-[35.5%] grid grid-cols-4 xl:grid-cols-2 gap-[20px] top-category-menu text-white xl:h-[400px]">
+                  <div className="xl:h-[190px]">
+                    <Image
+                      src={DummyBanner2}
+                      alt="user-icon"
+                      className="w-full xl:h-[190px] rounded-[7px]"
+                    />
+                  </div>
+                  <div className="xl:h-[190px]">
+                    <Image
+                      src={DummyBanner2}
+                      alt="user-icon"
+                      className="w-full xl:h-[190px] rounded-[7px]"
+                    />
+                  </div>
+                  <div className="xl:h-[190px]">
+                    <Image
+                      src={DummyBanner2}
+                      alt="user-icon"
+                      className="w-full xl:h-[190px] rounded-[7px]"
+                    />
+                  </div>
+                  <div className="xl:h-[190px]">
+                    <Image
+                      src={DummyBanner2}
+                      alt="user-icon"
+                      className="w-full xl:h-[190px] rounded-[7px]"
+                    />
+                  </div>
                 </div>
-                <div className="xl:h-[190px]">
-                  <Image
-                    src={DummyBanner2}
-                    alt="user-icon"
-                    className="w-full xl:h-[190px] rounded-[7px]"
-                  />
-                </div>
-                <div className="xl:h-[190px]">
-                  <Image
-                    src={DummyBanner2}
-                    alt="user-icon"
-                    className="w-full xl:h-[190px] rounded-[7px]"
-                  />
-                </div>
-              </div>
-            </section>
+              </section>
+            </div>
             <section className="mt-[20px] p-3 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[20px] top-category-menu">
               <div className="flex flex-col gap-3">
                 <Image
@@ -277,11 +310,15 @@ function Home() {
           </div> */}
             </section>
             <section className="best-selling w-full mt-[20px] sm:mt-20px]">
-              <Image
-                src={DummyBanner3}
-                alt="user-icon"
-                className="w-full rounded-[7px]"
-              />
+              <Slider {...settings}>
+                <div>
+                  <Image
+                    src={DummyBanner3}
+                    alt="user-icon"
+                    className="w-full rounded-[7px]"
+                  />
+                </div>
+              </Slider>
             </section>
             {/* <section className="new-arrivals-section mt-[20px] sm:mt-[20px]">
           <div className="main-header-wrapper py-4 px-3 border-b-[1px] flex flex-row justify-between items-center">
@@ -473,7 +510,7 @@ function Home() {
                 {officialStores.map((store, index) => {
                   return (
                     <Image
-                      key={index} // Use the array index as the key
+                      key={index}
                       src={store.storeImage}
                       alt="user-icon"
                       className="w-[120px] sm:w-[150px] lg:w-[200px]"
@@ -495,14 +532,29 @@ function Home() {
                 </div>
               </div>
               <div className="products p-3 gap-5 w-[100%] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-                {products.map((product) => {
-                  return (
+                {products.map((product) => (
+                  <Link
+                    key={product.productId}
+                    href={{
+                      pathname: `/products/${product.productId}`, // Dynamic route using the product id
+                      query: {
+                        image: product.productImage.src,
+                        name: product.productName,
+                        price: product.discountedPrice,
+                        originalPrice: product.originalPrice,
+                        discount: product.discount,
+                        rating: product.rating,
+                        isLiked: product.isLiked
+                      }
+                    }}
+                    passHref
+                  >
                     <FlexibleWidthProductCard
                       {...product}
-                      key={product.productName}
+                      key={product.productId}
                     />
-                  );
-                })}
+                  </Link>
+                ))}
               </div>
               {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
             <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">

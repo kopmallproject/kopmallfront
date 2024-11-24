@@ -3,6 +3,7 @@ import React from 'react';
 import dummyAvatar from '@/app/assets/images/img-17.png';
 import RelatedProducts from '@/app/(routes)/(mall-front)/products/components/RelatedProducts';
 import { products } from '@/app/data/products-list';
+import { useParams, useSearchParams } from 'next/navigation';
 import DummyBanner1 from '@/app/assets/images/img-23.png';
 import DummyBanner2 from '@/app/assets/images/img-9.png';
 import DummyBanner3 from '@/app/assets/images/img-20.png';
@@ -21,11 +22,23 @@ import ReviewMobileTab from '@/app/(routes)/(mall-front)/products/components/Rev
 import ProductNavigationTabs from '@/app/(routes)/(mall-front)/products/components/ProductNavigationTabs';
 
 const OverviewPage: React.FC = () => {
+  const params = useParams();
+  const searchParams = useSearchParams();
+
+  const productId = params?.productId;
+  const name = searchParams.get('name');
+  const price = searchParams.get('price');
+  const originalPrice = searchParams.get('originalPrice');
+  const discount = searchParams.get('discount');
+  const rating = searchParams.get('rating');
+  const image = searchParams.get('image') || dummyAvatar;
+
+  const mainImage = image as string;
   const images = [
-    { src: dummyAvatar, alt: 'user-icon-1' },
-    { src: dummyAvatar, alt: 'user-icon-2' },
-    { src: dummyAvatar, alt: 'user-icon-3' },
-    { src: dummyAvatar, alt: 'user-icon-4' }
+    { src: mainImage, alt: 'user-icon-1' },
+    { src: mainImage, alt: 'user-icon-1' },
+    { src: mainImage, alt: 'user-icon-1' },
+    { src: mainImage, alt: 'user-icon-1' }
   ];
 
   return (
@@ -35,20 +48,27 @@ const OverviewPage: React.FC = () => {
           <div className="flex gap-2 text-xs cursor-pointer">
             <span>Account / </span>
             <span>Gaming / </span>
-            <span className="font-semibold">Havic HV G-92 Gamepad</span>
+            <span className="font-semibold">{name}</span>
           </div>
           <div className="w-full flex flex-col lg:flex-row justify-between gap-5 py-[20px]">
-            <ProductImageGallery images={images} mainImage={dummyAvatar} />
-            <ProductDescription />
+            <ProductImageGallery images={images} mainImage={mainImage} />
+            <ProductDescription
+              name={name as string}
+              price={price as string}
+              originalPrice={originalPrice as string}
+              description="High quality vinyl controller skin for easy install & removal."
+              rating={Number(rating) || 4}
+              stockStatus={''}
+            />
           </div>
-          <div className="w-full flex flex-col py-[20px]">
+          <div className="w-full flex flex-col">
             {/* for mobile screens */}
             <OverviewMobileTab />
             <DescriptionMobileTab />
             <WarrantyMobileTab />
             <ReviewMobileTab />
 
-            {/* for large screens */}
+            {/* for large screens - same as all the above 4 in 1 */}
             <ProductNavigationTabs />
           </div>
 

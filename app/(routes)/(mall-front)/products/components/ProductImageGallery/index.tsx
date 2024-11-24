@@ -9,7 +9,7 @@ type ImageData = {
 
 interface ProductImageGalleryProps {
   images: ImageData[];
-  mainImage: StaticImageData;
+  mainImage: string | StaticImageData;
 }
 
 const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
@@ -22,12 +22,14 @@ const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
         {images.map((image, index) => (
           <div
             key={index}
-            className="bg-[#F5F5F5] rounded-[5px] w-full flex justify-center items-center p-2"
+            className="bg-[#F5F5F5] rounded-[5px] w-full flex justify-center items-center p-2 min-h-[120px]"
           >
             <Image
               src={image.src}
               alt={image.alt}
-              className="bg-cover w-[100px] sm:w-[120px]"
+              className="bg-cover w-[80px] sm:w-[100px]"
+              width={80}
+              height={80}
             />
           </div>
         ))}
@@ -36,7 +38,9 @@ const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
         <Image
           src={mainImage}
           alt="main-product-image"
-          className="bg-cover w-[80%] mx-auto"
+          className="bg-cover w-[250px] mx-auto"
+          width={250}
+          height={250}
         />
       </div>
     </div>

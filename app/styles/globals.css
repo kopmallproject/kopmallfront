@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer utilities {
+  html {
+    scroll-behavior: smooth;
+  }
   .nunito_sans {
     font-family: var(--font-nunito_sans);
   }
@@ -42,6 +45,60 @@
   .product-page .overflow-x-auto::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* SidebarFilter.css */
+.custom-radio {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+.custom-radio:checked {
+  background-color: #fcb349;
+}
+
+/* .custom-radio:focus {
+    box-shadow: 0 0 0 3px #fcb349;
+} */
+
+.custom-checked-box {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #fff;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.custom-checked-box:checked {
+  background-color: #fcb349;
+  border-color: #fcb349;
+}
+
+.custom-checked-box:checked::after {
+  content: '';
+  position: absolute;
+  /* top: 0.rem; */
+  bottom: 0.1rem;
+  left: 0.1rem;
+  width: 0.4rem;
+  height: 0.7rem;
+  border: solid white;
+  border-width: 0 0.2rem 0.2rem 0;
+  transform: rotate(30deg);
 }
 
 .newsletter-email-input::placeholder {

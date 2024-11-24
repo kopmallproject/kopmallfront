@@ -10,14 +10,25 @@ const ProductNavigationTabs = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="container hidden lg:block mx-auto p-6 bg-white rounded-[7px] shadow-md min-h-[400px]">
+    <div className="container hidden lg:block mx-auto p-4 bg-white rounded-[7px] min-h-[400px]">
       {/* Tabs */}
       <div className="flex border-b">
-        {['Overview', 'Description', 'Warranty', 'Reviews'].map((tab) => (
+        {/* extracting the first items to prevent a displacing padding(for only it) from the start of the row */}
+        <button
+          onClick={() => dispatch(setActiveTab('Overview'))}
+          className={`text-center pr-4 py-2 font-semibold ${
+            activeTab === 'Overview'
+              ? 'text-[#FDAF3E]'
+              : 'text-gray-700 border-transparent'
+          } border-b-2 hover:border-[#FDAF3E] focus:outline-none`}
+        >
+          Overview
+        </button>
+        {['Description', 'Warranty', 'Reviews'].map((tab) => (
           <button
             key={tab}
             onClick={() => dispatch(setActiveTab(tab))}
-            className={`px-4 py-2 font-semibold ${
+            className={`text-center px-4 py-2 font-semibold ${
               activeTab === tab
                 ? 'text-[#FDAF3E]'
                 : 'text-gray-700 border-transparent'
@@ -43,26 +54,48 @@ const ProductNavigationTabs = () => {
         )}
         {activeTab === 'Description' && (
           <div className="flex flex-col gap-6">
-            <table className="min-w-full text-left text-gray-500 border border-gray-300 rounded-[7px]">
-              <tbody className="rounded-[7px]">
-                <tr className="border-b">
-                  <th className="px-4 py-2 font-medium text-gray-700">
-                    Weight
-                  </th>
-                  <td className="px-4 py-2">1.5kg</td>
-                </tr>
-                <tr className="border-b">
-                  <th className="px-4 py-2 font-medium text-gray-700">
-                    Colour
-                  </th>
-                  <td className="px-4 py-2">Grey</td>
-                </tr>
-                <tr>
-                  <th className="px-4 py-2 font-medium text-gray-700">Brand</th>
-                  <td className="px-4 py-2">Sony</td>
-                </tr>
-              </tbody>
-            </table>
+            {/* replaced table with flex-box */}
+            <div className="flex flex-col rounded-[7px] border">
+              {/* Row 1 */}
+              <div className="flex border-b">
+                <div
+                  className="px-4 py-2 font-medium text-gray-700 border-r"
+                  style={{ flex: '0 0 20%' }}
+                >
+                  Weight
+                </div>
+                <div className="px-4 py-2" style={{ flex: '0 0 80%' }}>
+                  1.5kg
+                </div>
+              </div>
+
+              {/* Row 2 */}
+              <div className="flex border-b">
+                <div
+                  className="px-4 py-2 font-medium text-gray-700 border-r"
+                  style={{ flex: '0 0 20%' }}
+                >
+                  Colour
+                </div>
+                <div className="px-4 py-2" style={{ flex: '0 0 80%' }}>
+                  Grey
+                </div>
+              </div>
+
+              {/* Row 3 */}
+              <div className="flex">
+                <div
+                  className="px-4 py-2 font-medium text-gray-700 border-r"
+                  style={{ flex: '0 0 20%' }}
+                >
+                  Brand
+                </div>
+                <div className="px-4 py-2" style={{ flex: '0 0 80%' }}>
+                  Sony
+                </div>
+              </div>
+            </div>
+
             <div className="flex-1">
               <h3 className="font-semibold text-gray-800">Brand</h3>
               <p className="mt-2">
@@ -78,7 +111,7 @@ const ProductNavigationTabs = () => {
         )}
         {activeTab === 'Warranty' && (
           <div>
-            <h3 className="font-semibold text-gray-800">
+            <h3 className="font-medium poppins text-gray-800">
               Warranty Information
             </h3>
             <p>
@@ -92,9 +125,9 @@ const ProductNavigationTabs = () => {
           //   <h3 className="font-semibold text-gray-800">Customer Reviews</h3>
           //   <p>Customer reviews and ratings will be displayed here.</p>
           // </div>
-          <div className="container mx-auto p-6 bg-white rounded-lg shadow-md">
+          <div className="reviews container mx-auto bg-white">
             {/* Overall Rating */}
-            <div className="flex flex-col lg:flex-row lg:gap-x-8">
+            <div className="flex flex-col lg:flex-row border-b pb-5">
               <div className="flex flex-col items-start lg:w-1/3">
                 <div className="flex items-center gap-x-4">
                   <h1 className="text-4xl font-semibold">4.5</h1>
