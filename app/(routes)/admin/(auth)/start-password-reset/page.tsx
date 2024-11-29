@@ -10,8 +10,8 @@ const StartPasswordReset: React.FC = () => {
   return (
     <>
       <section className="w-full py-[100px] lg:py-0 flex flex-col justify-center">
-        <form className="flex flex-col w-full px-3 sm:mx-auto sm:w-[70%] md:w-[500px] text-slate-900">
-          <div className="poppins flex flex-col gap-4 text-center">
+        <form className="flex flex-col w-full px-3 sm:mx-auto sm:w-[70%] md:w-[450px] text-slate-900">
+          <div className="poppins flex flex-col text-center">
             <div className="flex items-center justify-center poppins uppercase font-bold text-xl">
               <Image
                 src={Logo}

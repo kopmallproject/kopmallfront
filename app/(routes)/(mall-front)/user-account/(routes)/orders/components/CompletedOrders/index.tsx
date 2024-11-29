@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import dummyAvatar from '@/app/assets/images/img-7.png';
-function ActiveOrdersComponent() {
+function ClosedOrders() {
   return (
     <>
-      <main className="w-full flex flex-col  min-h-[150px] text-[14px] gap-4">
+      <main className="w-full  flex flex-col min-h-[150px] text-[14px] gap-4">
         {/* <div className="w-full lg:border-b">
           <h2 className="poppins font-bold text-sm lg:text-lg lg:p-3">
             Orders
@@ -15,7 +15,7 @@ function ActiveOrdersComponent() {
             href="/user-account/active-order"
             className="hover:text-[#FCB349] text-xs hover:border-b-2 hover:border-[#FCB349]"
           >
-            ONGOING/Active (2)
+            ONGOING/DELIVERED (2)
           </Link>
           <Link
             href="/user-account/closed-order"
@@ -23,7 +23,6 @@ function ActiveOrdersComponent() {
           >
             CLOSED ORDERS
           </Link>
-          <button className="hover:text-[#FCB349] hover:border-b-2 hover:border-[#FCB349]"></button>
         </div> */}
         <div className="lg:mt-0 w-full flex flex-col gap-4 text-[14px]">
           <div className="w-full border-[1px] rounded-[7px] gap-3 flex flex-col sm:flex-row sm:justify-between sm:items-start p-2 xm:px-4">
@@ -57,8 +56,8 @@ function ActiveOrdersComponent() {
                 <div className="block text-slate-400 mb-1.5">
                   Order ID: 217892
                 </div>
-                <div className="text-xs mb-1.5 text-white bg-yellow-600 px-3 self-start py-1 rounded-[7px]">
-                  Active
+                <div className="text-xs mb-1.5 text-white bg-green-600 px-3 self-start py-1 rounded-[7px]">
+                  Delivered
                 </div>
                 <span className="poppins block text-[10px]">21-06-2024</span>
               </div>
@@ -105,8 +104,8 @@ function ActiveOrdersComponent() {
                 <div className="block text-slate-400 mb-1.5">
                   Order ID: 217892
                 </div>
-                <div className="text-xs mb-1.5 text-white bg-yellow-600 px-3 self-start py-1 rounded-[7px]">
-                  Active
+                <div className="text-xs mb-1.5 text-white bg-green-600 px-3 self-start py-1 rounded-[7px]">
+                  Delivered
                 </div>
                 <span className="poppins block text-[10px]">21-06-2024</span>
               </div>
@@ -153,8 +152,8 @@ function ActiveOrdersComponent() {
                 <div className="block text-slate-400 mb-1.5">
                   Order ID: 217892
                 </div>
-                <div className="text-xs mb-1.5 text-white bg-yellow-600 px-3 self-start py-1 rounded-[7px]">
-                  Active
+                <div className="text-xs mb-1.5 text-white bg-green-600 px-3 self-start py-1 rounded-[7px]">
+                  Delivered
                 </div>
                 <span className="poppins block text-[10px]">21-06-2024</span>
               </div>
@@ -174,4 +173,4 @@ function ActiveOrdersComponent() {
   );
 }
 
-export default ActiveOrdersComponent;
+export default ClosedOrders;

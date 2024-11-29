@@ -18,6 +18,10 @@ import { GiGamepad } from 'react-icons/gi';
 import { categories } from '@/app/data/category-list';
 import Link from 'next/link';
 import { HiChevronRight } from 'react-icons/hi2';
+import {
+  HiMiniArrowRightStartOnRectangle,
+  HiOutlineUser
+} from 'react-icons/hi2';
 
 type NavLinksProps = {
   handleNavToggle: () => void;
@@ -61,6 +65,18 @@ function NavLinks({ handleNavToggle, categories }: NavLinksProps) {
               <Link
                 onClick={handleNavToggle}
                 className="border-r border-b"
+                href="/user-account/123"
+              >
+                <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
+                  <HiOutlineUser className="text-[20px]" />
+                  <span className="text-[12px] xsm:text-[14px] font-light poppins">
+                    Account
+                  </span>
+                </div>
+              </Link>
+              <Link
+                onClick={handleNavToggle}
+                className="border-r border-b"
                 href="/user-account/orders/123"
               >
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
@@ -94,14 +110,14 @@ function NavLinks({ handleNavToggle, categories }: NavLinksProps) {
                   </span>
                 </div>
               </Link>
-              <Link onClick={handleNavToggle} href="/user-account/my-account">
+              {/* <Link onClick={handleNavToggle} href="/user-account/my-account">
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
                   <HiOutlineBanknotes className="text-[20px]" />
                   <span className="text-[12px] xsm:text-[14px] font-light poppins">
                     Wallet
                   </span>
                 </div>
-              </Link>
+              </Link> */}
             </div>
           </div>
           <ul className="flex flex-col border-t">
