@@ -5,16 +5,21 @@ import MainAppLayout from '@/app/global-components/layout/MainAppLayout';
 import Image from 'next/image';
 import DummyBanner1 from '@/app/assets/images/img-8.png';
 import DummyBanner52 from '@/app/assets/images/52.png';
-import Dummygif9 from '@/app/assets/images/9.gif';
+import DummyGif12 from '@/app/assets/images/12.webp';
 import Dummygif10 from '@/app/assets/images/10.gif';
 import Dummygif7 from '@/app/assets/images/7.gif';
 import Dummygif8 from '@/app/assets/images/8.gif';
+import Dummygif9 from '@/app/assets/images/8.gif';
 import DummyBanner53 from '@/app/assets/images/53.png';
 import DummyGif1 from '@/app/assets/images/3rd.gif';
 import DummyGif2 from '@/app/assets/images/4th.gif';
+import DummyGif11 from '@/app/assets/images/11.webp';
 import DummyGif3 from '@/app/assets/images/5th.gif';
 import DummyBanner2 from '@/app/assets/images/img-9.png';
-import DummyBanner3 from '@/app/assets/images/img-20.png';
+import DummyBanner from '@/app/assets/images/img-20.png';
+import DummyImage52 from '@/app/assets/images/img-52.jpg';
+import DummyImage53 from '@/app/assets/images/img-53.png';
+import DummyImage54 from '@/app/assets/images/img-54.png';
 import DummyBanner4 from '@/app/assets/images/img-21.png';
 import DummyBanner5 from '@/app/assets/images/img-22.png';
 import DummyBanner6 from '@/app/assets/images/img-23.png';
@@ -139,9 +144,9 @@ function Home() {
             <section className="mt-[20px] p-3 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[20px] top-category-menu">
               <div className="flex flex-col gap-3">
                 <Image
-                  src={Dummygif9}
+                  src={DummyGif11}
                   alt="user-icon"
-                  className="w-full h-full rounded-[7px]"
+                  className="w-full h-[85%] border rounded-[7px]"
                 />
                 <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
                   Up to 20% Off
@@ -149,9 +154,9 @@ function Home() {
               </div>
               <div className="flex flex-col gap-3">
                 <Image
-                  src={DummyBanner2}
+                  src={DummyGif12}
                   alt="user-icon"
-                  className="w-full rounded-[7px]"
+                  className="w-full h-full rounded-[7px]"
                 />
                 <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
                   TV & Audio deals
@@ -159,7 +164,7 @@ function Home() {
               </div>
               <div className="flex flex-col h-full gap-3">
                 <Image
-                  src={Dummygif10}
+                  src={DummyImage52}
                   alt="user-icon"
                   className="w-full h-full rounded-[7px]"
                 />
@@ -169,9 +174,9 @@ function Home() {
               </div>
               <div className="flex flex-col gap-3">
                 <Image
-                  src={DummyBanner2}
+                  src={DummyImage53}
                   alt="user-icon"
-                  className="w-full rounded-[7px]"
+                  className="w-full h-full border rounded-[7px]"
                 />
                 <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
                   Appliance deals
@@ -179,9 +184,9 @@ function Home() {
               </div>
               <div className="flex flex-col gap-3">
                 <Image
-                  src={DummyBanner2}
+                  src={DummyImage54}
                   alt="user-icon"
-                  className="w-full rounded-[7px]"
+                  className="w-full h-full rounded-[7px]"
                 />
                 <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
                   Amazing Discounts
@@ -223,9 +228,26 @@ function Home() {
                 </div>
               </div>
               <div className="flash-sales-products p-3 flex gap-5 w-[100%] overflow-x-auto">
-                {products.map((product) => {
-                  return <ProductCard {...product} key={product.productName} />;
-                })}
+                {products.map((product) => (
+                  <Link
+                    key={product.productId}
+                    href={{
+                      pathname: `/products/${product.productId}`, // Dynamic route using the product id
+                      query: {
+                        image: product.productImage.src,
+                        name: product.productName,
+                        price: product.discountedPrice,
+                        originalPrice: product.originalPrice,
+                        discount: product.discount,
+                        rating: product.rating,
+                        isLiked: product.isLiked
+                      }
+                    }}
+                    passHref
+                  >
+                    <ProductCard {...product} key={product.productId} />
+                  </Link>
+                ))}
               </div>
               {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
             <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
@@ -308,9 +330,26 @@ function Home() {
                 </div>
               </div>
               <div className="products p-3 flex gap-5 w-[100%] overflow-x-auto">
-                {products.map((product) => {
-                  return <ProductCard {...product} key={product.productName} />;
-                })}
+                {products.map((product) => (
+                  <Link
+                    key={product.productId}
+                    href={{
+                      pathname: `/products/${product.productId}`, // Dynamic route using the product id
+                      query: {
+                        image: product.productImage.src,
+                        name: product.productName,
+                        price: product.discountedPrice,
+                        originalPrice: product.originalPrice,
+                        discount: product.discount,
+                        rating: product.rating,
+                        isLiked: product.isLiked
+                      }
+                    }}
+                    passHref
+                  >
+                    <ProductCard {...product} key={product.productId} />
+                  </Link>
+                ))}
               </div>
               {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
             <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
@@ -506,9 +545,29 @@ function Home() {
                 </div>
               </div>
               <div className="products p-3 flex gap-5 w-[100%] overflow-x-auto">
-                {products.map((product) => {
-                  return <ProductCard {...product} key={product.productName} />;
-                })}
+                {products.map((product) => (
+                  <Link
+                    key={product.productId}
+                    href={{
+                      pathname: `/products/${product.productId}`, // Dynamic route using the product id
+                      query: {
+                        image: product.productImage.src,
+                        name: product.productName,
+                        price: product.discountedPrice,
+                        originalPrice: product.originalPrice,
+                        discount: product.discount,
+                        rating: product.rating,
+                        isLiked: product.isLiked
+                      }
+                    }}
+                    passHref
+                  >
+                    <FlexibleWidthProductCard
+                      {...product}
+                      key={product.productId}
+                    />
+                  </Link>
+                ))}
               </div>
               {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
             <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">

@@ -40,19 +40,28 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
         </div>
         <ul className="flex flex-col gap-10 mt-10">
           <Link href="/">
-            <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
+            <div
+              onClick={handleNavToggle}
+              className="cursor-pointer flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full"
+            >
               <HiHome className="text-[20px]" />
               <span className="text-[14px] font-light poppins">Dashboard</span>
             </div>
           </Link>
           <Link href="/">
-            <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
+            <div
+              onClick={handleNavToggle}
+              className=" cursor-pointer flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full"
+            >
               <HiMegaphone className="text-[20px]" />
               <span className="text-[14px] font-light poppins">Orders</span>
             </div>
           </Link>
           <Link href="/">
-            <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
+            <div
+              onClick={handleNavToggle}
+              className="cursor-pointer flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full"
+            >
               <HiShoppingBag className="text-[20px]" />
               <span className="text-[14px] font-light poppins">
                 Add Products
@@ -60,19 +69,28 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
             </div>
           </Link>
           <Link href="/">
-            <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
+            <div
+              onClick={handleNavToggle}
+              className="cursor-pointer flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full"
+            >
               <HiUsers className="text-[20px]" />
               <span className="text-[14px] font-light poppins">Chat</span>
             </div>
           </Link>
           <Link href="/">
-            <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
+            <div
+              onClick={handleNavToggle}
+              className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full"
+            >
               <HiOutlineBell className="text-[20px]" />
               <span className="text-[14px] font-light poppins">Marketing</span>
             </div>
           </Link>
           <Link href="/">
-            <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">
+            <div
+              onClick={handleNavToggle}
+              className="cursor-pointer flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full"
+            >
               <HiArrowLeftCircle className="text-[20px]" />
               <span className="text-[14px] font-light poppins">Logout</span>
             </div>
