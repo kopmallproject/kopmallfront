@@ -102,7 +102,7 @@ function CategoryPage() {
           </div> */}
           </section>
           <section className="flex lg:gap-4 lg:flex-row lg:justify-between">
-            <section className="categories-menu hidden rounded-[7px] lg:flex w-72 lg:w-[22%] 2xl:w-[250px] primary-background-color text-white self-start">
+            <section className="categories-menu bg-white hidden rounded-[7px] lg:flex w-72 lg:w-[22%] 2xl:w-[250px] self-start">
               {/* <div className="flex flex-col w-full">
                 <div className="flex cursor-pointer items-center justify-between gap-3 border-b py-3 border-t font-light text-[14px] px-3">
                   <span className="poppins">Phones and tablets</span>

@@ -19,7 +19,7 @@ function NavBar() {
           >
             <HiOutlineUser className="text-[22px]" />
             <div className="capitalize poppins text-[12px] transition duration-200 ease-in-out transform hover:scale-105">
-              my account
+              Account overview
             </div>
           </Link>
           <Link

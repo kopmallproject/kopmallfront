@@ -1,6 +1,6 @@
 function TopNav() {
   return (
-    <nav className="w-full bg-[#25133A] text-white py-2 sm:py-3 flex items-center justify-between px-3">
+    <nav className="w-full bg-[#25133A] text-white py-2 px-2 sm:py-3 flex items-center justify-between">
       <h1 className="text-[12px] xsm:text-[14px] capitalize sm:text-[14px] text-center poppins w-full md:w-10/12">
         Black Friday Sales For All Apple Products And Free Express Delivery -
         OFF 50%!{' '}

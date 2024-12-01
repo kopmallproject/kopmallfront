@@ -101,12 +101,19 @@ function DesktopNavBar() {
             <span className="text-[14px]">Help</span>
             <HiOutlineChevronDown className="h-4 w-4" />
           </div>
-          <Link
-            href="/cart/123"
-            className="flex items-center gap-1 cursor-pointer"
-          >
-            <HiOutlineShoppingCart className="h-6 w-6" />
-            <span className="text-[14px]">Cart</span>
+          <Link href="/cart/123" className="cursor-pointer">
+            <div className="flex gap-4 items-center">
+              <div className="relative">
+                <HiOutlineShoppingCart className="h-6 w-6" />
+                <div
+                  className="cart-item-counter bg-green-600 text-white absolute w-[20px] 
+                h-[20px] rounded-full text-[10px] flex items-center justify-center top-[-9px] right-[-10px]"
+                >
+                  12
+                </div>
+              </div>
+              <div className="poppins text-[14px]">Cart</div>
+            </div>
           </Link>
           <Link
             href="/user-account/123"

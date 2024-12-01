@@ -13,7 +13,8 @@ function MainAdminLayout({ children }: ChildProp) {
       <section className="navbar-wrapper lg:min-h-screen w-full lg:w-[20%] fixed top-0 left-0 lg:pt-0 z-30 lg:relative lg:px-0">
         <NavBar />
       </section>
-      <section className="w-full px-3 md:px-[5%] lg:px-0 lg:w-[75%] mx-auto lg:min-h-screen overflow-y-auto mt-24 lg:mt-32">
+
+      <section className="w-full px-3 sm:px-[20px] lg:w-[80%] mx-auto mt-[75px] lg:min-h-screen overflow-y-auto">
         {children}
       </section>
     </main>
