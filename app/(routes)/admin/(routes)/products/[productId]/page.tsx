@@ -11,7 +11,7 @@ import DummyBanner4 from '@/app/assets/images/img-21.png';
 import DummyBanner5 from '@/app/assets/images/img-22.png';
 import DummyBanner6 from '@/app/assets/images/img-9.png';
 import Image from 'next/image';
-import ProductCard from '../../(home)/components/ProductCard';
+import ProductCard from '@/app/(routes)/(mall-front)/(home)/components/ProductCard';
 import { HiChevronRight } from 'react-icons/hi2';
 import ProductImageGallery from '@/app/(routes)/(mall-front)/products/components/ProductImageGallery';
 import ProductDescription from '@/app/(routes)/(mall-front)/products/components/ProductDescription';
