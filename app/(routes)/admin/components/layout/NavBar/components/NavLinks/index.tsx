@@ -47,141 +47,88 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
             </div>
           </div>
         </div>
-        <ul className="flex flex-col gap-10 mt-10">
-          <Link href="/">
+        <ul className="flex flex-col gap-10 mt-10 ml-4">
+          <Link href="/admin/dashboard/123">
             <div
               onClick={handleNavToggle}
-              className="cursor-pointer flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full"
-            >
-              <HiHome className="text-[20px]" />
-              <span className="text-[14px] font-light poppins">Dashboard</span>
-            </div>
-          </Link>
-          <Link href="/">
-            <div
-              onClick={handleNavToggle}
-              className=" cursor-pointer flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full"
-            >
-              <HiMegaphone className="text-[20px]" />
-              <span className="text-[14px] font-light poppins">Orders</span>
-            </div>
-          </Link>
-          <Link href="/">
-            <div
-              onClick={handleNavToggle}
-              className="cursor-pointer flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full"
-            >
-              <HiShoppingBag className="text-[20px]" />
-              <span className="text-[14px] font-light poppins">
-                Add Products
-              </span>
-            </div>
-          </Link>
-          <Link href="/">
-            <div
-              onClick={handleNavToggle}
-              className="cursor-pointer flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full"
-            >
-              <HiUsers className="text-[20px]" />
-              <span className="text-[14px] font-light poppins">Chat</span>
-            </div>
-          </Link>
-          <Link href="/">
-            <div
-              onClick={handleNavToggle}
-              className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full"
-            >
-              <HiOutlineBell className="text-[20px]" />
-              <span className="text-[14px] font-light poppins">Marketing</span>
-            </div>
-          </Link>
-          <Link href="/">
-            <div
-              onClick={handleNavToggle}
-              className="cursor-pointer flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full"
-            >
-              <HiArrowLeftCircle className="text-[20px]" />
-              <span className="text-[14px] font-light poppins">Logout</span>
-            </div>
-          </Link>
-        </ul>
-        <ul className="flex flex-col gap-10 mt-12 px-4">
-          <li>
-            <a
-              href="/admin/dashboard"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiHome className="w-6 h-6" />{' '}
-              <span className="poppins text-medium text-[14px]">Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <Link
-              href="/admin/orders"
+              <span className="text-[14px] font-light poppins">Dashboard</span>
+            </div>
+          </Link>
+          <Link href="/admin/orders/123">
+            <div
+              onClick={handleNavToggle}
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
-              <HiShoppingBag className="w-6 h-6" />{' '}
+              <HiMegaphone className="w-6 h-6" />
               <span className="poppins text-medium text-[14px]">Orders</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/admin/products"
+            </div>
+          </Link>
+          <Link href="/admin/products/123">
+            <div
+              onClick={handleNavToggle}
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
-              <HiMiniSquaresPlus className="w-6 h-6" />{' '}
+              <HiShoppingBag className="text-[20px]" />
               <span className="poppins text-medium text-[14px]">Products</span>
-            </Link>
-          </li>
-          <li>
-            <a
-              href="/admin/customers"
+            </div>
+          </Link>
+          <Link href="/admin/customers/123">
+            <div
+              onClick={handleNavToggle}
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
-              <HiUsers className="w-6 h-6" />{' '}
+              <HiUsers className="text-[20px]" />
               <span className="poppins text-medium text-[14px]">Users</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/admin/customers"
+            </div>
+          </Link>
+          <Link href="/admin/categories">
+            <div
+              onClick={handleNavToggle}
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
-              <HiBuildingStorefront className="w-6 h-6" />{' '}
+              <HiOutlineBell className="text-[20px]" />
               <span className="poppins text-medium text-[14px]">Stores</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/admin/marketing"
+            </div>
+          </Link>
+          <Link href="/admin/deals">
+            <div
+              onClick={handleNavToggle}
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
-              <HiClipboardDocumentList className="w-6 h-6" />{' '}
+              <HiOutlineBell className="text-[20px]" />
               <span className="poppins text-medium text-[14px]">Deals</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/admin/marketing"
+            </div>
+          </Link>
+          <Link href="/admin/marketing/123">
+            <div
+              onClick={handleNavToggle}
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
-              <HiMegaphone className="w-6 h-6" />{' '}
+              <HiOutlineBell className="text-[20px]" />
               <span className="poppins text-medium text-[14px]">Campaigns</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/admin/marketing"
+            </div>
+          </Link>
+          <Link href="/admin/marketing/123">
+            <div
+              onClick={handleNavToggle}
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
-              <HiWallet className="w-6 h-6" />{' '}
-              <span className="poppins text-medium text-[14px]">Wallet</span>
-            </a>
-          </li>
-          <li className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500">
-            <HiArrowLeftCircle className="w-6 h-6" />{' '}
-            <span className="poppins text-medium text-[14px]">Log Out</span>
-          </li>
+              <HiOutlineBell className="text-[20px]" />
+              <span className="poppins text-medium text-[14px]">Wallets</span>
+            </div>
+          </Link>
+          <Link href="/">
+            <div
+              onClick={handleNavToggle}
+              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
+            >
+              <HiArrowLeftCircle className="text-[20px]" />
+              <span className="poppins text-medium text-[14px]">Logout</span>
+            </div>
+          </Link>
         </ul>
       </div>
     </nav>

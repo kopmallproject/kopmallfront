@@ -249,11 +249,6 @@ function Home() {
                   </Link>
                 ))}
               </div>
-              <div className="flash-sales-products px-2 py-2 flex gap-5 w-[100%] overflow-x-auto">
-                {products.map((product) => {
-                  return <ProductCard {...product} key={product.productName} />;
-                })}
-              </div>
               {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
             <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
               See All Items
@@ -355,11 +350,6 @@ function Home() {
                     <ProductCard {...product} key={product.productId} />
                   </Link>
                 ))}
-              </div>
-              <div className="products p-2 flex gap-5 w-[100%] overflow-x-auto">
-                {products.map((product) => {
-                  return <ProductCard {...product} key={product.productName} />;
-                })}
               </div>
               {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
             <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
@@ -581,11 +571,6 @@ function Home() {
                     />
                   </Link>
                 ))}
-              </div>
-              <div className="products p-2 flex gap-5 w-[100%] overflow-x-auto">
-                {products.map((product) => {
-                  return <ProductCard {...product} key={product.productName} />;
-                })}
               </div>
               {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
             <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
