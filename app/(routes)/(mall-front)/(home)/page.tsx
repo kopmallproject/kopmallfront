@@ -146,7 +146,7 @@ function Home() {
                 <Image
                   src={DummyGif11}
                   alt="user-icon"
-                  className="w-full h-[85%] border rounded-[7px]"
+                  className="w-full h-full lg:h-[85%] border rounded-[7px]"
                 />
                 <span className="poppins text-[12px] sm:text-[14px] font-normal text-center">
                   Up to 20% Off
