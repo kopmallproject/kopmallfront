@@ -110,7 +110,7 @@ svg.star-svg {
 }
 
 .log-in-page-side-sales-image {
-  background-image: url('../assets/images/2nd.gif');
+  background-image: url('../assets/images/img-9.png');
   background-size: cover; /* Adjusts image to cover the entire element */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating */
@@ -119,7 +119,7 @@ svg.star-svg {
 }
 
 .sign-up-page-side-sales-image {
-  background-image: url('../assets/images/1st.gif');
+  background-image: url('../assets/images/img-9.png');
   background-size: cover; /* Adjusts image to cover the entire element */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating */

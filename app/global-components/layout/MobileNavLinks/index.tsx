@@ -88,7 +88,7 @@ function NavLinks({ handleNavToggle, categories }: NavLinksProps) {
               </Link>
               <Link
                 onClick={handleNavToggle}
-                className="border-b"
+                className="border-r"
                 href="/user-account/saved-items/123"
               >
                 <div className="flex items-center gap-2 px-4 py-3 hover:bg-[#D7D7D780] h-full">

@@ -1,4 +1,4 @@
-import MainAdminLayout from './components/layout/MainAdminLayout';
+import MainAdminLayout from '../../components/layout/MainAdminLayout';
 
 function Admin() {
   return (

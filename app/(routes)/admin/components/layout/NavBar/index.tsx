@@ -1,11 +1,11 @@
-import DesktopNavBar from './components/DesktopNavBar';
+import DesktopNavBars from './components/DesktopNavBars';
 import MobileNavBar from './components/MobileNavBar';
 
 function NavBar() {
   return (
     <nav className="w-full">
       <MobileNavBar />
-      <DesktopNavBar />
+      <DesktopNavBars />
     </nav>
   );
 }

@@ -80,8 +80,8 @@ function Home() {
       <TopNav />
       <main>
         <NavBar />
-        <div className="min-h-screen bg-gray-100 lg:bg-black px-3 sm:px-[20px] md:px-[5%] lg:px-[10%] xl:px-[12%] 2xl:px-[17%] md:mx-auto text-[14px]">
-          <main className="min-h-screen pt-6 ">
+        <div className="min-h-screen bg-gray-100 lg:bg-black px-2 sm:px-[20px] md:px-[7%] lg:px-[10%] xl:px-[12%] 2xl:px-[17%] md:mx-auto text-[14px]">
+          <main className="min-h-screen pt-3 sm:pt-6">
             <div>
               {/* This wrapper makes the entire section a single slide */}
               <section className="first-section overflow-hidden flex flex-col xl:flex-row gap-y-[20px] justify-between">
@@ -136,7 +136,7 @@ function Home() {
                 </div>
               </section>
             </div>
-            <section className="mt-[20px] p-3 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[7px] top-category-menu">
+            <section className="mt-[20px] px-2 py-2 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[7px] top-category-menu">
               <div className="flex flex-col gap-3">
                 <Image
                   src={DummyBanner2}
@@ -199,7 +199,7 @@ function Home() {
               </div>
             </section>
             <section className="flash-sale-section bg-white mt-[20px] rounded-[7px] pb-2">
-              <div className="main-header-wrapper bg-red-600 py-2 rounded-tl-[7px] rounded-tr-[7px] text-white px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <div className="main-header-wrapper bg-red-600 py-2 rounded-tl-[7px] rounded-tr-[7px] text-white px-2 border-b-[1px] flex flex-row justify-between items-center">
                 <div className="flex">
                   <div className="flex gap-2 items-center">
                     <HiMiniShoppingBag className="secondary-text-color text-[25px] xsm:text-[30px]" />
@@ -222,7 +222,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flash-sales-products p-3 flex gap-5 w-[100%] overflow-x-auto">
+              <div className="flash-sales-products px-2 py-2 flex gap-5 w-[100%] overflow-x-auto">
                 {products.map((product) => {
                   return <ProductCard {...product} key={product.productName} />;
                 })}
@@ -233,7 +233,7 @@ function Home() {
             </button>
           </div> */}
             </section>
-            <section className="mt-[20px] p-3 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[20px] top-category-menu">
+            <section className="mt-[20px] p-2 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[20px] top-category-menu">
               <div className="flex flex-col gap-3">
                 <Image
                   src={Dummygif9}
@@ -296,7 +296,7 @@ function Home() {
               </div>
             </section>
             <section className="sponsored-products-section bg-white mt-[20px] rounded-[7px] pb-2">
-              <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <div className="main-header-wrapper py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
                 <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
                   Sponsored Products
                 </h3>
@@ -307,7 +307,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-              <div className="products p-3 flex gap-5 w-[100%] overflow-x-auto">
+              <div className="products p-2 flex gap-5 w-[100%] overflow-x-auto">
                 {products.map((product) => {
                   return <ProductCard {...product} key={product.productName} />;
                 })}
@@ -318,24 +318,24 @@ function Home() {
             </button>
           </div> */}
             </section>
-            <section className="best-selling w-full mt-[20px] sm:mt-20px]">
+            {/* <section className="best-selling w-full mt-[20px] sm:mt-20px]">
               <Slider {...settings}>
                 <div>
                   <Image
-                    src={DummyBanner52}
+                    src={DummyBanner3}
                     alt="user-icon"
                     className="w-full h-[500px] rounded-[7px]"
                   />
-                </div>
-                <div>
+                </div> */}
+            {/* <div>
                   <Image
                     src={DummyBanner53}
                     alt="user-icon"
                     className="w-full rounded-[7px]"
                   />
-                </div>
-              </Slider>
-            </section>
+                </div> */}
+            {/* </Slider>
+            </section> */}
             {/* <section className="new-arrivals-section mt-[20px] sm:mt-[20px]">
           <div className="main-header-wrapper py-4 px-3 border-b-[1px] flex flex-row justify-between items-center">
             <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
@@ -380,7 +380,7 @@ function Home() {
           </div>
         </section> */}
             <section className="mt-[20px] bg-white rounded-[7px] w-full">
-              <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <div className="main-header-wrapper py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
                 <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
                   Top Phone deals
                 </h3>
@@ -391,7 +391,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-full grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-[20px] p-3">
+              <div className="w-full grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-[20px] p-2">
                 <div className="flex flex-col gap-3">
                   <Image
                     src={DummyBanner2}
@@ -437,7 +437,7 @@ function Home() {
               </div>
             </section>
             <section className="mt-[20px] bg-white rounded-[7px] w-full">
-              <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <div className="main-header-wrapper py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
                 <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
                   Accessories deals
                 </h3>
@@ -448,7 +448,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-full grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-[20px] p-3">
+              <div className="w-full grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-[20px] p-2">
                 <div className="flex flex-col gap-3">
                   <Image
                     src={DummyBanner2}
@@ -494,7 +494,7 @@ function Home() {
               </div>
             </section>
             <section className="sponsored-products-section bg-white mt-[20px] rounded-[7px] pb-2">
-              <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <div className="main-header-wrapper py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
                 <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
                   Binatone Store
                 </h3>
@@ -505,7 +505,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-              <div className="products p-3 flex gap-5 w-[100%] overflow-x-auto">
+              <div className="products p-2 flex gap-5 w-[100%] overflow-x-auto">
                 {products.map((product) => {
                   return <ProductCard {...product} key={product.productName} />;
                 })}
@@ -517,12 +517,12 @@ function Home() {
           </div> */}
             </section>
             <section className="official-stores-section mt-[20px] bg-white rounded-[7px]">
-              <div className="flash-sales-countdown-section-wrapper border-b px-3 py-2">
+              <div className="flash-sales-countdown-section-wrapper border-b px-2 py-2">
                 <h3 className="capitalize poppins text-[14px] xsm:text-[16px] sm:text-[20px] sm:text-center w-full">
                   Official Stores
                 </h3>
               </div>
-              <div className="official-store-listings gap-6 lg:gap-y-8 grid grid-cols-4 md:grid-cols-6 p-3">
+              <div className="official-store-listings gap-6 lg:gap-y-8 grid grid-cols-4 md:grid-cols-6 p-2">
                 {officialStores.map((store, index) => {
                   return (
                     <Image
@@ -536,7 +536,7 @@ function Home() {
               </div>
             </section>
             <section className="best-discount-section bg-white mt-[20px] rounded-[7px] pb-2">
-              <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <div className="main-header-wrapper py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
                 <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
                   Best Discounts(up to 60% off)
                 </h3>
@@ -547,7 +547,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-              <div className="products p-3 gap-5 w-[100%] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+              <div className="products p-2 gap-5 w-[100%] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
                 {products.map((product) => (
                   <Link
                     key={product.productId}
@@ -620,7 +620,7 @@ function Home() {
                   </div>
                 </div>
               </section>
-              <section className="flex flex-col gap-y-6 sm:flex-row sm:justify-between mt-[20px] bg-white p-3 rounded-[7px]">
+              <section className="flex flex-col gap-y-6 sm:flex-row sm:justify-between mt-[20px] bg-white p-2 rounded-[7px]">
                 <Image
                   src={BannerX}
                   alt="user-icon"

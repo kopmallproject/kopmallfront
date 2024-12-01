@@ -21,7 +21,7 @@ function MobileNavBar() {
 
   return (
     <>
-      <div className="mobile-nav-bar bg-gray-100 lg:hidden flex flex-col px-3 sm:px-[20px] md:px-[7%] md:mx-auto">
+      <div className="mobile-nav-bar bg-gray-100 lg:hidden flex flex-col px-2 xsm:px-4 sm:px-[20px] md:px-[7%] md:mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <HiBars3BottomLeft
@@ -37,9 +37,17 @@ function MobileNavBar() {
             </Link>
           </div>
           <div className="flex items-center gap-6">
-            <Link href="/cart/123">
-              <HiOutlineShoppingCart className="h-6 w-6" />
-            </Link>
+            <div className="relative">
+              <Link href="/cart/123">
+                <HiOutlineShoppingCart className="h-6 w-6" />
+              </Link>
+              <div
+                className="cart-item-counter bg-green-600 text-white absolute w-[20px] 
+              h-[20px] rounded-full text-[10px] flex items-center justify-center top-[-9px] right-[-10px]"
+              >
+                12
+              </div>
+            </div>
             <Link href="/user-account/my-account">
               <HiOutlineUser className="h-6 w-6" />
             </Link>

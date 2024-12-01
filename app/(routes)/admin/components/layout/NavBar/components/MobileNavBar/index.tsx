@@ -22,10 +22,9 @@ function MobileNavBar() {
 
   return (
     <>
-      <div className="mobile-nav-bar lg:hidden flex flex-col justify-center px-3 w-full md:px-[5%] md:mx-auto shadow-md">
+      <div className="mobile-nav-bar lg:hidden flex flex-col justify-center px-3 w-full md:px-[5%] md:mx-auto shadow-md bg-gray-100">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4 py-2">
-            <h3 className="poppins font-bold text-lg">Kop Mall</h3>
+          <div className="flex items-center gap-2 py-2">
             <Link href="/">
               <Image
                 src={Logo}
@@ -33,13 +32,14 @@ function MobileNavBar() {
                 className="bg-cover w-[40px] h-[40px]"
               />{' '}
             </Link>
+            <h3 className="poppins font-bold text-[16px]">Mall Admin</h3>
           </div>
           <div className="flex items-center gap-6">
             <div className="relative pr-4">
               <HiOutlineBell className="text-[30px]" />
               <div
-                className="absolute top-[-12px] right-[8px] text-[10px] bg-white w-[25px] h-[25px] rounded-full 
-              text-gray-800 text-center font-bold pt-[4px]"
+                className="absolute top-[-8px] right-[12px] text-[10px] bg-white w-[20px] h-[20px] rounded-full 
+              text-center text-white font-medium poppins flex justify-center items-center primary-background-color"
               >
                 10
               </div>
@@ -47,7 +47,7 @@ function MobileNavBar() {
             <div className="w-[40px] h-[40px] border rounded-full flex justify-center items-center">
               <HiBars3BottomLeft
                 onClick={handleNavToggle}
-                className="h-6 w-6 cursor-pointer"
+                className="h-6 w-6"
               />
             </div>
           </div>

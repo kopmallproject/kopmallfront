@@ -35,6 +35,7 @@ import TopNav from '@/app/global-components/layout/TopNav';
 import Logo from '@/app/assets/images/logo.png';
 import RadioActive from '@/app/assets/images/img-49.png';
 import RadioInactive from '@/app/assets/images/img-50.png';
+import Link from 'next/link';
 
 // import { products } from '@/app/data/products-list';
 
@@ -75,13 +76,13 @@ function CartPage() {
       <main className="pb-[200px] min-h-screen sm:px-[20px] md:px-[5%] xl:px-[12%] md:mx-auto bg-gray-100">
         <nav className="checkout-nav py-2 px-3 xsm:px-0">
           <div className="flex w-full items-center">
-            <div className="mr-4">
+            <Link href="/" className="mr-4">
               <Image
                 src={Logo}
                 alt="user-icon"
                 className="bg-cover w-[60px] h-[60px]"
               />
-            </div>
+            </Link>
             <span className="poppins text-2xl md:text-4xl font-thin">|</span>
             <div className="poppins text-2xl md:text-3xl pl-5">Checkout</div>
           </div>
