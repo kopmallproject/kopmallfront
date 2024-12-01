@@ -24,7 +24,11 @@ function StoreProfileCard() {
       <section className="flex flex-col justify-between min-h-[100px]">
         <section>
           <div className="name-and-id font-medium text-[14px] mt-5 poppins">
-            Binatone Stores(672e29ef3a031fecf3d0cb22)
+            <span>Samsung Official Store</span>
+            <span className="font-normal text-[12px]">
+              {' '}
+              | 672e29ef3a031fecf3d0cb22
+            </span>
           </div>
           <section className="flex flex-col gap-3 mt-4 text-gray-400 font-medium text-[12px]">
             <div className="flex gap-3 items-center">

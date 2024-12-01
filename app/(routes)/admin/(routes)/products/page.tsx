@@ -11,18 +11,19 @@ import { officialStores } from '@/app/data/official-stores';
 import { HiChevronRight } from 'react-icons/hi2';
 import { HiMiniShoppingBag } from 'react-icons/hi2';
 import MainAdminLayout from '../../components/layout/MainAdminLayout';
+import { HiMiniPlus } from 'react-icons/hi2';
 
 function Orders() {
   const activeTab = useAppSelector((state: RootState) => state.tab.activeTab);
   const dispatch = useAppDispatch();
   return (
     <MainAdminLayout>
-      <section className="text-[12px] text-gray-500 mt-2 mb-4">
+      <section className="text-[12px] text-gray-500 mt-2 mb-2 md:mb-4">
         Admin / Products
       </section>
       <section className="bg-white mt-[20px] rounded-[7px] pb-2">
         <div className="w-full">
-          <h2 className="poppins font-medium text-[16px] lg:pb-3">
+          <h2 className="poppins font-medium text-[16px] pb-3">
             Products (2500)
           </h2>
         </div>
@@ -57,6 +58,12 @@ function Orders() {
             </button>
           </div> */}
       </section>
+      <button
+        className="add-product-button rounded-full w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] fixed bottom-[30px] 
+      right-[30px] md:bottom-[50px] md:right-[50px] secondary-background-color flex items-center justify-center"
+      >
+        <HiMiniPlus className="text-black text-[25px] sm:text-[30px]" />
+      </button>
     </MainAdminLayout>
   );
 }
