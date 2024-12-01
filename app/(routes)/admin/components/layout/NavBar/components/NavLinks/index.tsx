@@ -14,7 +14,7 @@ import Logo from '@/app/assets/images/logo.png';
 import { HiMiniSquaresPlus } from 'react-icons/hi2';
 import { HiBuildingStorefront } from 'react-icons/hi2';
 import { HiClipboardDocumentList } from 'react-icons/hi2';
-import { HiWallet } from 'react-icons/hi2';
+import { HiMiniViewColumns } from 'react-icons/hi2';
 
 type NavLinksProps = {
   handleNavToggle: () => void;
@@ -34,7 +34,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               />
             </div>
             <div className="poppins">
-              <div className="font-medium mb-1 text-[14px]">Aaron Ramsey</div>
+              <div className="font-medium mb-1">Aaron Ramsey</div>
               <div className="block text-[12px]">Admin</div>
             </div>
           </div>
@@ -47,14 +47,14 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
             </div>
           </div>
         </div>
-        <ul className="flex flex-col gap-10 mt-12 px-4">
+        <ul className="flex flex-col gap-10 mt-12 px-4 text-[12px]">
           <li>
             <a
-              href="/admin/dashboard"
+              href="/admin"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiHome className="w-6 h-6" />{' '}
-              <span className="poppins text-medium text-[14px]">Dashboard</span>
+              <span className="poppins text-medium">Admin Home</span>
             </a>
           </li>
           <li>
@@ -63,7 +63,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiShoppingBag className="w-6 h-6" />{' '}
-              <span className="poppins text-medium text-[14px]">Orders</span>
+              <span className="poppins text-medium">Orders</span>
             </Link>
           </li>
           <li>
@@ -72,57 +72,58 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiMiniSquaresPlus className="w-6 h-6" />{' '}
-              <span className="poppins text-medium text-[14px]">Products</span>
+              <span className="poppins text-medium">Products</span>
             </Link>
           </li>
           <li>
             <a
-              href="/admin/customers"
+              href="/admin/categories"
+              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
+            >
+              <HiMiniViewColumns className="w-6 h-6" />
+              <span className="poppins text-medium">Categories</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/admin/users"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiUsers className="w-6 h-6" />{' '}
-              <span className="poppins text-medium text-[14px]">Users</span>
+              <span className="poppins text-medium">Users</span>
             </a>
           </li>
           <li>
             <a
-              href="/admin/customers"
+              href="/admin/stores"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiBuildingStorefront className="w-6 h-6" />{' '}
-              <span className="poppins text-medium text-[14px]">Stores</span>
+              <span className="poppins text-medium">Stores</span>
             </a>
           </li>
           <li>
             <a
-              href="/admin/marketing"
+              href="/admin/deals"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiClipboardDocumentList className="w-6 h-6" />{' '}
-              <span className="poppins text-medium text-[14px]">Deals</span>
+              <span className="poppins text-medium">Deals</span>
             </a>
           </li>
           <li>
             <a
-              href="/admin/marketing"
+              href="/admin/campaigns"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiMegaphone className="w-6 h-6" />{' '}
-              <span className="poppins text-medium text-[14px]">Campaigns</span>
+              <span className="poppins text-medium">Campaigns</span>
             </a>
           </li>
-          <li>
-            <a
-              href="/admin/marketing"
-              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-            >
-              <HiWallet className="w-6 h-6" />{' '}
-              <span className="poppins text-medium text-[14px]">Wallet</span>
-            </a>
-          </li>
+
           <li className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500">
             <HiArrowLeftCircle className="w-6 h-6" />{' '}
-            <span className="poppins text-medium text-[14px]">Log Out</span>
+            <span className="poppins text-medium">Log Out</span>
           </li>
         </ul>
       </div>

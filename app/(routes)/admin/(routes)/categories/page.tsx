@@ -9,18 +9,17 @@ import { HiMiniEnvelope } from 'react-icons/hi2';
 import { HiOutlineTrash } from 'react-icons/hi2';
 import { HiPencilSquare } from 'react-icons/hi2';
 import CategoryCard from './components/CategoryCard';
+import { HiMiniPlus } from 'react-icons/hi2';
 
 function Categories() {
   return (
     <MainAdminLayout>
-      <section className="text-[12px] text-gray-500 mt-2 mb-4">
+      <section className="text-[12px] text-gray-500 mt-2 mb-2 md:mb-4">
         Admin / Categories
       </section>
       <main className="bg-white pb-[100px] w-full flex flex-col min-h-[150px] text-[14px] rounded-[7px]">
         <div className="w-full">
-          <h2 className="poppins font-medium text-[16px] lg:pb-3">
-            Categories
-          </h2>
+          <h2 className="poppins font-medium text-[16px] pb-3">Categories</h2>
         </div>
         <section className="categories-wrapper flex flex-wrap gap-4 mt-4">
           <CategoryCard categoryName="Computers" />
@@ -32,6 +31,12 @@ function Categories() {
           <CategoryCard categoryName="Samsung Devices" />
         </section>
       </main>
+      <button
+        className="add-product-button rounded-full w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] fixed bottom-[30px] 
+      right-[30px] md:bottom-[50px] md:right-[50px] secondary-background-color flex items-center justify-center"
+      >
+        <HiMiniPlus className="text-black text-[25px] sm:text-[30px]" />
+      </button>
     </MainAdminLayout>
   );
 }

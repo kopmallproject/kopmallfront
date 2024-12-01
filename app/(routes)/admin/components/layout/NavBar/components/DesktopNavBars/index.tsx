@@ -32,7 +32,7 @@ function DesktopNavBar() {
           <HiOutlineBell className="text-[30px]" />
           <div
             className="absolute top-[-7px] right-[12px] text-[12px] bg-white w-[20px] h-[20px] rounded-full 
-              text-gray-800 text-center font-medium flex items-center justify-center"
+              text-gray-800 text-center font-medium poppins flex items-center justify-center"
           >
             10
           </div>
