@@ -47,12 +47,12 @@ import { CiApple } from 'react-icons/ci';
 import { GiGamepad } from 'react-icons/gi';
 import dummyProduct from '@/app/assets/images/img-10.png';
 import { Rating } from 'react-simple-star-rating';
-import ProductCard from './components/ProductCard';
-import FlexibleWidthProductCard from './components/FlexibleWidthProductCard';
 import { HiOutlineArrowLeft } from 'react-icons/hi2';
 import { HiOutlineArrowRight } from 'react-icons/hi2';
-import { products } from '@/app/data/products-list';
 import { categories } from '@/app/data/category-list';
+import { products } from '@/app/data/products-list';
+import ProductCard from './components/ProductCard';
+import FlexibleWidthProductCard from './components/FlexibleWidthProductCard';
 import { officialStores } from '@/app/data/official-stores';
 import { HiChevronRight } from 'react-icons/hi2';
 import { HiMiniShoppingBag } from 'react-icons/hi2';
@@ -330,6 +330,9 @@ function Home() {
             {/* <div>
                   <Image
                     src={DummyBanner53}
+=========
+                    src={DummyBanner3}
+>>>>>>>>> Temporary merge branch 2
                     alt="user-icon"
                     className="w-full rounded-[7px]"
                   />

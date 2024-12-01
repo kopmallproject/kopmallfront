@@ -8,14 +8,14 @@ import {
 } from 'react-icons/hi2';
 import NavLinks from '../../../MobileNavLinks';
 import Image from 'next/image';
-import Logo from '../../../../../assets/images/logo.png';
+import Logo from '@/app/assets/images/logo.png';
 import Link from 'next/link';
 import { categories } from '@/app/data/category-list';
 
-function MobileNavBar() {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+function MobileNavBar(): JSX.Element {
+  const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
 
-  const handleNavToggle = () => {
+  const handleNavToggle = (): void => {
     setIsNavOpen(!isNavOpen);
   };
 
@@ -33,7 +33,7 @@ function MobileNavBar() {
                 src={Logo}
                 alt="user-icon"
                 className="bg-cover w-[50px] h-[50px]"
-              />{' '}
+              />
             </Link>
           </div>
           <div className="flex items-center gap-6">
@@ -62,9 +62,18 @@ function MobileNavBar() {
           />
         </div>
       </div>
-      {/* Conditionally render NavLinks */}
+      {/* Overlay */}
+      {isNavOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 z-20"
+          onClick={handleNavToggle}
+        ></div>
+      )}
+      {/* Sidebar */}
       <div
-        className={`${isNavOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-500 ease-in-out fixed top-0 left-0 w-10/12 sm:w-1/2 h-full z-30`}
+        className={`${
+          isNavOpen ? 'translate-x-0' : '-translate-x-full'
+        } transition-transform duration-500 ease-in-out fixed top-0 left-0 w-10/12 sm:w-1/2 h-full z-30 bg-white`}
       >
         <NavLinks handleNavToggle={handleNavToggle} categories={categories} />
       </div>
