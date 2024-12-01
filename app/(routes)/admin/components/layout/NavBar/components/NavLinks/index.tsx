@@ -48,7 +48,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
           </div>
         </div>
         <ul className="flex flex-col gap-10 mt-10 ml-4">
-          <Link href="/admin/dashboard/123">
+          <Link href="/admin">
             <div
               onClick={handleNavToggle}
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
