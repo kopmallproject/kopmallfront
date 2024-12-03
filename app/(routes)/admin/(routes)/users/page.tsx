@@ -11,7 +11,7 @@ import UserProfileCard from './components/UserProfileCard';
 function Users() {
   return (
     <MainAdminLayout>
-      <section className="text-[12px] text-gray-500 mt-2 mb-2 md:mb-4">
+      <section className="text-[12px] text-gray-500 mb-2">
         Admin / Users / Order-details
       </section>
       <main className="bg-white pb-[100px] w-full flex flex-col min-h-[150px] text-[14px] rounded-[7px]">

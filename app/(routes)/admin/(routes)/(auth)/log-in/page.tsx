@@ -15,8 +15,8 @@ const Login: React.FC = () => {
 
   return (
     <>
-      <section className="w-full py-[100px] lg:py-0 flex flex-col justify-center">
-        <form className=" flex flex-col w-full px-3 sm:mx-auto sm:w-[70%] md:w-[450px] text-slate-900">
+      <section className="w-full py-[100px] px-3 lg:py-0 flex flex-col justify-center">
+        <form className=" flex flex-col w-full p-4 rounded-[7px] sm:mx-auto sm:w-[70%] md:w-[375px] text-slate-900 bg-gray-100">
           <div className="poppins flex flex-col text-center mb-3">
             <div className="flex items-center justify-center poppins uppercase font-bold text-xl">
               <Image

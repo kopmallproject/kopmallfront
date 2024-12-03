@@ -49,13 +49,13 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
         </div>
         <ul className="flex flex-col gap-10 mt-12 px-4 text-[12px]">
           <li>
-            <a
+            <Link
               href="/admin"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiHome className="w-6 h-6" />{' '}
               <span className="poppins text-medium">Admin Home</span>
-            </a>
+            </Link>
           </li>
           <li>
             <Link
@@ -76,49 +76,53 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
             </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/admin/categories"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiMiniViewColumns className="w-6 h-6" />
               <span className="poppins text-medium">Categories</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/admin/users"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiUsers className="w-6 h-6" />{' '}
               <span className="poppins text-medium">Users</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/admin/stores"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiBuildingStorefront className="w-6 h-6" />{' '}
               <span className="poppins text-medium">Stores</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/admin/deals"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiClipboardDocumentList className="w-6 h-6" />{' '}
-              <span className="poppins text-medium">Deals</span>
-            </a>
+              <span className="poppins text-medium text-[14px]">
+                Deals/Campaigns
+              </span>
+            </Link>
           </li>
           <li>
-            <a
-              href="/admin/campaigns"
+            <Link
+              href="/admin/notifications"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiMegaphone className="w-6 h-6" />{' '}
-              <span className="poppins text-medium">Campaigns</span>
-            </a>
+              <span className="poppins text-medium text-[14px]">
+                Notifications
+              </span>
+            </Link>
           </li>
 
           <li className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500">

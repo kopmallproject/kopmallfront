@@ -14,6 +14,7 @@ import { HiBuildingStorefront } from 'react-icons/hi2';
 import { HiClipboardDocumentList } from 'react-icons/hi2';
 import { HiWallet } from 'react-icons/hi2';
 import { HiMiniViewColumns } from 'react-icons/hi2';
+import { HiMagnifyingGlass } from 'react-icons/hi2';
 
 function DesktopNavBar() {
   return (
@@ -28,23 +29,28 @@ function DesktopNavBar() {
             <span className="block text-[12px]">Admin</span>
           </div>
         </div>
-        <div className="relative pr-4">
-          <HiOutlineBell className="text-[30px]" />
-          <div
-            className="absolute top-[-7px] right-[12px] text-[12px] bg-white w-[20px] h-[20px] rounded-full 
-              text-gray-800 text-center font-medium poppins flex items-center justify-center"
-          >
-            10
+        <section className="flex items-center">
+          <div className="relative pr-8">
+            <HiMagnifyingGlass className="text-[25px]" />
           </div>
-        </div>
+          <Link href="/admin/notifications" className="relative pr-4">
+            <HiOutlineBell className="text-[30px]" />
+            <div
+              className="absolute top-[-7px] right-[12px] text-[12px] bg-white w-[20px] h-[20px] rounded-full 
+              text-gray-800 text-center font-medium poppins flex items-center justify-center"
+            >
+              10
+            </div>
+          </Link>
+        </section>
       </header>
 
       {/* Sidebar */}
       <aside className="bg-gray-100 fixed top-0 left-0 w-1/5 h-full px-6 text-[12px]">
         <div className="flex items-center gap-3 my-3">
-          <div>
+          <Link href="/">
             <Image src={Logo} alt="logo" className="bg-cover w-[50px]" />
-          </div>
+          </Link>
           <div>
             <span className="poppins font-medium text-lg">Mall Admin</span>
           </div>
@@ -117,17 +123,19 @@ function DesktopNavBar() {
                 className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
               >
                 <HiClipboardDocumentList className="w-6 h-6" />{' '}
-                <span className="poppins text-medium text-[14px]">Deals</span>
+                <span className="poppins text-medium text-[14px]">
+                  Deals/Campaigns
+                </span>
               </a>
             </li>
             <li>
               <a
-                href="/admin/campaigns"
+                href="/admin/notifications"
                 className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
               >
                 <HiMegaphone className="w-6 h-6" />{' '}
                 <span className="poppins text-medium text-[14px]">
-                  Campaigns
+                  Notifications
                 </span>
               </a>
             </li>
