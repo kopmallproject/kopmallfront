@@ -108,9 +108,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiClipboardDocumentList className="w-6 h-6" />{' '}
-              <span className="poppins text-medium text-[14px]">
-                Deals/Campaigns
-              </span>
+              <span className="poppins text-medium">Deals/Campaigns</span>
             </Link>
           </li>
           <li>
@@ -119,9 +117,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiMegaphone className="w-6 h-6" />{' '}
-              <span className="poppins text-medium text-[14px]">
-                Notifications
-              </span>
+              <span className="poppins text-medium">Notifications</span>
             </Link>
           </li>
 
