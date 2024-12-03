@@ -26,7 +26,7 @@ function ActiveOrdersComponent() {
           <button className="hover:text-[#FCB349] hover:border-b-2 hover:border-[#FCB349]"></button>
         </div> */}
         <div className="lg:mt-0 w-full flex flex-col gap-4 text-[14px]">
-          <div className="w-full border-[1px] rounded-[7px] gap-3 flex flex-col sm:flex-row sm:justify-between sm:items-start p-2 xm:px-4">
+          <div className="w-full border-[1px] rounded-[7px] gap-3 bg-gray-100 flex flex-col sm:flex-row sm:justify-between sm:items-start p-2 xm:px-4">
             <div className="w-full flex items-center gap-5">
               <div className="w-[100px] lg:w-[150px] grid grid-cols-2 gap-2">
                 <Image
@@ -74,7 +74,7 @@ function ActiveOrdersComponent() {
           </div>
         </div>
         <div className="lg:mt-0 w-full flex flex-col gap-4 text-[14px]">
-          <div className="w-full border-[1px] rounded-[7px] gap-3 flex flex-col sm:flex-row sm:justify-between sm:items-start p-2 xm:px-4">
+          <div className="w-full border-[1px] rounded-[7px] gap-3 bg-gray-100 flex flex-col sm:flex-row sm:justify-between sm:items-start p-2 xm:px-4">
             <div className="w-full flex items-center gap-5">
               <div className="w-[100px] lg:w-[150px] grid grid-cols-2 gap-2">
                 <Image
@@ -122,7 +122,7 @@ function ActiveOrdersComponent() {
           </div>
         </div>
         <div className="lg:mt-0 w-full flex flex-col gap-4 text-[14px]">
-          <div className="w-full border-[1px] rounded-[7px] gap-3 flex flex-col sm:flex-row sm:justify-between sm:items-start p-2 xm:px-4">
+          <div className="w-full border-[1px] rounded-[7px] gap-3 bg-gray-100 flex flex-col sm:flex-row sm:justify-between sm:items-start p-2 xm:px-4">
             <div className="w-full flex items-center gap-5">
               <div className="w-[100px] lg:w-[150px] grid grid-cols-2 gap-2">
                 <Image

@@ -18,7 +18,7 @@ function Orders() {
   const dispatch = useAppDispatch();
   return (
     <MainAdminLayout>
-      <section className="text-[12px] text-gray-500 mt-2 mb-2 md:mb-4">
+      <section className="text-[12px] text-gray-500 mb-2">
         Admin / Products
       </section>
       <section className="bg-white mt-[20px] rounded-[7px] pb-2">

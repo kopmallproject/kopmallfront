@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Logo from '@/app/assets/images/logo.png';
 import Link from 'next/link';
 import NavLinks from '../NavLinks';
+import { HiMagnifyingGlass } from 'react-icons/hi2';
 
 function MobileNavBar(): JSX.Element {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
@@ -18,7 +19,7 @@ function MobileNavBar(): JSX.Element {
       <div className="mobile-nav-bar lg:hidden flex flex-col justify-center px-3 w-full md:px-[5%] md:mx-auto shadow-md bg-gray-100">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 py-2">
-            <Link href="/">
+            <Link href="/admin">
               <Image
                 src={Logo}
                 alt="user-icon"
@@ -27,16 +28,21 @@ function MobileNavBar(): JSX.Element {
             </Link>
             <h3 className="poppins font-medium text-[16px]">Mall Admin</h3>
           </div>
-          <div className="flex items-center gap-6">
-            <div className="relative pr-4">
-              <HiOutlineBell className="text-[30px]" />
-              <div
-                className="absolute top-[-8px] right-[12px] text-[10px] bg-white w-[20px] h-[20px] rounded-full 
-              text-center text-white font-medium poppins flex justify-center items-center primary-background-color"
-              >
-                10
+          <div className="flex items-center">
+            <section className="flex items-center">
+              <div className="relative pr-6">
+                <HiMagnifyingGlass className="text-[20px]" />
               </div>
-            </div>
+              <Link href="/admin/notifications" className="relative pr-6">
+                <HiOutlineBell className="text-[25px]" />
+                <div
+                  className="absolute top-[-8px] right-[17px] text-[10px] bg-white w-[20px] h-[20px] rounded-full 
+              text-center text-white font-medium poppins flex justify-center items-center primary-background-color"
+                >
+                  10
+                </div>
+              </Link>
+            </section>
             <div className="w-[40px] h-[40px] border rounded-full flex justify-center items-center">
               <HiBars3BottomLeft
                 onClick={handleNavToggle}

@@ -9,6 +9,9 @@ import {
 } from 'react-icons/hi2';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useAppDispatch } from '@/app/rtk-base/hooks';
+import { showModal } from '@/app/rtk-base/slices/modal-slice';
 import Logo from '@/app/assets/images/logo.png';
 
 import { HiMiniSquaresPlus } from 'react-icons/hi2';
@@ -21,6 +24,24 @@ type NavLinksProps = {
 };
 
 function NavLinks({ handleNavToggle }: NavLinksProps) {
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
+  const handleLogoutClick = () => {
+    dispatch(
+      showModal({
+        title: 'Confirm Logout',
+        message: 'Are you sure you want to log out?',
+        onConfirm: () => {
+          router.push('/log-in');
+        },
+        onCancel: () => {
+          console.log('Logout canceled');
+        }
+      })
+    );
+  };
+
   return (
     <nav className="lg:hidden fixed top-0 left-0 right-0 min-h-screen z-30 bg-white shadow-md">
       <div className="flex flex-col min-h-screen relative h-[500px] overflow-y-auto pb-[100px]">
@@ -49,15 +70,15 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
         </div>
         <ul className="flex flex-col gap-10 mt-12 px-4 text-[12px]">
           <li>
-            <a
+            <Link
               href="/admin"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiHome className="w-6 h-6" />{' '}
               <span className="poppins text-medium">Admin Home</span>
-            </a>
+            </Link>
           </li>
-          <li>
+          <li onClick={handleNavToggle}>
             <Link
               href="/admin/orders"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
@@ -66,7 +87,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               <span className="poppins text-medium">Orders</span>
             </Link>
           </li>
-          <li>
+          <li onClick={handleNavToggle}>
             <Link
               href="/admin/products"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
@@ -76,54 +97,59 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
             </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/admin/categories"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiMiniViewColumns className="w-6 h-6" />
               <span className="poppins text-medium">Categories</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/admin/users"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiUsers className="w-6 h-6" />{' '}
               <span className="poppins text-medium">Users</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/admin/stores"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiBuildingStorefront className="w-6 h-6" />{' '}
               <span className="poppins text-medium">Stores</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/admin/deals"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiClipboardDocumentList className="w-6 h-6" />{' '}
-              <span className="poppins text-medium">Deals</span>
-            </a>
+              <span className="poppins text-medium">Deals/Campaigns</span>
+            </Link>
           </li>
           <li>
-            <a
-              href="/admin/campaigns"
+            <Link
+              href="/admin/notifications"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiMegaphone className="w-6 h-6" />{' '}
-              <span className="poppins text-medium">Campaigns</span>
-            </a>
+              <span className="poppins text-medium">Notifications</span>
+            </Link>
           </li>
 
-          <li className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500">
-            <HiArrowLeftCircle className="w-6 h-6" />{' '}
-            <span className="poppins text-medium">Log Out</span>
+          <li onClick={handleNavToggle}>
+            <div
+              onClick={handleLogoutClick}
+              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
+            >
+              <HiArrowLeftCircle className="w-6 h-6" />{' '}
+              <span className="poppins text-medium">Log Out</span>
+            </div>
           </li>
         </ul>
       </div>
