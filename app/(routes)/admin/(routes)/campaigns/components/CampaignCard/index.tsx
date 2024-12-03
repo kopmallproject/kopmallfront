@@ -3,10 +3,13 @@ import Logo from '@/app/assets/images/img-39.png';
 import { HiMiniPhone } from 'react-icons/hi2';
 import { HiMiniEnvelope } from 'react-icons/hi2';
 import Image from 'next/image';
+import { useAppDispatch } from '@/app/rtk-base/hooks';
+import { showOverlay } from '@/app/rtk-base/slices/overlay-slice';
 import { HiPencilSquare } from 'react-icons/hi2';
 import { HiOutlineTrash } from 'react-icons/hi2';
 
 function CampaignCard() {
+  const dispatch = useAppDispatch();
   return (
     <div className="user-card rounded bg-gray-100">
       <section className="flex justify-between items-center">
@@ -25,7 +28,13 @@ function CampaignCard() {
         <div>
           <div className="controls flex flex-row-reverse gap-3 w-full">
             <div className="cursor-pointer edit-product-button flex items-center justify-center w-[25px] h-[25px] xsm:w-[35px] xsm:h-[35px] rounded-[7px] bg-white">
-              <HiPencilSquare className="text-[15px] xsm:text-[18px]" />
+              <HiPencilSquare
+                onClick={() => {
+                  console.log('Opening Deals Overlay');
+                  dispatch(showOverlay('campaign'));
+                }}
+                className="text-[15px] xsm:text-[18px]"
+              />
             </div>
             <div className="cursor-pointer delete-product-button flex items-center justify-center w-[25px] h-[25px] xsm:w-[35px] xsm:h-[35px] rounded-[7px] bg-white">
               <HiOutlineTrash className="text-[15px] xsm:text-[18px]" />

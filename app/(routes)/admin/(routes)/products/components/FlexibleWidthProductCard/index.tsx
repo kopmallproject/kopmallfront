@@ -7,6 +7,8 @@ import DummyBanner1 from '@/app/assets/images/img-8.png';
 import DummyBanner2 from '@/app/assets/images/img-9.png';
 import { HiOutlineHeart } from 'react-icons/hi2';
 import dummyProduct from '@/app/assets/images/img-10.png';
+import { useAppDispatch } from '@/app/rtk-base/hooks';
+import { showOverlay } from '@/app/rtk-base/slices/overlay-slice';
 import { Rating } from 'react-simple-star-rating';
 import { StaticImageData } from 'next/image';
 import { HiOutlineTrash } from 'react-icons/hi2';
@@ -24,6 +26,7 @@ type ProductSpecs = {
 };
 
 function ProductCard(product: ProductSpecs) {
+  const dispatch = useAppDispatch();
   return (
     <div className="product-card relative flex flex-col">
       <div className="product-image-wrapper bg-[#F5F5F5] p-3 h-[190px] sm:h-[220px] flex justify-center items-center">
@@ -33,7 +36,13 @@ function ProductCard(product: ProductSpecs) {
           </div>
           <div className="flex gap-3">
             <div className="cursor-pointer edit-product-button flex items-center justify-center w-[28px] xsm:w-[35px] h-[28px] xsm:h-[35px] rounded-[7px] bg-white">
-              <HiPencilSquare className="text-[15px] xsm:text-[18px]" />
+              <HiPencilSquare
+                onClick={() => {
+                  console.log('Opening Deals Overlay');
+                  dispatch(showOverlay('product'));
+                }}
+                className="text-[15px] xsm:text-[18px]"
+              />
             </div>
             <div className="cursor-pointer delete-product-button flex items-center justify-center w-[28px] xsm:w-[35px] h-[28px] xsm:h-[35px] rounded-[7px] bg-white">
               <HiOutlineTrash className="text-[15px] xsm:text-[18px]" />

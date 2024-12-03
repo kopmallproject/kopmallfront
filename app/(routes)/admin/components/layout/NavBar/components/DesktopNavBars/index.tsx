@@ -9,6 +9,9 @@ import {
   HiShoppingBag,
   HiUsers
 } from 'react-icons/hi2';
+import { useRouter } from 'next/navigation';
+import { useAppDispatch } from '@/app/rtk-base/hooks';
+import { showModal } from '@/app/rtk-base/slices/modal-slice';
 import { HiMiniSquaresPlus } from 'react-icons/hi2';
 import { HiBuildingStorefront } from 'react-icons/hi2';
 import { HiClipboardDocumentList } from 'react-icons/hi2';
@@ -17,6 +20,24 @@ import { HiMiniViewColumns } from 'react-icons/hi2';
 import { HiMagnifyingGlass } from 'react-icons/hi2';
 
 function DesktopNavBar() {
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
+  const handleLogoutClick = () => {
+    dispatch(
+      showModal({
+        title: 'Confirm Logout',
+        message: 'Are you sure you want to log out?',
+        onConfirm: () => {
+          router.push('/log-in');
+        },
+        onCancel: () => {
+          console.log('Logout canceled');
+        }
+      })
+    );
+  };
+
   return (
     <main className="hidden lg:flex">
       <header className="w-4/5 primary-background-color text-white flex justify-between items-center px-4 py-2 fixed top-0 right-0">
@@ -140,7 +161,10 @@ function DesktopNavBar() {
               </a>
             </li>
 
-            <li className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500">
+            <li
+              onClick={handleLogoutClick}
+              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
+            >
               <HiArrowLeftCircle className="w-6 h-6" />{' '}
               <span className="poppins text-medium text-[14px]">Log Out</span>
             </li>
