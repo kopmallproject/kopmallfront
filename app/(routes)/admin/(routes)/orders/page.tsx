@@ -15,14 +15,12 @@ function Orders() {
   const dispatch = useAppDispatch();
   return (
     <MainAdminLayout>
-      <section className="text-[12px] text-gray-500 mt-2 mb-4">
+      <section className="text-[12px] text-gray-500 mt-2 mb-2 md:mb-4">
         Admin / Orders
       </section>
       <main className="bg-white pb-[100px] w-full flex flex-col min-h-[150px] text-[14px] rounded-[7px]">
         <div className="w-full">
-          <h2 className="poppins font-medium text-[16px] lg:pb-3">
-            Orders (26)
-          </h2>
+          <h2 className="poppins font-medium text-[16px] pb-3">Orders (26)</h2>
         </div>
         <div className="text-xs mt-3 lg:mt-0 lg:pt-3 pb-3 flex justify-between lg:gap-8 lg:justify-start  text-slate-400">
           {/* <Link

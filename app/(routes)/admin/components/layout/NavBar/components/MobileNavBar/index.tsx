@@ -25,7 +25,7 @@ function MobileNavBar(): JSX.Element {
                 className="bg-cover w-[40px] h-[40px]"
               />
             </Link>
-            <h3 className="poppins font-bold text-[16px]">Mall Admin</h3>
+            <h3 className="poppins font-medium text-[16px]">Mall Admin</h3>
           </div>
           <div className="flex items-center gap-6">
             <div className="relative pr-4">

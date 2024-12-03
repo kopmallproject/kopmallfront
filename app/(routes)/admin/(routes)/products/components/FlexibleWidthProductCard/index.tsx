@@ -32,11 +32,11 @@ function ProductCard(product: ProductSpecs) {
             -{product.discount}%
           </div>
           <div className="flex gap-3">
-            <div className="cursor-pointer edit-product-button flex items-center justify-center w-[35px] h-[35px] rounded-[7px] bg-white">
-              <HiPencilSquare className="text-[18px]" />
+            <div className="cursor-pointer edit-product-button flex items-center justify-center w-[28px] xsm:w-[35px] h-[28px] xsm:h-[35px] rounded-[7px] bg-white">
+              <HiPencilSquare className="text-[15px] xsm:text-[18px]" />
             </div>
-            <div className="cursor-pointer delete-product-button flex items-center justify-center w-[35px] h-[35px] rounded-[7px] bg-white">
-              <HiOutlineTrash className="text-[18px]" />
+            <div className="cursor-pointer delete-product-button flex items-center justify-center w-[28px] xsm:w-[35px] h-[28px] xsm:h-[35px] rounded-[7px] bg-white">
+              <HiOutlineTrash className="text-[15px] xsm:text-[18px]" />
             </div>
           </div>
         </div>
