@@ -1,11 +1,14 @@
 import React from 'react';
 import Logo from '@/app/assets/images/img-22.png';
+import { useAppDispatch } from '@/app/rtk-base/hooks';
+import { showOverlay } from '@/app/rtk-base/slices/overlay-slice';
 import { HiMiniPhone } from 'react-icons/hi2';
 import { HiMiniEnvelope } from 'react-icons/hi2';
 import Image from 'next/image';
 import { HiPencilSquare } from 'react-icons/hi2';
 
 function StoreProfileCard() {
+  const dispatch = useAppDispatch();
   return (
     <div className="user-card rounded p-4 bg-gray-100">
       <section className="flex justify-between items-center">
@@ -15,7 +18,15 @@ function StoreProfileCard() {
           className="bg-cover w-[50px] h-[50px] rounded-full"
         />
         <div className="flex gap-4 items-center">
-          <HiPencilSquare className="text-[25px] cursor-pointer" />
+          <div className="cursor-pointer edit-product-button flex items-center justify-center w-[25px] h-[25px] xsm:w-[35px] xsm:h-[35px] rounded-[7px] bg-white">
+            <HiPencilSquare
+              onClick={() => {
+                console.log('Opening Deals Overlay');
+                dispatch(showOverlay('store'));
+              }}
+              className="text-[15px] xsm:text-[18px]"
+            />
+          </div>
           <div className="text-[10px] deactivation-button poppins primary-background-color text-white rounded-[7px] px-3 py-2">
             Deactivate Store
           </div>

@@ -9,6 +9,9 @@ import {
 } from 'react-icons/hi2';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useAppDispatch } from '@/app/rtk-base/hooks';
+import { showModal } from '@/app/rtk-base/slices/modal-slice';
 import Logo from '@/app/assets/images/logo.png';
 
 import { HiMiniSquaresPlus } from 'react-icons/hi2';
@@ -21,6 +24,24 @@ type NavLinksProps = {
 };
 
 function NavLinks({ handleNavToggle }: NavLinksProps) {
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
+  const handleLogoutClick = () => {
+    dispatch(
+      showModal({
+        title: 'Confirm Logout',
+        message: 'Are you sure you want to log out?',
+        onConfirm: () => {
+          router.push('/log-in');
+        },
+        onCancel: () => {
+          console.log('Logout canceled');
+        }
+      })
+    );
+  };
+
   return (
     <nav className="lg:hidden fixed top-0 left-0 right-0 min-h-screen z-30 bg-white shadow-md">
       <div className="flex flex-col min-h-screen relative h-[500px] overflow-y-auto pb-[100px]">
@@ -120,15 +141,17 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               <span className="poppins text-medium text-[14px]">Wallets</span>
             </div>
           </Link>
-          <Link href="/">
+          {/* <Link href=""> */}
+          <div onClick={handleNavToggle} className="">
             <div
-              onClick={handleNavToggle}
+              onClick={handleLogoutClick}
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
             >
               <HiArrowLeftCircle className="text-[20px]" />
               <span className="poppins text-medium text-[14px]">Logout</span>
             </div>
-          </Link>
+          </div>
+          {/* </Link> */}
         </ul>
       </div>
     </nav>
