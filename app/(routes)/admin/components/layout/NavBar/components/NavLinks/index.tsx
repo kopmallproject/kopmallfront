@@ -69,7 +69,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
           </div>
         </div>
         <ul className="flex flex-col gap-10 mt-12 px-4 text-[12px]">
-          <li>
+          <li onClick={handleNavToggle}>
             <a
               href="/admin"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
@@ -78,7 +78,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               <span className="poppins text-medium">Admin Home</span>
             </a>
           </li>
-          <li>
+          <li onClick={handleNavToggle}>
             <Link
               href="/admin/orders"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
@@ -87,7 +87,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               <span className="poppins text-medium">Orders</span>
             </Link>
           </li>
-          <li>
+          <li onClick={handleNavToggle}>
             <Link
               href="/admin/products"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
@@ -96,7 +96,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               <span className="poppins text-medium">Products</span>
             </Link>
           </li>
-          <li>
+          <li onClick={handleNavToggle}>
             <a
               href="/admin/categories"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
@@ -105,7 +105,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               <span className="poppins text-medium">Categories</span>
             </a>
           </li>
-          <li>
+          <li onClick={handleNavToggle}>
             <a
               href="/admin/users"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
@@ -114,7 +114,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               <span className="poppins text-medium">Users</span>
             </a>
           </li>
-          <li>
+          <li onClick={handleNavToggle}>
             <a
               href="/admin/stores"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
@@ -123,7 +123,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               <span className="poppins text-medium">Stores</span>
             </a>
           </li>
-          <li>
+          <li onClick={handleNavToggle}>
             <a
               href="/admin/deals"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
@@ -132,7 +132,7 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
               <span className="poppins text-medium">Deals</span>
             </a>
           </li>
-          <li>
+          <li onClick={handleNavToggle}>
             <a
               href="/admin/campaigns"
               className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
@@ -142,9 +142,14 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
             </a>
           </li>
 
-          <li className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500">
-            <HiArrowLeftCircle className="w-6 h-6" />{' '}
-            <span className="poppins text-medium">Log Out</span>
+          <li onClick={handleNavToggle}>
+            <div
+              onClick={handleLogoutClick}
+              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
+            >
+              <HiArrowLeftCircle className="w-6 h-6" />{' '}
+              <span className="poppins text-medium">Log Out</span>
+            </div>
           </li>
         </ul>
       </div>

@@ -1,6 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type OverlayType = 'createUser' | 'store' | 'categories' | 'deals' | null;
+type OverlayType =
+  | 'product'
+  | 'createUser'
+  | 'store'
+  | 'categories'
+  | 'deals'
+  | 'campaign'
+  | null;
 
 interface OverlayState {
   type: OverlayType;

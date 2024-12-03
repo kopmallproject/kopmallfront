@@ -5,6 +5,8 @@ import CreateUserForm from '@/app/(routes)/admin/components/CreateUserForm';
 import StoreForm from '@/app/(routes)/admin/components/StoreForm';
 import CategoriesForm from '@/app/(routes)/admin/components/CategoriesForm';
 import DealsForm from '@/app/(routes)/admin/components/DealsForm';
+import ProductForm from '@/app/(routes)/admin/components/ProductForm';
+import CampaignForm from '@/app/(routes)/admin/components/CampaignForm';
 import { HiMiniXMark } from 'react-icons/hi2';
 
 const AdminFormModal: React.FC = () => {
@@ -23,6 +25,10 @@ const AdminFormModal: React.FC = () => {
         return <CategoriesForm />;
       case 'deals':
         return <DealsForm />;
+      case 'product':
+        return <ProductForm />;
+      case 'campaign':
+        return <CampaignForm />;
       default:
         return null;
     }
