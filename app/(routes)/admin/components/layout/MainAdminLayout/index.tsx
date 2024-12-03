@@ -2,6 +2,8 @@
 
 import React from 'react';
 import NavBar from '../NavBar';
+import AdminFormModal from '../../AdminFormModal';
+import GlobalModal from '../../GlobalModal';
 
 type ChildProp = {
   children: React.ReactNode;
@@ -17,6 +19,8 @@ function MainAdminLayout({ children }: ChildProp) {
       <section className="w-full px-3 sm:px-[20px] lg:w-[80%] mx-auto mt-[75px] lg:min-h-screen overflow-y-auto">
         {children}
       </section>
+      <AdminFormModal />
+      <GlobalModal />
     </main>
   );
 }
