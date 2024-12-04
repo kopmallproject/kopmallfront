@@ -1,3 +1,8 @@
+'use client';
+import { useAppDispatch, useAppSelector } from '@/app/rtk-base/hooks';
+import { RootState } from '@/app/rtk-base/store';
+import { setActiveTab } from '@/app/rtk-base/slices/tab-slice';
+import { Rating } from 'react-simple-star-rating';
 import MainAdminLayout from '../../components/layout/MainAdminLayout';
 import {
   HiArrowLeftCircle,
@@ -13,10 +18,18 @@ import { HiClipboardDocumentList } from 'react-icons/hi2';
 import { HiWallet } from 'react-icons/hi2';
 import { HiMiniViewColumns } from 'react-icons/hi2';
 import { HiMagnifyingGlass } from 'react-icons/hi2';
+import RenderChart from './components/RenderChart';
 import TopPerformersCategoryCard from './components/TopPerformersCategoryCard';
 import TopPerformersProductCard from './components/TopPerformersProductCard';
 
 function Admin() {
+  const activeTab = useAppSelector((state: RootState) => state.tab.activeTab);
+  const dispatch = useAppDispatch();
+
+  const handleTabChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    dispatch(setActiveTab(e.target.value));
+  };
+
   return (
     <MainAdminLayout>
       <section className="flex justify-between items-center text-[12px] text-gray-500 mb-2">
@@ -83,8 +96,10 @@ function Admin() {
               <h3 className="section-header poppins mt-6 mb-3 font-medium">
                 Order Tracker
               </h3>
-              <section className="bg-blue-100 w-full min-h-[450px]">
-                {/* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam omnis recusandae atque repudiandae architecto, doloribus, iusto sequi quaerat tempora repellat enim similique ducimus quis, qui possimus cupiditate libero eos itaque. */}
+              <section className="bg-blue-100 min-h-[450px] w-full flex justify-center">
+                <div style={{ width: '700px', height: '400px' }}>
+                  <RenderChart />
+                </div>
               </section>
             </section>
             {/* a sales tracker chat might not be necessary - leave hidden for now */}
@@ -97,26 +112,38 @@ function Admin() {
               </section>
             </section>
           </section>
-          <section className="w-full 2xl:w-[25%] mt-4 lg:mt-0 lg:translate-y-[-12px]">
+          <section className="w-full 2xl:w-[25%] mt-4 lg:mt-0 xl:mt-5 lg:translate-y-[-12px]">
             <div className="w-full flex justify-between items-center">
               <h3 className="section-header flex mt-[9px] poppins mb-3">
                 <span className="text-[14px] font-medium">Top performers</span>
                 <span className="text-[14px]">(sales)</span>
               </h3>
-              <div className="">
+              <div>
                 <select
-                  id="language"
-                  name="language"
-                  className="poppins w-[90px] cursor-pointer text-xs border-none rounded-md p-2 flex-1 bg-transparent text-black"
+                  id="tabSelect"
+                  name="tabSelect"
+                  value={activeTab}
+                  onChange={handleTabChange}
+                  className="poppins w-[120px] cursor-pointer text-xs border-none rounded-md p-2 flex-1 bg-transparent text-black"
                 >
-                  <option className="text-black text-[12px]">Products</option>
-                  <option className="text-black text-[12px]">Categories</option>
+                  <option value="Overview" className="text-black text-[12px]">
+                    Products
+                  </option>
+                  <option value="Categories" className="text-black text-[12px]">
+                    Categories
+                  </option>
                 </select>
               </div>
             </div>
             <div className="categories-wrapper grid md:grid-cols-2 2xl:grid-cols-1 gap-4 mt-2">
-              <TopPerformersCategoryCard />
-              <TopPerformersProductCard />
+              {activeTab === 'Overview' &&
+                Array.from({ length: 5 }).map((_, index) => (
+                  <TopPerformersProductCard key={`product-${index}`} />
+                ))}
+              {activeTab === 'Categories' &&
+                Array.from({ length: 5 }).map((_, index) => (
+                  <TopPerformersCategoryCard key={`category-${index}`} />
+                ))}
             </div>
           </section>
         </div>

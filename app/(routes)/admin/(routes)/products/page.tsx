@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import dummyAvatar from '@/app/assets/images/img-7.png';
 import { useAppDispatch, useAppSelector } from '@/app/rtk-base/hooks';
+import { showOverlay } from '@/app/rtk-base/slices/overlay-slice';
 import { RootState } from '@/app/rtk-base/store';
 import { setActiveTab } from '@/app/rtk-base/slices/tab-slice';
 import { products } from '@/app/data/products-list';
@@ -62,7 +63,12 @@ function Orders() {
         className="add-product-button rounded-full w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] fixed bottom-[30px] 
       right-[30px] md:bottom-[50px] md:right-[50px] secondary-background-color flex items-center justify-center"
       >
-        <HiMiniPlus className="text-black text-[25px] sm:text-[30px]" />
+        <HiMiniPlus
+          onClick={() => {
+            dispatch(showOverlay('product'));
+          }}
+          className="text-black text-[25px] sm:text-[30px]"
+        />
       </button>
     </MainAdminLayout>
   );
