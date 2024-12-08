@@ -1,3 +1,5 @@
+'use client';
+
 import {
   HiHome,
   HiShoppingBag,
@@ -9,7 +11,7 @@ import {
 } from 'react-icons/hi2';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation'; // Use usePathname
 import { useAppDispatch } from '@/app/rtk-base/hooks';
 import { showModal } from '@/app/rtk-base/slices/modal-slice';
 import Logo from '@/app/assets/images/logo.png';
@@ -25,6 +27,7 @@ type NavLinksProps = {
 
 function NavLinks({ handleNavToggle }: NavLinksProps) {
   const dispatch = useAppDispatch();
+  const pathname = usePathname(); // Get the current path
   const router = useRouter();
 
   const handleLogoutClick = () => {
@@ -41,6 +44,49 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
       })
     );
   };
+
+  const navItems = [
+    {
+      href: '/admin',
+      label: 'Admin Home',
+      icon: <HiHome className="w-6 h-6" />
+    },
+    {
+      href: '/admin/orders',
+      label: 'Orders',
+      icon: <HiShoppingBag className="w-6 h-6" />
+    },
+    {
+      href: '/admin/products',
+      label: 'Products',
+      icon: <HiMiniSquaresPlus className="w-6 h-6" />
+    },
+    {
+      href: '/admin/categories',
+      label: 'Categories',
+      icon: <HiMiniViewColumns className="w-6 h-6" />
+    },
+    {
+      href: '/admin/users',
+      label: 'Users',
+      icon: <HiUsers className="w-6 h-6" />
+    },
+    {
+      href: '/admin/stores',
+      label: 'Stores',
+      icon: <HiBuildingStorefront className="w-6 h-6" />
+    },
+    {
+      href: '/admin/deals',
+      label: 'Deals/Campaigns',
+      icon: <HiClipboardDocumentList className="w-6 h-6" />
+    },
+    {
+      href: '/admin/notifications',
+      label: 'Notifications',
+      icon: <HiMegaphone className="w-6 h-6" />
+    }
+  ];
 
   return (
     <nav className="lg:hidden fixed top-0 left-0 right-0 min-h-screen z-30 bg-white shadow-md">
@@ -69,85 +115,27 @@ function NavLinks({ handleNavToggle }: NavLinksProps) {
           </div>
         </div>
         <ul className="flex flex-col gap-10 mt-12 px-4 text-[12px]">
-          <li>
-            <Link
-              href="/admin"
-              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-            >
-              <HiHome className="w-6 h-6" />{' '}
-              <span className="poppins text-medium">Admin Home</span>
-            </Link>
-          </li>
-          <li onClick={handleNavToggle}>
-            <Link
-              href="/admin/orders"
-              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-            >
-              <HiShoppingBag className="w-6 h-6" />{' '}
-              <span className="poppins text-medium">Orders</span>
-            </Link>
-          </li>
-          <li onClick={handleNavToggle}>
-            <Link
-              href="/admin/products"
-              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-            >
-              <HiMiniSquaresPlus className="w-6 h-6" />{' '}
-              <span className="poppins text-medium">Products</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/admin/categories"
-              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-            >
-              <HiMiniViewColumns className="w-6 h-6" />
-              <span className="poppins text-medium">Categories</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/admin/users"
-              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-            >
-              <HiUsers className="w-6 h-6" />{' '}
-              <span className="poppins text-medium">Users</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/admin/stores"
-              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-            >
-              <HiBuildingStorefront className="w-6 h-6" />{' '}
-              <span className="poppins text-medium">Stores</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/admin/deals"
-              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-            >
-              <HiClipboardDocumentList className="w-6 h-6" />{' '}
-              <span className="poppins text-medium">Deals/Campaigns</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/admin/notifications"
-              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-            >
-              <HiMegaphone className="w-6 h-6" />{' '}
-              <span className="poppins text-medium">Notifications</span>
-            </Link>
-          </li>
-
+          {navItems.map((item) => (
+            <li key={item.href} onClick={handleNavToggle}>
+              <Link
+                href={item.href}
+                className={`flex items-center space-x-4 cursor-pointer ${
+                  pathname === item.href
+                    ? 'text-[#fcb349] font-bold'
+                    : 'hover:text-[#fcb349]'
+                }`}
+              >
+                {item.icon}
+                <span className="poppins text-medium">{item.label}</span>
+              </Link>
+            </li>
+          ))}
           <li onClick={handleNavToggle}>
             <div
               onClick={handleLogoutClick}
-              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
+              className="flex items-center space-x-4 cursor-pointer hover:text-[#fcb349] active:text-[#fcb349]"
             >
-              <HiArrowLeftCircle className="w-6 h-6" />{' '}
+              <HiArrowLeftCircle className="w-6 h-6" />
               <span className="poppins text-medium">Log Out</span>
             </div>
           </li>

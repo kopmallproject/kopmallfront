@@ -1,25 +1,73 @@
+'use client';
+
 import Image from 'next/image';
-import Logo from '@/app/assets/images/logo.png';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   HiArrowLeftCircle,
   HiHome,
   HiMegaphone,
   HiOutlineBell,
   HiShoppingBag,
-  HiUsers
+  HiUsers,
+  HiMiniSquaresPlus,
+  HiBuildingStorefront,
+  HiClipboardDocumentList,
+  HiMiniViewColumns,
+  HiMagnifyingGlass
 } from 'react-icons/hi2';
-import { useRouter } from 'next/navigation';
 import { useAppDispatch } from '@/app/rtk-base/hooks';
 import { showModal } from '@/app/rtk-base/slices/modal-slice';
-import { HiMiniSquaresPlus } from 'react-icons/hi2';
-import { HiBuildingStorefront } from 'react-icons/hi2';
-import { HiClipboardDocumentList } from 'react-icons/hi2';
-import { HiWallet } from 'react-icons/hi2';
-import { HiMiniViewColumns } from 'react-icons/hi2';
-import { HiMagnifyingGlass } from 'react-icons/hi2';
+import { useState } from 'react';
+import Logo from '@/app/assets/images/logo.png';
+
+type NavItem = {
+  href: string;
+  label: string;
+  icon: JSX.Element;
+};
+
+const navItems: NavItem[] = [
+  { href: '/admin', label: 'Admin Home', icon: <HiHome className="w-6 h-6" /> },
+  {
+    href: '/admin/orders',
+    label: 'Orders',
+    icon: <HiShoppingBag className="w-6 h-6" />
+  },
+  {
+    href: '/admin/products',
+    label: 'Products',
+    icon: <HiMiniSquaresPlus className="w-6 h-6" />
+  },
+  {
+    href: '/admin/categories',
+    label: 'Categories',
+    icon: <HiMiniViewColumns className="w-6 h-6" />
+  },
+  {
+    href: '/admin/users',
+    label: 'Users',
+    icon: <HiUsers className="w-6 h-6" />
+  },
+  {
+    href: '/admin/stores',
+    label: 'Stores',
+    icon: <HiBuildingStorefront className="w-6 h-6" />
+  },
+  {
+    href: '/admin/deals',
+    label: 'Deals/Campaigns',
+    icon: <HiClipboardDocumentList className="w-6 h-6" />
+  },
+  {
+    href: '/admin/notifications',
+    label: 'Notifications',
+    icon: <HiMegaphone className="w-6 h-6" />
+  }
+];
 
 function DesktopNavBar() {
+  const pathname = usePathname(); // Use usePathname to get the current path
   const dispatch = useAppDispatch();
   const router = useRouter();
 
@@ -43,7 +91,13 @@ function DesktopNavBar() {
       <header className="w-4/5 primary-background-color text-white flex justify-between items-center px-4 py-2 fixed top-0 right-0">
         <div className="flex items-center gap-3">
           <div className="rounded-full bg-slate-400">
-            <Image src={Logo} alt="logo" className="bg-cover w-10 h-10" />
+            <Image
+              src={Logo}
+              alt="logo"
+              width={50}
+              height={50}
+              className="bg-cover w-10 h-10"
+            />
           </div>
           <div className="poppins">
             <span className="font-medium text-[14px]">Aaron Ramsey</span>
@@ -70,7 +124,13 @@ function DesktopNavBar() {
       <aside className="bg-gray-100 fixed top-0 left-0 w-1/5 h-full px-6 text-[12px]">
         <div className="flex items-center gap-3 my-3">
           <Link href="/">
-            <Image src={Logo} alt="logo" className="bg-cover w-[50px]" />
+            <Image
+              width={50}
+              height={50}
+              src={Logo}
+              alt="logo"
+              className="bg-cover w-[50px]"
+            />
           </Link>
           <div>
             <span className="poppins font-medium text-lg">Mall Admin</span>
@@ -78,94 +138,28 @@ function DesktopNavBar() {
         </div>
         <nav className="nav-links">
           <ul className="flex flex-col gap-10 mt-20">
-            <li>
-              <a
-                href="/admin"
-                className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-              >
-                <HiHome className="w-6 h-6" />{' '}
-                <span className="poppins text-medium text-[14px]">
-                  Admin Home
-                </span>
-              </a>
-            </li>
-            <li>
-              <Link
-                href="/admin/orders"
-                className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-              >
-                <HiShoppingBag className="w-6 h-6" />{' '}
-                <span className="poppins text-medium text-[14px]">Orders</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/admin/products"
-                className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-              >
-                <HiMiniSquaresPlus className="w-6 h-6" />{' '}
-                <span className="poppins text-medium text-[14px]">
-                  Products
-                </span>
-              </Link>
-            </li>
-            <li>
-              <a
-                href="/admin/categories"
-                className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-              >
-                <HiMiniViewColumns className="w-6 h-6" />
-                <span className="poppins text-medium text-[14px]">
-                  Categories
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="/admin/users"
-                className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-              >
-                <HiUsers className="w-6 h-6" />{' '}
-                <span className="poppins text-medium text-[14px]">Users</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="/admin/stores"
-                className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-              >
-                <HiBuildingStorefront className="w-6 h-6" />{' '}
-                <span className="poppins text-medium text-[14px]">Stores</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="/admin/deals"
-                className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-              >
-                <HiClipboardDocumentList className="w-6 h-6" />{' '}
-                <span className="poppins text-medium text-[14px]">
-                  Deals/Campaigns
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="/admin/notifications"
-                className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
-              >
-                <HiMegaphone className="w-6 h-6" />{' '}
-                <span className="poppins text-medium text-[14px]">
-                  Notifications
-                </span>
-              </a>
-            </li>
-
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className={`flex items-center space-x-4 cursor-pointer ${
+                    pathname === item.href
+                      ? 'text-[#fcb349]'
+                      : 'hover:text-[#fcb349]'
+                  }`}
+                >
+                  {item.icon}
+                  <span className="poppins text-medium text-[14px]">
+                    {item.label}
+                  </span>
+                </Link>
+              </li>
+            ))}
             <li
               onClick={handleLogoutClick}
-              className="flex items-center space-x-4 cursor-pointer hover:text-blue-500 active:text-blue-500"
+              className={`flex items-center space-x-4 cursor-pointer hover:text-[#fcb349] active:text-[#fcb349]`}
             >
-              <HiArrowLeftCircle className="w-6 h-6" />{' '}
+              <HiArrowLeftCircle className="w-6 h-6" />
               <span className="poppins text-medium text-[14px]">Log Out</span>
             </li>
           </ul>
