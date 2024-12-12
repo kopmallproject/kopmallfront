@@ -35,8 +35,10 @@ const AdminFormModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-20 flex items-center justify-center px-3">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full md:w-[40%] relative">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+      {/* The overlay container covers the entire screen */}
+      <div className="fixed inset-0 bg-black bg-opacity-50 z-50"></div>
+      <div className="bg-white p-6 rounded-lg shadow-lg w-full md:w-[40%] z-50 relative">
         <button
           onClick={() => dispatch(hideOverlay())}
           className="absolute top-4 right-4 text-gray-600 hover:text-black"
