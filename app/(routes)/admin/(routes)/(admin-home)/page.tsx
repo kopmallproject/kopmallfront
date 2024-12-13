@@ -21,6 +21,10 @@ import { HiMagnifyingGlass } from 'react-icons/hi2';
 import RenderChart from './components/RenderChart';
 import TopPerformersCategoryCard from './components/TopPerformersCategoryCard';
 import TopPerformersProductCard from './components/TopPerformersProductCard';
+import Image from 'next/image';
+import Link from 'next/link';
+import dummyAvatar from '@/app/assets/images/img-7.png';
+import { HiChevronRight } from 'react-icons/hi2';
 
 function Admin() {
   const activeTab = useAppSelector((state: RootState) => state.tab.activeTab);
@@ -96,10 +100,160 @@ function Admin() {
               <h3 className="section-header poppins mt-6 mb-3 font-medium">
                 Order Tracker
               </h3>
-              <section className="bg-blue-100 min-h-[450px] w-full flex justify-center">
-                <div style={{ width: '700px', height: '400px' }}>
-                  <RenderChart />
-                </div>
+              <section className="flex flex-col lg:flex-row gap-6 lg:gap-4">
+                <section
+                  className="bg-blue-100 min-h-[450px] w-full flex justify-center rounded-[10px] 
+                lg:w-1/2"
+                >
+                  <div className="w-full">
+                    <RenderChart />
+                  </div>
+                </section>
+                <section
+                  className="bg-gray-100 min-h-[450px] w-full flex rounded-[10px] 
+                lg:w-1/2 flex-col"
+                >
+                  <div className="px-4 pt-3 section-header poppins text-[12px] font-medium flex justify-between">
+                    <span>Latest orders</span>
+                    <div className="flex gap-2 items-center">
+                      See all
+                      <HiChevronRight className="text-[14px] font-bold" />
+                    </div>
+                  </div>
+                  <main className="w-full flex flex-col min-h-[150px] text-[14px] gap-4 px-4 pb-4 pt-3">
+                    <div className="lg:mt-0 w-full flex flex-col gap-4 text-[14px]">
+                      <div className="w-full rounded-[7px] gap-3 bg-white flex flex-col sm:flex-row sm:justify-between sm:items-start p-2 xm:px-4">
+                        <div className="w-full flex items-center gap-5">
+                          <div className="w-[100px] lg:w-[150px] grid grid-cols-2 gap-2">
+                            <Image
+                              src={dummyAvatar}
+                              alt="user-icon"
+                              className=" bg-cover"
+                            />
+                            <Image
+                              src={dummyAvatar}
+                              alt="user-icon"
+                              className=" bg-cover"
+                            />
+                            <Image
+                              src={dummyAvatar}
+                              alt="user-icon"
+                              className=" bg-cover"
+                            />
+                            <Image
+                              src={dummyAvatar}
+                              alt="user-icon"
+                              className=" bg-cover"
+                            />
+                          </div>
+                          <div className="w-full flex flex-col text-[12px]">
+                            <h3 className="poppins inline-block font-medium mb-2">
+                              Havic HV G-92 Gamepad
+                            </h3>
+                            <div className="block text-slate-400 mb-1.5">
+                              Order ID: 217892
+                            </div>
+                            <div className="text-xs mb-1.5 text-white bg-yellow-600 px-3 self-start py-1 rounded-[7px]">
+                              Active
+                            </div>
+                            <span className="poppins block text-[10px]">
+                              21-06-2024
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex items-center w-full justify-end">
+                          <Link
+                            href="/admin/orders/order-details/123"
+                            className="poppins secondary-text-color lg:text-gray-400  text-[12px] hover:text-[#FCB349] hover:border-b-2 hover:border-[#FCB349]"
+                          >
+                            See details
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="lg:mt-0 w-full flex flex-col gap-4 text-[14px]">
+                      <div className="w-full rounded-[7px] gap-3 bg-white flex flex-col sm:flex-row sm:justify-between sm:items-start p-2 xm:px-4">
+                        <div className="w-full flex items-center gap-5">
+                          <div className="w-[100px] lg:w-[150px] grid grid-cols-2 gap-2">
+                            <Image
+                              src={dummyAvatar}
+                              alt="user-icon"
+                              className=" bg-cover"
+                            />
+                            <Image
+                              src={dummyAvatar}
+                              alt="user-icon"
+                              className=" bg-cover"
+                            />
+                            <Image
+                              src={dummyAvatar}
+                              alt="user-icon"
+                              className=" bg-cover"
+                            />
+                          </div>
+                          <div className="w-full flex flex-col text-[12px]">
+                            <h3 className="poppins inline-block font-medium mb-2">
+                              Havic HV G-92 Gamepad
+                            </h3>
+                            <div className="block text-slate-400 mb-1.5">
+                              Order ID: 217892
+                            </div>
+                            <div className="text-xs mb-1.5 text-white bg-yellow-600 px-3 self-start py-1 rounded-[7px]">
+                              Active
+                            </div>
+                            <span className="poppins block text-[10px]">
+                              21-06-2024
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex items-center w-full justify-end">
+                          <Link
+                            href="/admin/orders/order-details/123"
+                            className="poppins secondary-text-color lg:text-gray-400  text-[12px] hover:text-[#FCB349] hover:border-b-2 hover:border-[#FCB349]"
+                          >
+                            See details
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="lg:mt-0 w-full flex flex-col gap-4 text-[14px]">
+                      <div className="w-full rounded-[7px] gap-3 bg-white flex flex-col sm:flex-row sm:justify-between sm:items-start p-2 xm:px-4">
+                        <div className="w-full flex items-center gap-5">
+                          <div className="w-[100px] lg:w-[150px] gap-2">
+                            {/* <div className="w-[100px] lg:w-[150px] grid grid-cols-2 gap-2"> */}
+                            <Image
+                              src={dummyAvatar}
+                              alt="user-icon"
+                              className=" bg-cover"
+                            />
+                          </div>
+                          <div className="w-full flex flex-col text-[12px]">
+                            <h3 className="poppins inline-block font-medium mb-2">
+                              Havic HV G-92 Gamepad
+                            </h3>
+                            <div className="block text-slate-400 mb-1.5">
+                              Order ID: 217892
+                            </div>
+                            <div className="text-xs mb-1.5 text-white bg-yellow-600 px-3 self-start py-1 rounded-[7px]">
+                              Active
+                            </div>
+                            <span className="poppins block text-[10px]">
+                              21-06-2024
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex items-center w-full justify-end">
+                          <Link
+                            href="/admin/orders/order-details/123"
+                            className="poppins secondary-text-color lg:text-gray-400  text-[12px] hover:text-[#FCB349] hover:border-b-2 hover:border-[#FCB349]"
+                          >
+                            See details
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </main>
+                </section>
               </section>
             </section>
             {/* a sales tracker chat might not be necessary - leave hidden for now */}

@@ -59,9 +59,12 @@ const renderCustomizedLabel = ({
 export default class RenderChart extends PureComponent {
   render(): JSX.Element {
     return (
-      <div style={{ textAlign: 'center', width: '100%' }}>
+      <div
+        style={{ textAlign: 'center', width: '100%' }}
+        className="flex flex-col items-center justify-center"
+      >
         {/* Adjust chart size */}
-        <ResponsiveContainer width="100%" height={380}>
+        <ResponsiveContainer width="100%" height={360}>
           <PieChart>
             <Pie
               data={data}
@@ -91,6 +94,7 @@ export default class RenderChart extends PureComponent {
             alignItems: 'center',
             gap: '20px'
           }}
+          className="px-4"
         >
           {data.map((entry, index) => (
             <div
@@ -100,6 +104,7 @@ export default class RenderChart extends PureComponent {
                 alignItems: 'center',
                 gap: '8px'
               }}
+              // className="mb-8"
             >
               <div
                 style={{
@@ -108,7 +113,14 @@ export default class RenderChart extends PureComponent {
                   backgroundColor: COLORS[index]
                 }}
               ></div>
-              <span>{entry.name}</span>
+              <div className="flex flex-col gap-1">
+                <span className="poppins text-center text-[12px]">
+                  {entry.name}
+                </span>
+                <span className="poppins text-center text-[12px]">
+                  ({entry.value})
+                </span>
+              </div>
             </div>
           ))}
         </div>

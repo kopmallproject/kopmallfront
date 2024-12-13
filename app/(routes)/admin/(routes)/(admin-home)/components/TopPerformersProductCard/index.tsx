@@ -19,9 +19,9 @@ import { products } from '@/app/data/products-list';
 function TopPerformersProductCard() {
   const product = products[0];
   return (
-    <div className="category-card rounded-[10px] px-6 py-4 text-white primary-background-color flex justify-between items-center">
+    <div className="category-card rounded-[10px] px-6 py-4 bg-gray-100 flex justify-between items-center">
       <div className="w-1/4 flex">
-        <div className="self-start category-icon-wrapper primary-text-color bg-slate-100 p-2 rounded-[10px]">
+        <div className="self-start category-icon-wrapper primary-text-color bg-slate-300 p-2 rounded-[10px]">
           <Image
             className="w-[40px]"
             alt="product-image"
