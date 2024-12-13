@@ -3,6 +3,12 @@ import tabReducer from './slices/tab-slice';
 import overlayReducer from './slices/overlay-slice';
 import modalReducer from './slices/modal-slice';
 
+// // store.ts
+// type RootState {
+//   tab: TabState;
+//   // ... other slices
+// }
+
 export const store = configureStore({
   reducer: {
     tab: tabReducer,
