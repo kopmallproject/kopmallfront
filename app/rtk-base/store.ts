@@ -2,12 +2,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import tabReducer from './slices/tab-slice';
 import overlayReducer from './slices/overlay-slice';
 import modalReducer from './slices/modal-slice';
+import userReducer from './slices/user-slice';
 
 export const store = configureStore({
   reducer: {
     tab: tabReducer,
     overlay: overlayReducer,
-    logout: modalReducer
+    logout: modalReducer,
+    user: userReducer
   }
 });
 

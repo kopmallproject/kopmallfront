@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { signIn } from 'next-auth/react';
 import dummyAvatar from '@/app/assets/images/img-2.png';
 import goggleIcon from '@/app/assets/images/img-5.png';
 import piIcon from '@/app/assets/images/img-51.png';
@@ -12,6 +13,14 @@ import SideSalesImage from '@/app/assets/images/img-9.png';
 
 const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const handleGoggleSignIn = async () => {
+    try {
+      await signIn('google', { callbackUrl: '/' });
+    } catch (error) {
+      console.error('Google sign-in failed:', error);
+    }
+  };
 
   return (
     <>
@@ -50,7 +59,10 @@ const Login: React.FC = () => {
             </span> */}
           </div>
           <div className="auth-section mt-6 flex flex-col w-full lg:flex-row lg:items-center justify-center gap-3 text-base">
-            <div className="flex items-center justify-center gap-4 border-[1px] border-gray-500 py-2 px-3 rounded-[5px] cursor-pointer">
+            <div
+              onClick={handleGoggleSignIn}
+              className="flex items-center justify-center gap-4 border-[1px] border-gray-500 py-2 px-3 rounded-[5px] cursor-pointer"
+            >
               <Image
                 src={goggleIcon}
                 alt="user-icon"
