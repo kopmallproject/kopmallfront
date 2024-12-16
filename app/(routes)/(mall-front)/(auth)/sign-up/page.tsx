@@ -3,6 +3,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { signIn } from 'next-auth/react';
+import { useAppDispatch } from '@/app/rtk-base/hooks';
+import { setUserInfo } from '@/app/rtk-base/slices/user-slice';
+import Script from 'next/script'; //
+import Head from 'next/head';
 import goggleIcon from '@/app/assets/images/img-5.png';
 import appleIcon from '@/app/assets/images/img-6.png';
 import { HiMiniEyeSlash, HiMiniEye } from 'react-icons/hi2';
@@ -10,10 +15,72 @@ import Logo from '@/app/assets/images/logo.png';
 import piIcon from '@/app/assets/images/img-51.png';
 
 const SignUp: React.FC = () => {
+  const dispatch = useAppDispatch();
   const [showPassword, setShowPassword] = useState(false);
+  // const isPiInitialized = useRef(false);
+
+  const handleGoggleSignUp = async () => {
+    await signIn('google', { callbackUrl: '/' });
+  };
+
+  // const onIncompletePaymentFound = (payment: { [key: string]: any }) => {
+  //   console.log('Incomplete payment found:', payment);
+  //   // Handle the incomplete payment logic here
+  // };
+
+  // useEffect(() => {
+  //   if (typeof window.Pi !== 'undefined') {
+  //     window.Pi.init({
+  //       version: '2.0'
+  //     });
+  //     isPiInitialized.current = true;
+  //     console.log('Pi SDK initialized');
+  //   } else {
+  //     console.error('Pi SDK is not available');
+  //   }
+  // }, []);
+
+  // const handlePiLogin = async () => {
+  //   if (typeof window.Pi === 'undefined') {
+  //     console.error('Pi SDK is not initialized');
+  //     return;
+  //   }
+
+  //   try {
+  //     const auth = await window.Pi.authenticate([], onIncompletePaymentFound);
+  //     console.log('Authentication successful:', auth);
+  //   } catch (error) {
+  //     console.error('Error during authentication:', error);
+  //   }
+  // };
+
+  // const verifyUserOnBackend = async (accessToken: string) => {
+  //   try {
+  //     const response = await fetch('/api/verify', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify({ accessToken })
+  //     });
+  //     const result = await response.json();
+
+  //     if (response.ok) {
+  //       console.log('User verified on backend:', result);
+  //     } else {
+  //       console.error('Backend verification failed:', result);
+  //     }
+  //   } catch (error) {
+  //     console.error('Error verifying user on backend:', error);
+  //   }
+  // };
 
   return (
     <>
+      <Script
+        src="https://sdk.minepi.com/pi-sdk.js"
+        strategy="afterInteractive" // Load script after page load
+      />
       <section className="hidden lg:flex justify-center items-center bg-white w-full lg:w-4/12 2xl:w-3/12 h-screen">
         <div
           className="flex flex-col items-center justify-center gap-7 sign-up-page-side-sales-image"
@@ -46,7 +113,10 @@ const SignUp: React.FC = () => {
             <h3 className="text-lg">Select a method to create your account</h3>
           </div>
           <div className="auth-section mt-6 flex flex-col w-full lg:flex-row lg:items-center justify-center gap-3 text-base">
-            <div className="flex items-center justify-center gap-4 border-[1px] border-gray-500 py-2 px-3 rounded-[5px] cursor-pointer">
+            <div
+              onClick={handleGoggleSignUp}
+              className="flex items-center justify-center gap-4 border-[1px] border-gray-500 py-2 px-3 rounded-[5px] cursor-pointer"
+            >
               <Image
                 src={goggleIcon}
                 alt="user-icon"
