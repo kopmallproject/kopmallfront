@@ -7,6 +7,7 @@ import {
 } from 'react-icons/io5';
 import Image from 'next/image';
 import Logo from '@/app/assets/images/logo.png';
+import BrandImage from '@/app/assets/images/brand-image.png';
 
 function Footer() {
   return (
@@ -15,11 +16,11 @@ function Footer() {
       className="bg-gray-300 w-full px-3 md:px-[10%] xl:px-[12%] py-20 text-gray-600 poppins"
     >
       <div className="w-full gap-6 md:gap-[80px]">
-        <div className="logo-wrapper flex flex-row items-center gap-1">
+        <div className="logo-wrapper flex flex-row items-center gap-2">
           <Image
-            src={Logo}
+            src={BrandImage}
             alt="user-icon"
-            className="bg-cover w-[60px] h-[60px] rounded-[7px]"
+            className="bg-cover w-[50px] h-[50px] rounded-[7px]"
           />{' '}
           <div className="flex flex-col gap-y-1 poppins text-[14px] font-medium text-gray-800">
             <span>King Of Pi</span>

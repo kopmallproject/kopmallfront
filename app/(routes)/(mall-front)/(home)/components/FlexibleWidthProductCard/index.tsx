@@ -9,6 +9,7 @@ import { HiOutlineHeart } from 'react-icons/hi2';
 import dummyProduct from '@/app/assets/images/img-10.png';
 import { Rating } from 'react-simple-star-rating';
 import { StaticImageData } from 'next/image';
+import { LuPi } from 'react-icons/lu';
 
 type ProductSpecs = {
   productId: string;
@@ -43,10 +44,12 @@ function ProductCard(product: ProductSpecs) {
         {product.productName}
       </div>
       <div className="price-and-discount mt-1 flex gap-4">
-        <span className="text-red-500 font-normal poppins text-[12px] sm:text-[14px]">
+        <span className="text-red-500 font-normal poppins text-[12px] sm:text-[14px] flex items-center">
+          <LuPi />
           {product.discountedPrice}
         </span>
-        <span className="text-gray-500 font-normal poppins line-through text-[12px] sm:text-[14px]">
+        <span className="text-gray-500 font-normal poppins line-through text-[12px] sm:text-[14px] flex items-center">
+          <LuPi />
           {product.originalPrice}
         </span>
       </div>

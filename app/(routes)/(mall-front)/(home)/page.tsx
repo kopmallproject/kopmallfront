@@ -154,7 +154,7 @@ function Home() {
               </div>
               <div className="flex flex-col gap-3">
                 <Image
-                  src={DummyGif12}
+                  src={DummyGif11}
                   alt="user-icon"
                   className="w-full h-full rounded-[7px]"
                 />
@@ -164,7 +164,7 @@ function Home() {
               </div>
               <div className="flex flex-col h-full gap-3">
                 <Image
-                  src={DummyImage52}
+                  src={DummyGif11}
                   alt="user-icon"
                   className="w-full h-full rounded-[7px]"
                 />
@@ -174,7 +174,7 @@ function Home() {
               </div>
               <div className="flex flex-col gap-3">
                 <Image
-                  src={DummyImage53}
+                  src={DummyGif11}
                   alt="user-icon"
                   className="w-full h-full border rounded-[7px]"
                 />
@@ -184,7 +184,7 @@ function Home() {
               </div>
               <div className="flex flex-col gap-3">
                 <Image
-                  src={DummyImage54}
+                  src={DummyGif11}
                   alt="user-icon"
                   className="w-full h-full rounded-[7px]"
                 />
@@ -258,7 +258,7 @@ function Home() {
             <section className="mt-[20px] p-2 bg-white rounded-[7px] w-full grid grid-cols-3 xl:grid-cols-6 gap-[20px] top-category-menu">
               <div className="flex flex-col gap-3">
                 <Image
-                  src={Dummygif9}
+                  src={DummyGif11}
                   alt="user-icon"
                   className="w-full h-full rounded-[7px]"
                 />
@@ -278,7 +278,7 @@ function Home() {
               </div>
               <div className="flex flex-col h-full gap-3">
                 <Image
-                  src={Dummygif10}
+                  src={DummyGif11}
                   alt="user-icon"
                   className="w-full h-full rounded-[7px]"
                 />
@@ -318,8 +318,8 @@ function Home() {
               </div>
             </section>
             <section className="sponsored-products-section bg-white mt-[20px] rounded-[7px] pb-2">
-              <div className="main-header-wrapper py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
-                <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+              <div className="main-header-wrapper rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
+                <h3 className="poppins font-normal text-[14px] xsm:text-[16px] flex items-center">
                   Sponsored Products
                 </h3>
                 <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
@@ -351,79 +351,11 @@ function Home() {
                   </Link>
                 ))}
               </div>
-              {/* <div className="flex items-center justify-center mt-[20px] px-3 pb-3">
-            <button className="w-full rounded-[5px] px-4 py-3 poppins text-[14px] secondary-background-color font-normal">
-              See All Items
-            </button>
-          </div> */}
             </section>
-            {/* <section className="best-selling w-full mt-[20px] sm:mt-20px]">
-              <Slider {...settings}>
-                <div>
-                  <Image
-                    src={DummyBanner3}
-                    alt="user-icon"
-                    className="w-full h-[500px] rounded-[7px]"
-                  />
-                </div> */}
-            {/* <div>
-                  <Image
-                    src={DummyBanner53}
-=========
-                    src={DummyBanner3}
->>>>>>>>> Temporary merge branch 2
-                    alt="user-icon"
-                    className="w-full rounded-[7px]"
-                  />
-                </div> */}
-            {/* </Slider>
-            </section> */}
-            {/* <section className="new-arrivals-section mt-[20px] sm:mt-[20px]">
-          <div className="main-header-wrapper py-4 px-3 border-b-[1px] flex flex-row justify-between items-center">
-            <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
-              New Arrivals
-            </h3>
-            <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
-              <div className="text-center">See all items</div>
-              <div>
-                <HiChevronRight className="text-[16px] font-bold" />
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row gap-x-6 gap-y-4">
-            <div className="w-full md:w-1/2">
-              <Image
-                src={DummyBanner2}
-                alt="user-icon"
-                className="w-full rounded-[7px]"
-              />
-            </div>
-            <div className="w-full md:w-1/2 flex flex-col justify-center">
-              <div className="w-full">
-                <Image
-                  src={DummyBanner4}
-                  alt="user-icon"
-                  className="w-full rounded-[7px]"
-                />
-              </div>
-              <div className="w-full flex flex-row mt-4 justify-between">
-                <Image
-                  src={DummyBanner5}
-                  alt="user-icon"
-                  className="rounded-[7px] w-[48%]"
-                />{' '}
-                <Image
-                  src={DummyBanner6}
-                  alt="user-icon"
-                  className="rounded-[7px] w-[48%]"
-                />
-              </div>
-            </div>
-          </div>
-        </section> */}
+
             <section className="mt-[20px] bg-white rounded-[7px] w-full">
-              <div className="main-header-wrapper py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
-                <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+              <div className="rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white main-header-wrapper py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
+                <h3 className="poppins font-normal text-[14px] xsm:text-[16px] flex items-center">
                   Top Phone deals
                 </h3>
                 <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
@@ -479,8 +411,8 @@ function Home() {
               </div>
             </section>
             <section className="mt-[20px] bg-white rounded-[7px] w-full">
-              <div className="main-header-wrapper py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
-                <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+              <div className="main-header-wrapper rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
+                <h3 className="poppins font-normal text-[14px] xsm:text-[16px] flex items-center">
                   Accessories deals
                 </h3>
                 <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
@@ -536,8 +468,8 @@ function Home() {
               </div>
             </section>
             <section className="sponsored-products-section bg-white mt-[20px] rounded-[7px] pb-2">
-              <div className="main-header-wrapper py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
-                <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+              <div className="main-header-wrapper rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
+                <h3 className="poppins font-normal text-[14px] xsm:text-[16px] flex items-center">
                   Binatone Store
                 </h3>
                 <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
@@ -565,10 +497,7 @@ function Home() {
                     }}
                     passHref
                   >
-                    <FlexibleWidthProductCard
-                      {...product}
-                      key={product.productId}
-                    />
+                    <ProductCard {...product} key={product.productId} />
                   </Link>
                 ))}
               </div>
@@ -579,8 +508,8 @@ function Home() {
           </div> */}
             </section>
             <section className="official-stores-section mt-[20px] bg-white rounded-[7px]">
-              <div className="flash-sales-countdown-section-wrapper border-b px-2 py-2">
-                <h3 className="capitalize poppins text-[14px] xsm:text-[16px] sm:text-[20px] sm:text-center w-full">
+              <div className="flash-sales-countdown-section-wrapper rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white border-b px-2 py-2">
+                <h3 className="capitalize poppins text-[14px] xsm:text-[16px] sm:text-center w-full">
                   Official Stores
                 </h3>
               </div>
@@ -598,8 +527,8 @@ function Home() {
               </div>
             </section>
             <section className="best-discount-section bg-white mt-[20px] rounded-[7px] pb-2">
-              <div className="main-header-wrapper py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
-                <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+              <div className="main-header-wrapper rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white py-2 px-2 border-b-[1px] flex flex-row justify-between items-center">
+                <h3 className="poppins font-normal text-[14px] xsm:text-[16px] flex items-center">
                   Best Discounts(up to 60% off)
                 </h3>
                 <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">

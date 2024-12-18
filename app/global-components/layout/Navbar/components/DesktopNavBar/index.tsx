@@ -8,7 +8,8 @@ import {
 } from 'react-icons/hi2';
 import { HiBars3BottomLeft } from 'react-icons/hi2';
 import Image from 'next/image';
-import Logo from '../../../../../assets/images/logo.png';
+import Logo from '@/app/assets/images/logo.png';
+// import Logo from '@/app/assets/images/brand-image.png';
 import Image1 from '@/app/assets/images/img-41.png';
 import Image2 from '@/app/assets/images/img-42.png';
 import Image3 from '@/app/assets/images/img-43.png';
@@ -69,13 +70,17 @@ function DesktopNavBar() {
     <nav className="w-full">
       <div className="desktop-nav-bar w-full hidden bg-gray-100 lg:flex items-center justify-between shadow-sm py-[6px] px-3 lg:px-[10%] xl:px-[12%] lg:mx-auto">
         <div className="flex items-center gap-6">
-          <Link href="/">
-            <div className="poppins uppercase font-bold text-xl">
+          <Link href="/" className="flex flex-row gap-4 items-center">
+            <div className="poppins uppercase text-xl">
               <Image
                 src={Logo}
                 alt="user-icon"
-                className="bg-cover w-[60px] h-[60px]"
+                className="bg-cover w-[45px] h-[45px]"
               />
+            </div>
+            <div className="hidden flex-col poppins font-extralight text-[18px]">
+              <span>King Of Pi</span>
+              <span>Mall</span>
             </div>
           </Link>
           <div className="flex items-center justify-center gap-4 w-3/4">

@@ -39,6 +39,7 @@ import DummyBanner3 from '@/app/assets/images/img-20.png';
 import DummyBanner4 from '@/app/assets/images/img-21.png';
 import DummyBanner5 from '@/app/assets/images/img-22.png';
 import DummyBanner6 from '@/app/assets/images/img-9.png';
+import { LuPi } from 'react-icons/lu';
 
 // import { products } from '@/app/data/products-list';
 
@@ -106,8 +107,9 @@ function CartPage() {
                         <div className="product-name poppins uppercase font-normal text-[14px]">
                           {each.productName}
                         </div>
-                        <div className="text-right text-[14px]">
-                          ${each.discountedPrice}
+                        <div className="flex items-center text-right text-[14px]">
+                          <LuPi />
+                          {each.discountedPrice}
                         </div>
                       </div>
                       <div className="flex flex-col justify-between">
@@ -156,12 +158,20 @@ function CartPage() {
                 </div>
                 <div className="flex justify-between p-4">
                   <span>Subtotal:</span>
-                  <span>$79.72</span>
+                  <span className="flex items-center">
+                    <LuPi />
+                    79.72
+                  </span>
                 </div>
               </div>
               <Link href="/checkout/123">
-                <button className="secondary-background-color mt-4 px-4 py-3 poppins text-[14px] text-center font-normal w-full rounded-[5px]">
-                  Checkout($79.72)
+                <button className="flex items-center secondary-background-color mt-4 px-4 py-3 poppins text-[14px] justify-center font-normal w-full rounded-[5px]">
+                  <span>Checkout(</span>
+                  <span className="flex items-center">
+                    <LuPi />
+                    79.72
+                  </span>
+                  )
                 </button>
               </Link>
             </section>
@@ -202,8 +212,8 @@ function CartPage() {
           </div>
         </section> */}
         <section className="recently-viewed bg-white mt-[100px] lg:mt-[150px] rounded-[7px] pb-2">
-          <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
-            <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+          <div className="main-header-wrapper py-2 px-3 rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white border-b-[1px] flex flex-row justify-between items-center">
+            <h3 className="poppins font-normal text-[14px] xsm:text-[16px] flex items-center">
               Recently Viewed
             </h3>
             {/* <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
@@ -225,8 +235,8 @@ function CartPage() {
           </div> */}
         </section>
         <section className="mt-[20px] bg-white rounded-[7px] w-full">
-          <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
-            <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+          <div className="main-header-wrapper rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+            <h3 className="poppins font-normal text-[14px] xsm:text-[16px] flex items-center">
               Top Phone deals
             </h3>
             <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
@@ -282,8 +292,8 @@ function CartPage() {
           </div>
         </section>
         <section className="sponsored-products-section bg-white mt-[20px] rounded-[7px] pb-2">
-          <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
-            <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+          <div className="main-header-wrapper rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+            <h3 className="poppins font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
               Recommended products
             </h3>
             <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
@@ -305,9 +315,9 @@ function CartPage() {
           </div> */}
         </section>
         <section className="sponsored-products-section bg-white mt-[20px] rounded-[7px] pb-2">
-          <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
-            <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
-              Binatone Store
+          <div className="main-header-wrapper py-2 px-3 rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white border-b-[1px] flex flex-row justify-between items-center">
+            <h3 className="poppins font-normal text-[14px] xsm:text-[16px] flex items-center">
+              Samsung Store
             </h3>
             <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
               <div className="text-center">See all items</div>
@@ -328,8 +338,8 @@ function CartPage() {
           </div> */}
         </section>
         <section className="sponsored-products-section bg-white mt-[20px] rounded-[7px] pb-2">
-          <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
-            <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+          <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white flex-row justify-between items-center">
+            <h3 className="poppins font-normal text-[14px] xsm:text-[16px] flex items-center">
               Binatone Store
             </h3>
             <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">

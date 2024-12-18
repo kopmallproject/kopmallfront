@@ -79,8 +79,8 @@ function CategoryPage() {
             </span>
           </section>
           <section className="sponsored-products-section bg-white mt-[20px] mb-[20px] sm:mb-[40px] rounded-[7px] pb-2">
-            <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
-              <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+            <div className="main-header-wrapper rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <h3 className="poppins font-normal text-[14px] xsm:text-[16px] flex items-center">
                 Sponsored Products
               </h3>
               <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
@@ -148,8 +148,8 @@ function CategoryPage() {
               <SidebarFilter />
             </section>
             <section className="category-products w-full lg:w-[73%] 2xl:w-[76%] bg-white rounded-[7px] pb-[20px]">
-              <div className="p-3 main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
-                <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+              <div className="p-3 main-header-wrapper rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
+                <h3 className="poppins font-normal text-[14px] xsm:text-[16px] flex items-center">
                   Category:{' '}
                   {categoryName
                     ? decodeURIComponent(categoryName)
@@ -242,8 +242,8 @@ function CategoryPage() {
             </div>
           </section>
           <section className="sponsored-products-section bg-white mt-[20px] mb-[20px] sm:mb-[40px] rounded-[7px] pb-2">
-            <div className="main-header-wrapper py-2 px-3 border-b-[1px] flex flex-row justify-between items-center">
-              <h3 className="poppins secondary-text-color font-normal text-[14px] xsm:text-[16px] sm:text-[20px] flex items-center">
+            <div className="main-header-wrapper py-2 rounded-tr-[7px] rounded-tl-[7px] bg-red-600 text-white px-3 border-b-[1px] flex flex-row justify-between items-center">
+              <h3 className="poppins font-normal text-[14px] xsm:text-[16px] flex items-center">
                 Sponsored Products
               </h3>
               <div className="poppins text-[12px] xsm:text-[14px] font-normal flex gap-2 items-center">
