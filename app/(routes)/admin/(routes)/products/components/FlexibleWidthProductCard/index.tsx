@@ -13,6 +13,7 @@ import { Rating } from 'react-simple-star-rating';
 import { StaticImageData } from 'next/image';
 import { HiOutlineTrash } from 'react-icons/hi2';
 import { HiPencilSquare } from 'react-icons/hi2';
+import { LuPi } from 'react-icons/lu';
 
 type ProductSpecs = {
   productId: string;
@@ -59,10 +60,12 @@ function ProductCard(product: ProductSpecs) {
         {product.productName}
       </div>
       <div className="price-and-discount mt-1 flex gap-4">
-        <span className="text-red-500 font-normal poppins text-[12px] sm:text-[14px]">
+        <span className="flex items-center text-red-500 font-normal poppins text-[12px] sm:text-[14px]">
+          <LuPi />
           {product.discountedPrice}
         </span>
-        <span className="text-gray-500 font-normal poppins line-through text-[12px] sm:text-[14px]">
+        <span className="flex items-center text-gray-500 font-normal poppins line-through text-[12px] sm:text-[14px]">
+          <LuPi />
           {product.originalPrice}
         </span>
       </div>

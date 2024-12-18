@@ -3,6 +3,7 @@ import { HiOutlineRefresh } from 'react-icons/hi';
 import { RiArrowGoBackLine, RiTruckLine } from 'react-icons/ri';
 import { Rating } from 'react-simple-star-rating';
 import QuantitySelector from '../QuantitySelector';
+import { LuPi } from 'react-icons/lu';
 
 interface ProductDescriptionProps {
   name: string;
@@ -35,7 +36,8 @@ const ProductDescription: React.FC<ProductDescriptionProps> = ({
           {stockStatus}
         </span>
       </div>
-      <p className="text-[16px] sm:text-2xl font-bold text-gray-800 mt-4">
+      <p className="text-[16px] sm:text-2xl font-bold text-gray-800 mt-4 flex items-center">
+        <LuPi />
         {price}
       </p>
       <p className="text-gray-600 mt-4 text-[14px]">{description}</p>

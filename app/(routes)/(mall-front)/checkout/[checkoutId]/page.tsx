@@ -36,6 +36,7 @@ import Logo from '@/app/assets/images/logo.png';
 import RadioActive from '@/app/assets/images/img-49.png';
 import RadioInactive from '@/app/assets/images/img-50.png';
 import Link from 'next/link';
+import { LuPi } from 'react-icons/lu';
 
 // import { products } from '@/app/data/products-list';
 
@@ -172,12 +173,22 @@ function CartPage() {
                 </div>
                 <div className="flex justify-between p-4">
                   <span>Subtotal:</span>
-                  <span>$79.72</span>
+                  <span className="flex items-center">
+                    <LuPi />
+                    79.72
+                  </span>{' '}
                 </div>
               </div>
-              <button className="secondary-background-color mt-4 px-4 py-3 poppins text-[14px] text-center font-normal">
-                Proceed to pay($79.72)
-              </button>
+              <Link href="/checkout/123">
+                <button className="flex items-center secondary-background-color mt-4 px-4 py-3 poppins text-[14px] justify-center font-normal w-full rounded-[5px]">
+                  <span>Checkout(</span>
+                  <span className="flex items-center">
+                    <LuPi />
+                    79.72
+                  </span>
+                  )
+                </button>
+              </Link>
             </section>
           </div>
           <div className="flex flex-col lg:w-[30%] mt-6">
@@ -212,8 +223,9 @@ function CartPage() {
                               </span>
                             </div>
                           </div>
-                          <div className="text-right mt-1 text-[14px]">
-                            ${each.discountedPrice}
+                          <div className="flex items-center text-right mt-1 text-[14px]">
+                            <LuPi />
+                            {each.discountedPrice}
                           </div>
                         </div>
                       </div>
@@ -244,18 +256,28 @@ function CartPage() {
               })}
             </section>
             <section className="cart-summary lg:hidden flex flex-col w-full">
-              <div className="mt-4 flex flex-col border-[1px] rounded-[5px]">
+              <div className="mt-4 flex bg-white flex-col border-[1px] rounded-[5px]">
                 <div className="title poppins py-2 px-4 border-b-[1px]">
                   Cart Summary
                 </div>
                 <div className="flex justify-between p-4">
                   <span>Subtotal:</span>
-                  <span>$79.72</span>
+                  <span className="flex items-center">
+                    <LuPi />
+                    79.72
+                  </span>{' '}
                 </div>
               </div>
-              <button className="secondary-background-color mt-4 px-4 py-3 poppins text-[14px] text-center font-normal">
-                Checkout($79.72)
-              </button>
+              <Link href="/checkout/123">
+                <button className="flex items-center secondary-background-color mt-4 px-4 py-3 poppins text-[14px] justify-center font-normal w-full rounded-[5px]">
+                  <span>Checkout(</span>
+                  <span className="flex items-center">
+                    <LuPi />
+                    79.72
+                  </span>
+                  )
+                </button>
+              </Link>
             </section>
           </div>
         </section>
